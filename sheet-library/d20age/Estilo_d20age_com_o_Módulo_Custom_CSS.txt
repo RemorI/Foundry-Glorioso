@@ -1,0 +1,73 @@
+/* Custom CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Londrina+Sketch&family=Love+Ya+Like+A+Sister&family=Rubik+Doodle+Shadow&display=swap');
+
+.div {
+  font-family: "Love Ya Like A Sister", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* Deixa os Atributos e coisas roláveis maiores */ 
+
+a.custom-system-rollable, {
+  font-family: "Love Ya Like A Sister", cursive;
+       font-size: 20px
+}
+
+.atributo {
+  font-family: "Rubik Doodle Shadow", system-ui;
+   font-size: 16pt;
+	color: black;
+	font-weight: bold;
+}
+
+/* Modifica o cabeçalho */
+
+.sheet-header, .title {
+   background-image: url("https://i.ibb.co/x6ZfJW5/design-space-paper-textured-background-53876-42312.jpg");
+   text-transform: uppercase;
+  font-family: "Love Ya Like A Sister", cursive;
+   font-size: 12pt;
+}
+
+/* Modificações gerais na ficha */
+
+.character {
+   background-image: url("https://i.ibb.co/x6ZfJW5/design-space-paper-textured-background-53876-42312.jpg");
+  font-family: "Love Ya Like A Sister", cursive;
+   font-size: 12pt;
+
+}
+
+.custom-system-label-title, .sheet-tabs, h2{
+  font-family: "Rubik Doodle Shadow", system-ui;
+   font-size: 16pt;
+   padding:0.1em 0.2em;
+	color: black;
+	font-weight: bold;
+
+}
+
+
+
+/* Modifica o estilo das rolagens no chat*/
+
+.titulorolagem {
+   background-image: #ffffff;
+  font-family: "Special Elite", system-ui;
+   font-size: 14pt;
+}
+
+.custom-system-roll {
+  font-family: "Love Ya Like A Sister", cursive;
+   font-size: 14pt;
+}
+
+/* Modifica a fonte do nome do personagem */
+
+.charname {
+  font-family: "Love Ya Like A Sister", cursive;
+    font-size: 28pt;
+}

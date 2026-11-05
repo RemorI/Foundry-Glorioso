@@ -1,0 +1,43 @@
+{{! Author: Jean-Baptiste Louvet-Daniel
+   -
+   - This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at https://mozilla.org/MPL/2.0/. }}
+
+<div class='custom-system-template-settings'>
+    {{#if isActor}}
+        <fieldset class="custom-system-fieldset">
+            <legend>{{localize "CSB.TemplateSettings.Combat.Title"}}</legend>
+            <div class='custom-system-form-field'>
+                <label for='custom-system-combat-initiative-{{appId}}'>{{localize 'CSB.TemplateSettings.Combat.InitiativeFormula.Name'}} {{> icon-formula}} {{> icon-no-delimiters}} </label>
+                <input type='text' name='combat.initiativeFormula' class='custom-system-combat-initiative' id="custom-system-combat-initiative-{{appId}}" value='{{combat.initiativeFormula}}' />
+            </div>
+
+        </fieldset>
+    {{/if}}
+    <fieldset class="custom-system-fieldset">
+        <legend>{{localize "CSB.TemplateSettings.Display.Title"}}</legend>
+        <div>
+            <h2 class='sheetSize'>{{localize 'CSB.TemplateSettings.Display.SheetSize'}}</h2>
+            <div class='custom-system-form-field'>
+                <label for='custom-system-display-width-{{appId}}'>{{localize 'CSB.TemplateSettings.Display.DefaultWidth'}}</label>
+                <input type='number' name='display.width' class='custom-system-display-width' id='custom-system-display-width-{{appId}}' value='{{display.width}}' />
+                <label for='custom-system-display-height-{{appId}}'>{{localize 'CSB.TemplateSettings.Display.DefaultHeight'}}</label>
+                <input type='number' name='display.height' class='custom-system-display-height' id='custom-system-display-height-{{appId}}' value='{{display.height}}' />
+            </div>
+            <div class='custom-system-form-field'>
+                <label for='custom-system-display-fix-size-{{appId}}'>{{localize 'CSB.TemplateSettings.Display.PreventSheetResizing'}}</label>
+                <input type='checkbox' name='display.fix_size' class='custom-system-display-fix-size' id='custom-system-display-fix-size-{{appId}}' {{checked display.fix_size}} />
+            </div>
+        </div>
+        <div>
+            <h2 class='pictureSize'>{{localize 'CSB.TemplateSettings.Display.ProfilPictureSize'}}</h2>
+            <div class='custom-system-form-field'>
+                <label for='custom-system-display-pp-width-{{appId}}'>{{localize 'CSB.TemplateSettings.Display.DefaultWidth'}}</label>
+                <input type='number' name='display.pp_width' class='custom-system-display-pp-width' id='custom-system-display-pp-width-{{appId}}' value='{{display.pp_width}}' />
+                <label for='custom-system-display-pp-height-{{appId}}'>{{localize 'CSB.TemplateSettings.Display.DefaultHeight'}}</label>
+                <input type='number' name='display.pp_height' class='custom-system-display-pp-height' id='custom-system-display-pp-height-{{appId}}' value='{{display.pp_height}}' />
+            </div>
+        </div>
+    </fieldset>
+</div>

@@ -1,0 +1,183 @@
+{
+    "name": "Armadura Acolchoada",
+    "type": "equippableItem",
+    "img": "icons/equipment/chest/breastplate-quilted-brown.webp",
+    "system": {
+        "hidden": [],
+        "header": {
+            "contents": [
+                {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "contents": [
+                        {
+                            "key": "armadura_ca",
+                            "cssClass": "",
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "label": "CA: ",
+                            "defaultValue": "0",
+                            "size": "full-size",
+                            "allowDecimal": false,
+                            "minVal": "",
+                            "maxVal": "",
+                            "allowRelative": false,
+                            "showControls": false,
+                            "type": "numberField"
+                        },
+                        {
+                            "key": "item_carga",
+                            "cssClass": "",
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "label": "Carga: ",
+                            "defaultValue": "0",
+                            "size": "full-size",
+                            "allowDecimal": false,
+                            "minVal": "",
+                            "maxVal": "",
+                            "allowRelative": false,
+                            "showControls": false,
+                            "type": "numberField"
+                        },
+                        {
+                            "key": "armadura_custo",
+                            "cssClass": "",
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "label": "Custo:",
+                            "defaultValue": "0po",
+                            "size": "full-size",
+                            "charList": "",
+                            "maxLength": "",
+                            "type": "textField"
+                        },
+                        {
+                            "key": "item_equipado",
+                            "cssClass": "",
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "label": "Equipado? ",
+                            "defaultValue": null,
+                            "size": "full-size",
+                            "type": "checkbox"
+                        }
+                    ],
+                    "flow": "grid-4",
+                    "align": "center",
+                    "type": "panel"
+                },
+                {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "contents": [
+                        {
+                            "key": "",
+                            "cssClass": "",
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "label": null,
+                            "defaultValue": null,
+                            "size": "small",
+                            "icon": "",
+                            "value": "Descrição: ",
+                            "prefix": "",
+                            "suffix": "",
+                            "rollMessage": "",
+                            "altRollMessage": "",
+                            "style": "label",
+                            "type": "label"
+                        },
+                        {
+                            "key": "armadura_desc",
+                            "cssClass": "",
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "label": "",
+                            "defaultValue": "",
+                            "size": "full-size",
+                            "charList": "",
+                            "maxLength": "",
+                            "type": "textField"
+                        }
+                    ],
+                    "flow": "horizontal",
+                    "align": "left",
+                    "type": "panel"
+                }
+            ],
+            "cssClass": null,
+            "role": 0,
+            "permission": 0,
+            "tooltip": null,
+            "flow": null,
+            "align": null,
+            "type": "panel"
+        },
+        "body": {
+            "contents": []
+        },
+        "display": {
+            "width": "600",
+            "height": "600",
+            "fix_size": false,
+            "pp_width": "64",
+            "pp_height": "64"
+        },
+        "template": "C8DChCYN40Z7zdRL",
+        "props": {
+            "armadura_ca": "1",
+            "item_carga": "1",
+            "armadura_custo": "5 po",
+            "armadura_desc": "Leve, Couro ",
+            "item_equipado": false
+        },
+        "modifiers": [
+            {
+                "priority": 0,
+                "key": "armadura_ca",
+                "operator": "add",
+                "formula": "${item_equipado ? armadura_ca : 0}$"
+            },
+            {
+                "priority": 0,
+                "key": "item_carga",
+                "operator": "add",
+                "formula": "${item_carga}$"
+            }
+        ],
+        "unique": false
+    },
+    "effects": [],
+    "flags": {
+        "custom-system-builder": {
+            "version": "2.1.0"
+        },
+        "exportSource": {
+            "world": "olddragon2",
+            "system": "custom-system-builder",
+            "coreVersion": "10.290",
+            "systemVersion": "2.1.0"
+        }
+    },
+    "_stats": {
+        "systemId": "custom-system-builder",
+        "systemVersion": "2.1.0",
+        "coreVersion": "10.290",
+        "createdTime": 1668488537980,
+        "modifiedTime": 1668497972347,
+        "lastModifiedBy": "N5JqJ4jX09flFcz7"
+    }
+}

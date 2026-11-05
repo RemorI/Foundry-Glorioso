@@ -1,0 +1,1093 @@
+{
+    "name": "Fire Ball",
+    "type": "equippableItem",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+        "hidden": [],
+        "header": {
+            "contents": [
+                {
+                    "key": "edit",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "label": "Edit: ",
+                    "defaultValue": null,
+                    "size": "full-size",
+                    "type": "checkbox",
+                    "defaultChecked": false
+                }
+            ],
+            "key": "custom_header",
+            "cssClass": null,
+            "role": 0,
+            "permission": 0,
+            "tooltip": null,
+            "visibilityFormula": null,
+            "flow": null,
+            "align": null,
+            "type": "panel"
+        },
+        "body": {
+            "contents": [
+                {
+                    "key": "",
+                    "cssClass": "",
+                    "role": 0,
+                    "permission": 0,
+                    "tooltip": null,
+                    "visibilityFormula": null,
+                    "contents": [
+                        {
+                            "key": "",
+                            "cssClass": "",
+                            "role": 0,
+                            "permission": 0,
+                            "tooltip": null,
+                            "visibilityFormula": null,
+                            "label": null,
+                            "defaultValue": null,
+                            "size": "full-size",
+                            "icon": "",
+                            "value": "Spell",
+                            "prefix": "",
+                            "suffix": "",
+                            "rollMessage": "",
+                            "altRollMessage": "",
+                            "style": "bold",
+                            "type": "label"
+                        },
+                        {
+                            "key": "",
+                            "cssClass": "",
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "visibilityFormula": null,
+                            "contents": [
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": 0,
+                                        "permission": 0,
+                                        "tooltip": null,
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Aspect",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": "",
+                                        "contents": [
+                                            {
+                                                "key": "Aspect",
+                                                "cssClass": "",
+                                                "role": "0",
+                                                "permission": "0",
+                                                "tooltip": "",
+                                                "visibilityFormula": "edit",
+                                                "label": "",
+                                                "defaultValue": "Earth",
+                                                "size": "full-size",
+                                                "options": [
+                                                    {
+                                                        "key": "Earth",
+                                                        "value": "Earth"
+                                                    },
+                                                    {
+                                                        "key": "Fire",
+                                                        "value": "Fire"
+                                                    },
+                                                    {
+                                                        "key": "Air",
+                                                        "value": "Air"
+                                                    },
+                                                    {
+                                                        "key": "Water",
+                                                        "value": "Water"
+                                                    },
+                                                    {
+                                                        "key": "Void/Spirit",
+                                                        "value": "Void/Spirit"
+                                                    },
+                                                    {
+                                                        "key": "Illusion",
+                                                        "value": "Illusion"
+                                                    },
+                                                    {
+                                                        "key": "Necromancy",
+                                                        "value": "Necromancy"
+                                                    },
+                                                    {
+                                                        "key": "Witchery",
+                                                        "value": "Witchery"
+                                                    },
+                                                    {
+                                                        "key": "Nature",
+                                                        "value": "Nature"
+                                                    },
+                                                    {
+                                                        "key": "Summoning",
+                                                        "value": "Summoning"
+                                                    },
+                                                    {
+                                                        "key": "Protection",
+                                                        "value": "Protection"
+                                                    },
+                                                    {
+                                                        "key": "Enchantment",
+                                                        "value": "Enchantment"
+                                                    },
+                                                    {
+                                                        "key": "Transformation",
+                                                        "value": "Transformation"
+                                                    }
+                                                ],
+                                                "tableKey": null,
+                                                "tableKeyColumn": null,
+                                                "tableLabelColumn": null,
+                                                "type": "select"
+                                            },
+                                            {
+                                                "key": "",
+                                                "cssClass": "",
+                                                "role": "0",
+                                                "permission": "0",
+                                                "tooltip": "",
+                                                "visibilityFormula": "not(edit)",
+                                                "label": null,
+                                                "defaultValue": null,
+                                                "size": "full-size",
+                                                "icon": "",
+                                                "value": "${Aspect}$",
+                                                "prefix": "",
+                                                "suffix": "",
+                                                "rollMessage": "",
+                                                "altRollMessage": "",
+                                                "style": "bold",
+                                                "type": "label"
+                                            }
+                                        ],
+                                        "flow": "vertical",
+                                        "align": "center",
+                                        "type": "panel"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": 0,
+                                        "permission": 0,
+                                        "tooltip": null,
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Attribute",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": "",
+                                        "contents": [
+                                            {
+                                                "key": "Attribute",
+                                                "cssClass": "",
+                                                "role": "0",
+                                                "permission": "0",
+                                                "tooltip": "",
+                                                "visibilityFormula": "edit",
+                                                "label": "",
+                                                "defaultValue": "Stability",
+                                                "size": "full-size",
+                                                "options": [
+                                                    {
+                                                        "key": "Strength",
+                                                        "value": "Strength"
+                                                    },
+                                                    {
+                                                        "key": "Constitution",
+                                                        "value": "Constitution"
+                                                    },
+                                                    {
+                                                        "key": "Dexterity",
+                                                        "value": "Dexterity"
+                                                    },
+                                                    {
+                                                        "key": "Perception",
+                                                        "value": "Perception"
+                                                    },
+                                                    {
+                                                        "key": "Willpower",
+                                                        "value": "Willpower"
+                                                    },
+                                                    {
+                                                        "key": "Stability",
+                                                        "value": "Stability"
+                                                    },
+                                                    {
+                                                        "key": "Intelligence",
+                                                        "value": "Intelligence"
+                                                    },
+                                                    {
+                                                        "key": "Charisma",
+                                                        "value": "Charisma"
+                                                    }
+                                                ],
+                                                "tableKey": null,
+                                                "tableKeyColumn": null,
+                                                "tableLabelColumn": null,
+                                                "type": "select"
+                                            },
+                                            {
+                                                "key": "",
+                                                "cssClass": "",
+                                                "role": "0",
+                                                "permission": "0",
+                                                "tooltip": "",
+                                                "visibilityFormula": "not(edit)",
+                                                "label": null,
+                                                "defaultValue": null,
+                                                "size": "full-size",
+                                                "icon": "",
+                                                "value": "${Attribute}$",
+                                                "prefix": "",
+                                                "suffix": "",
+                                                "rollMessage": "",
+                                                "altRollMessage": "",
+                                                "style": "bold",
+                                                "type": "label"
+                                            }
+                                        ],
+                                        "flow": "vertical",
+                                        "align": "center",
+                                        "type": "panel"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": 0,
+                                        "permission": 0,
+                                        "tooltip": null,
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Spell Level",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": "",
+                                        "contents": [
+                                            {
+                                                "key": "Spell_Level",
+                                                "cssClass": "",
+                                                "role": "0",
+                                                "permission": "0",
+                                                "tooltip": "",
+                                                "visibilityFormula": "",
+                                                "label": "",
+                                                "defaultValue": "1",
+                                                "size": "full-size",
+                                                "allowDecimal": false,
+                                                "minVal": "${Minimum_Spell_Level}$",
+                                                "maxVal": "10",
+                                                "allowRelative": false,
+                                                "showControls": true,
+                                                "controlsStyle": "hover",
+                                                "type": "numberField"
+                                            },
+                                            {
+                                                "key": "",
+                                                "cssClass": "",
+                                                "role": "0",
+                                                "permission": "0",
+                                                "tooltip": "",
+                                                "visibilityFormula": "",
+                                                "contents": [
+                                                    {
+                                                        "key": "Minimum_Spell_Level",
+                                                        "cssClass": "",
+                                                        "role": "0",
+                                                        "permission": "0",
+                                                        "tooltip": "",
+                                                        "visibilityFormula": "edit",
+                                                        "label": "MSL: ",
+                                                        "defaultValue": "1",
+                                                        "size": "full-size",
+                                                        "allowDecimal": false,
+                                                        "minVal": "1",
+                                                        "maxVal": "10",
+                                                        "allowRelative": false,
+                                                        "showControls": true,
+                                                        "controlsStyle": "hover",
+                                                        "type": "numberField"
+                                                    },
+                                                    {
+                                                        "key": "",
+                                                        "cssClass": "",
+                                                        "role": "0",
+                                                        "permission": "0",
+                                                        "tooltip": "",
+                                                        "visibilityFormula": "not(edit)",
+                                                        "label": null,
+                                                        "defaultValue": null,
+                                                        "size": "full-size",
+                                                        "icon": "",
+                                                        "value": "${Minimum_Spell_Level}$",
+                                                        "prefix": "MSL: ",
+                                                        "suffix": "",
+                                                        "rollMessage": "",
+                                                        "altRollMessage": "",
+                                                        "style": "bold",
+                                                        "type": "label"
+                                                    }
+                                                ],
+                                                "flow": "vertical",
+                                                "align": "center",
+                                                "type": "panel"
+                                            }
+                                        ],
+                                        "flow": "grid-2",
+                                        "align": "center",
+                                        "type": "panel"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": 0,
+                                        "permission": 0,
+                                        "tooltip": null,
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Minimum Value",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "Minimum_Value",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": "",
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "${Spell_Level + 12}$",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Target",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": "",
+                                        "contents": [
+                                            {
+                                                "key": "Target_Formula",
+                                                "cssClass": "",
+                                                "role": "0",
+                                                "permission": "0",
+                                                "tooltip": "",
+                                                "visibilityFormula": "edit",
+                                                "label": "",
+                                                "defaultValue": "",
+                                                "size": "full-size",
+                                                "charList": "",
+                                                "maxLength": "",
+                                                "type": "textField"
+                                            },
+                                            {
+                                                "key": "Target",
+                                                "cssClass": "",
+                                                "role": "0",
+                                                "permission": "0",
+                                                "tooltip": "",
+                                                "visibilityFormula": "not(edit)",
+                                                "label": null,
+                                                "defaultValue": null,
+                                                "size": "full-size",
+                                                "icon": "",
+                                                "value": "${recalculate(Target_Formula)}$",
+                                                "prefix": "",
+                                                "suffix": "",
+                                                "rollMessage": "",
+                                                "altRollMessage": "",
+                                                "style": "bold",
+                                                "type": "label"
+                                            }
+                                        ],
+                                        "flow": "vertical",
+                                        "align": "center",
+                                        "type": "panel"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Spell Casting Duration",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": "",
+                                        "contents": [
+                                            {
+                                                "key": "Spell_Casting_Duration_Formula",
+                                                "cssClass": "",
+                                                "role": "0",
+                                                "permission": "0",
+                                                "tooltip": "",
+                                                "visibilityFormula": "edit",
+                                                "label": "",
+                                                "defaultValue": "",
+                                                "size": "full-size",
+                                                "charList": "",
+                                                "maxLength": "",
+                                                "type": "textField"
+                                            },
+                                            {
+                                                "key": "Spell_Casting_Duration",
+                                                "cssClass": "",
+                                                "role": "0",
+                                                "permission": "0",
+                                                "tooltip": "",
+                                                "visibilityFormula": "not(edit)",
+                                                "label": null,
+                                                "defaultValue": null,
+                                                "size": "full-size",
+                                                "icon": "",
+                                                "value": "${recalculate(Spell_Casting_Duration_Formula)}$",
+                                                "prefix": "",
+                                                "suffix": "",
+                                                "rollMessage": "",
+                                                "altRollMessage": "",
+                                                "style": "bold",
+                                                "type": "label"
+                                            }
+                                        ],
+                                        "flow": "vertical",
+                                        "align": "center",
+                                        "type": "panel"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Range",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": "",
+                                        "contents": [
+                                            {
+                                                "key": "Range_Formula",
+                                                "cssClass": "",
+                                                "role": "0",
+                                                "permission": "0",
+                                                "tooltip": "",
+                                                "visibilityFormula": "edit",
+                                                "label": "",
+                                                "defaultValue": "",
+                                                "size": "full-size",
+                                                "charList": "",
+                                                "maxLength": "",
+                                                "type": "textField"
+                                            },
+                                            {
+                                                "key": "Range",
+                                                "cssClass": "",
+                                                "role": "0",
+                                                "permission": "0",
+                                                "tooltip": "",
+                                                "visibilityFormula": "not(edit)",
+                                                "label": null,
+                                                "defaultValue": null,
+                                                "size": "full-size",
+                                                "icon": "",
+                                                "value": "${recalculate(Range_Formula)}$",
+                                                "prefix": "",
+                                                "suffix": "",
+                                                "rollMessage": "",
+                                                "altRollMessage": "",
+                                                "style": "bold",
+                                                "type": "label"
+                                            }
+                                        ],
+                                        "flow": "vertical",
+                                        "align": "center",
+                                        "type": "panel"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Duration of Action",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": "",
+                                        "contents": [
+                                            {
+                                                "key": "Duration_Of_Action_Formula",
+                                                "cssClass": "",
+                                                "role": "0",
+                                                "permission": "0",
+                                                "tooltip": "",
+                                                "visibilityFormula": "edit",
+                                                "label": "",
+                                                "defaultValue": "",
+                                                "size": "full-size",
+                                                "charList": "",
+                                                "maxLength": "",
+                                                "type": "textField"
+                                            },
+                                            {
+                                                "key": "Duration_Of_Action",
+                                                "cssClass": "",
+                                                "role": "0",
+                                                "permission": "0",
+                                                "tooltip": "",
+                                                "visibilityFormula": "not(edit)",
+                                                "label": null,
+                                                "defaultValue": null,
+                                                "size": "full-size",
+                                                "icon": "",
+                                                "value": "${recalculate(Duration_Of_Action_Formula)}$",
+                                                "prefix": "",
+                                                "suffix": "",
+                                                "rollMessage": "",
+                                                "altRollMessage": "",
+                                                "style": "bold",
+                                                "type": "label"
+                                            }
+                                        ],
+                                        "flow": "vertical",
+                                        "align": "center",
+                                        "type": "panel"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Area of Effect",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": "",
+                                        "contents": [
+                                            {
+                                                "key": "Area_Of_Effect_Formula",
+                                                "cssClass": "",
+                                                "role": "0",
+                                                "permission": "0",
+                                                "tooltip": "",
+                                                "visibilityFormula": "edit",
+                                                "label": "",
+                                                "defaultValue": "",
+                                                "size": "full-size",
+                                                "charList": "",
+                                                "maxLength": "",
+                                                "type": "textField"
+                                            },
+                                            {
+                                                "key": "Area_Of_Effect",
+                                                "cssClass": "",
+                                                "role": "0",
+                                                "permission": "0",
+                                                "tooltip": "",
+                                                "visibilityFormula": "not(edit)",
+                                                "label": null,
+                                                "defaultValue": null,
+                                                "size": "full-size",
+                                                "icon": "",
+                                                "value": "${recalculate(Area_Of_Effect_Formula)}$",
+                                                "prefix": "",
+                                                "suffix": "",
+                                                "rollMessage": "",
+                                                "altRollMessage": "",
+                                                "style": "bold",
+                                                "type": "label"
+                                            }
+                                        ],
+                                        "flow": "vertical",
+                                        "align": "center",
+                                        "type": "panel"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Damage / Healing",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": "",
+                                        "contents": [
+                                            {
+                                                "key": "Damage_Healing_Formula",
+                                                "cssClass": "",
+                                                "role": "0",
+                                                "permission": "0",
+                                                "tooltip": "",
+                                                "visibilityFormula": "edit",
+                                                "label": "",
+                                                "defaultValue": "",
+                                                "size": "full-size",
+                                                "charList": "",
+                                                "maxLength": "",
+                                                "type": "textField"
+                                            },
+                                            {
+                                                "key": "Damage_Healing",
+                                                "cssClass": "",
+                                                "role": "0",
+                                                "permission": "0",
+                                                "tooltip": "",
+                                                "visibilityFormula": "not(edit)",
+                                                "label": null,
+                                                "defaultValue": null,
+                                                "size": "full-size",
+                                                "icon": "",
+                                                "value": "${recalculate(Damage_Healing_Formula)}$",
+                                                "prefix": "",
+                                                "suffix": "",
+                                                "rollMessage": "",
+                                                "altRollMessage": "",
+                                                "style": "bold",
+                                                "type": "label"
+                                            }
+                                        ],
+                                        "flow": "vertical",
+                                        "align": "center",
+                                        "type": "panel"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": "",
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "CP-Costs",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": "",
+                                        "contents": [
+                                            {
+                                                "key": "Conviction_Points_Costs",
+                                                "cssClass": "",
+                                                "role": "0",
+                                                "permission": "0",
+                                                "tooltip": "",
+                                                "visibilityFormula": "edit",
+                                                "label": "",
+                                                "defaultValue": "1",
+                                                "size": "full-size",
+                                                "allowDecimal": false,
+                                                "minVal": "1",
+                                                "maxVal": "",
+                                                "allowRelative": false,
+                                                "showControls": true,
+                                                "controlsStyle": "hover",
+                                                "type": "numberField"
+                                            },
+                                            {
+                                                "key": "",
+                                                "cssClass": "",
+                                                "role": "0",
+                                                "permission": "0",
+                                                "tooltip": "",
+                                                "visibilityFormula": "not(edit)",
+                                                "label": null,
+                                                "defaultValue": null,
+                                                "size": "full-size",
+                                                "icon": "",
+                                                "value": "${Conviction_Points_Costs}$",
+                                                "prefix": "",
+                                                "suffix": "",
+                                                "rollMessage": "",
+                                                "altRollMessage": "",
+                                                "style": "bold",
+                                                "type": "label"
+                                            }
+                                        ],
+                                        "flow": "vertical",
+                                        "align": "center",
+                                        "type": "panel"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Learned",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "Learned",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": "",
+                                        "label": "",
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "type": "checkbox",
+                                        "defaultChecked": false
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "As additional spell bought",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "Addition",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": "",
+                                        "label": "",
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "type": "checkbox",
+                                        "defaultChecked": false
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Effect",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "Effect",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": "",
+                                        "label": "",
+                                        "defaultValue": "",
+                                        "size": null,
+                                        "style": "dialog",
+                                        "type": "textArea"
+                                    }
+                                ],
+                                [null, null],
+                                [null, null]
+                            ],
+                            "cols": "2",
+                            "rows": "14",
+                            "layout": "cc",
+                            "type": "table"
+                        }
+                    ],
+                    "flow": "vertical",
+                    "align": "center",
+                    "type": "panel"
+                }
+            ],
+            "key": "custom_body",
+            "cssClass": null,
+            "flow": null,
+            "align": null,
+            "type": "panel",
+            "role": 0,
+            "permission": 0,
+            "tooltip": null,
+            "visibilityFormula": null
+        },
+        "display": {
+            "width": "600",
+            "height": "600",
+            "fix_size": false,
+            "pp_width": "64",
+            "pp_height": "64"
+        },
+        "template": "rOJkyKhMa1ZZWeLg",
+        "props": {
+            "name": "Fire Ball",
+            "Aspect": "Fire",
+            "Attribute": "Willpower",
+            "Spell_Level": "3",
+            "Minimum_Spell_Level": "3",
+            "Target": "Object",
+            "Spell_Casting_Duration": "1 Action",
+            "Range": "25 m",
+            "Duration_Of_Action": "Instant",
+            "Area_Of_Effect": "8 m",
+            "Damage_Healing": "2d10 + 6",
+            "Conviction_Points_Costs": "1",
+            "Effect": "<p>Launch a standard-fireball at your opponent</p>",
+            "edit": false,
+            "Learned": false,
+            "Addition": false,
+            "Minimum_Value": "15",
+            "Target_Formula": "Object",
+            "Spell_Casting_Duration_Formula": "1 Action",
+            "Range_Formula": "25 m",
+            "Duration_Of_Action_Formula": "Instant",
+            "Area_Of_Effect_Formula": "${5 + Spell_Level}$ m",
+            "Damage_Healing_Formula": "2d10 + ${Spell_Level * 2}$"
+        },
+        "modifiers": [],
+        "unique": false,
+        "templateSystemUniqueVersion": 3544709811
+    },
+    "effects": [],
+    "folder": "cXICaEAFFf6AM7FA",
+    "flags": {
+        "custom-system-builder": {
+            "version": "2.3.1"
+        },
+        "exportSource": {
+            "world": "example",
+            "system": "custom-system-builder",
+            "coreVersion": "11.307",
+            "systemVersion": "2.3.1"
+        }
+    },
+    "_stats": {
+        "systemId": "custom-system-builder",
+        "systemVersion": "2.3.1",
+        "coreVersion": "11.307",
+        "createdTime": 1692209861454,
+        "modifiedTime": 1692211618380,
+        "lastModifiedBy": "qW8zGX9Ha3g8siz3"
+    }
+}

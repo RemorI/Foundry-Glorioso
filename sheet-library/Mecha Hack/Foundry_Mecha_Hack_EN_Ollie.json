@@ -1,0 +1,1021 @@
+{
+    "isCustomSystemExport": true,
+    "actors": [
+        {
+            "type": "_template",
+            "name": "The Mecha Hack - Character Sheet",
+            "data": {
+                "hidden": [],
+                "header": {
+                    "contents": [
+                        {
+                            "key": "",
+                            "cssClass": "",
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "contents": [
+                                {
+                                    "key": "",
+                                    "cssClass": "",
+                                    "role": "0",
+                                    "permission": "0",
+                                    "tooltip": "",
+                                    "contents": [
+                                        {
+                                            "key": "",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": null,
+                                            "defaultValue": null,
+                                            "size": "full-size",
+                                            "icon": "",
+                                            "value": "<strong>Pilot Name</strong>",
+                                            "prefix": "",
+                                            "suffix": "",
+                                            "rollMessage": "",
+                                            "altRollMessage": "",
+                                            "style": "label",
+                                            "type": "label"
+                                        },
+                                        {
+                                            "key": "pilot_name",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": "",
+                                            "defaultValue": "",
+                                            "size": "full-size",
+                                            "charList": "",
+                                            "maxLength": "",
+                                            "type": "textField"
+                                        },
+                                        {
+                                            "key": "",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": null,
+                                            "defaultValue": null,
+                                            "size": "full-size",
+                                            "icon": "",
+                                            "value": "<strong>Pilot Type</strong>",
+                                            "prefix": "",
+                                            "suffix": "",
+                                            "rollMessage": "",
+                                            "altRollMessage": "",
+                                            "style": "label",
+                                            "type": "label"
+                                        },
+                                        {
+                                            "key": "pilot_type",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": "",
+                                            "defaultValue": "",
+                                            "size": "full-size",
+                                            "charList": "",
+                                            "maxLength": "",
+                                            "type": "textField"
+                                        },
+                                        {
+                                            "key": "",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": null,
+                                            "defaultValue": null,
+                                            "size": "full-size",
+                                            "icon": "",
+                                            "value": "<strong>Pilot Record</strong>",
+                                            "prefix": "",
+                                            "suffix": "",
+                                            "rollMessage": "",
+                                            "altRollMessage": "",
+                                            "style": "label",
+                                            "type": "label"
+                                        },
+                                        {
+                                            "key": "pilot_record",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": "",
+                                            "defaultValue": "",
+                                            "size": "full-size",
+                                            "charList": "",
+                                            "maxLength": "",
+                                            "type": "textField"
+                                        }
+                                    ],
+                                    "flow": "vertical",
+                                    "align": "left",
+                                    "type": "panel"
+                                },
+                                {
+                                    "key": "",
+                                    "cssClass": "",
+                                    "role": "0",
+                                    "permission": "0",
+                                    "tooltip": "",
+                                    "contents": [
+                                        {
+                                            "key": "",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "contents": [
+                                                {
+                                                    "key": "",
+                                                    "cssClass": "",
+                                                    "role": "0",
+                                                    "permission": "0",
+                                                    "tooltip": "",
+                                                    "contents": [
+                                                        {
+                                                            "key": "ap_act",
+                                                            "cssClass": "",
+                                                            "role": "0",
+                                                            "permission": "0",
+                                                            "tooltip": "",
+                                                            "label": "",
+                                                            "defaultValue": "0",
+                                                            "size": "small",
+                                                            "allowDecimal": false,
+                                                            "minVal": "0",
+                                                            "maxVal": "${ap_max}$",
+                                                            "allowRelative": false,
+                                                            "showControls": true,
+                                                            "type": "numberField"
+                                                        },
+                                                        {
+                                                            "key": "",
+                                                            "cssClass": "",
+                                                            "role": "0",
+                                                            "permission": "0",
+                                                            "tooltip": "",
+                                                            "label": null,
+                                                            "defaultValue": null,
+                                                            "size": "full-size",
+                                                            "icon": "",
+                                                            "value": "/",
+                                                            "prefix": "",
+                                                            "suffix": "",
+                                                            "rollMessage": "",
+                                                            "altRollMessage": "",
+                                                            "style": "label",
+                                                            "type": "label"
+                                                        },
+                                                        {
+                                                            "key": "ap_max",
+                                                            "cssClass": "",
+                                                            "role": "0",
+                                                            "permission": "0",
+                                                            "tooltip": "",
+                                                            "label": "",
+                                                            "defaultValue": "0",
+                                                            "size": "small",
+                                                            "allowDecimal": false,
+                                                            "minVal": "0",
+                                                            "maxVal": "",
+                                                            "allowRelative": false,
+                                                            "showControls": false,
+                                                            "type": "numberField"
+                                                        }
+                                                    ],
+                                                    "flow": "horizontal",
+                                                    "align": "center",
+                                                    "type": "panel"
+                                                },
+                                                {
+                                                    "key": "",
+                                                    "cssClass": "",
+                                                    "role": "0",
+                                                    "permission": "0",
+                                                    "tooltip": "",
+                                                    "label": null,
+                                                    "defaultValue": null,
+                                                    "size": "medium",
+                                                    "icon": "",
+                                                    "value": "<strong>Armor Points</strong>",
+                                                    "prefix": "",
+                                                    "suffix": "",
+                                                    "rollMessage": "",
+                                                    "altRollMessage": "",
+                                                    "style": "label",
+                                                    "type": "label"
+                                                }
+                                            ],
+                                            "flow": "vertical",
+                                            "align": "center",
+                                            "type": "panel"
+                                        },
+                                        {
+                                            "key": "",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "contents": [
+                                                {
+                                                    "key": "",
+                                                    "cssClass": "",
+                                                    "role": "0",
+                                                    "permission": "0",
+                                                    "tooltip": "",
+                                                    "contents": [
+                                                        {
+                                                            "key": "hp_act",
+                                                            "cssClass": "",
+                                                            "role": "0",
+                                                            "permission": "0",
+                                                            "tooltip": "",
+                                                            "label": "",
+                                                            "defaultValue": "0",
+                                                            "size": "small",
+                                                            "allowDecimal": false,
+                                                            "minVal": "0",
+                                                            "maxVal": "${hp_max}$",
+                                                            "allowRelative": false,
+                                                            "showControls": true,
+                                                            "type": "numberField"
+                                                        },
+                                                        {
+                                                            "key": "",
+                                                            "cssClass": "",
+                                                            "role": "0",
+                                                            "permission": "0",
+                                                            "tooltip": "",
+                                                            "label": null,
+                                                            "defaultValue": null,
+                                                            "size": "full-size",
+                                                            "icon": "",
+                                                            "value": "/",
+                                                            "prefix": "",
+                                                            "suffix": "",
+                                                            "rollMessage": "",
+                                                            "altRollMessage": "",
+                                                            "style": "label",
+                                                            "type": "label"
+                                                        },
+                                                        {
+                                                            "key": "hp_max",
+                                                            "cssClass": "",
+                                                            "role": "0",
+                                                            "permission": "0",
+                                                            "tooltip": "",
+                                                            "label": "",
+                                                            "defaultValue": "0",
+                                                            "size": "small",
+                                                            "allowDecimal": false,
+                                                            "minVal": "0",
+                                                            "maxVal": "",
+                                                            "allowRelative": false,
+                                                            "showControls": false,
+                                                            "type": "numberField"
+                                                        }
+                                                    ],
+                                                    "flow": "horizontal",
+                                                    "align": "center",
+                                                    "type": "panel"
+                                                },
+                                                {
+                                                    "key": "",
+                                                    "cssClass": "",
+                                                    "role": "0",
+                                                    "permission": "0",
+                                                    "tooltip": "",
+                                                    "label": null,
+                                                    "defaultValue": null,
+                                                    "size": "full-size",
+                                                    "icon": "",
+                                                    "value": "<strong>Hit Points</strong>",
+                                                    "prefix": "",
+                                                    "suffix": "",
+                                                    "rollMessage": "",
+                                                    "altRollMessage": "",
+                                                    "style": "label",
+                                                    "type": "label"
+                                                }
+                                            ],
+                                            "flow": "vertical",
+                                            "align": "center",
+                                            "type": "panel"
+                                        }
+                                    ],
+                                    "flow": "horizontal",
+                                    "align": "center",
+                                    "type": "panel"
+                                },
+                                {
+                                    "key": "",
+                                    "cssClass": "",
+                                    "role": "0",
+                                    "permission": "0",
+                                    "tooltip": "",
+                                    "contents": [
+                                        {
+                                            "key": "",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": null,
+                                            "defaultValue": null,
+                                            "size": "full-size",
+                                            "icon": "",
+                                            "value": "<strong>Callsign</strong>",
+                                            "prefix": "",
+                                            "suffix": "",
+                                            "rollMessage": "",
+                                            "altRollMessage": "",
+                                            "style": "label",
+                                            "type": "label"
+                                        },
+                                        {
+                                            "key": "mech_callsign",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": "",
+                                            "defaultValue": "",
+                                            "size": "full-size",
+                                            "charList": "",
+                                            "maxLength": "",
+                                            "type": "textField"
+                                        },
+                                        {
+                                            "key": "",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": null,
+                                            "defaultValue": null,
+                                            "size": "full-size",
+                                            "icon": "",
+                                            "value": "<strong>Chassis</strong>",
+                                            "prefix": "",
+                                            "suffix": "",
+                                            "rollMessage": "",
+                                            "altRollMessage": "",
+                                            "style": "label",
+                                            "type": "label"
+                                        },
+                                        {
+                                            "key": "mech_chassis",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": "",
+                                            "defaultValue": "",
+                                            "size": "full-size",
+                                            "charList": "",
+                                            "maxLength": "",
+                                            "type": "textField"
+                                        },
+                                        {
+                                            "key": "",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": null,
+                                            "defaultValue": null,
+                                            "size": "full-size",
+                                            "icon": "",
+                                            "value": "<strong>Level</strong>",
+                                            "prefix": "",
+                                            "suffix": "",
+                                            "rollMessage": "",
+                                            "altRollMessage": "",
+                                            "style": "label",
+                                            "type": "label"
+                                        },
+                                        {
+                                            "key": "mech_level",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": "",
+                                            "defaultValue": "1",
+                                            "size": "full-size",
+                                            "allowDecimal": false,
+                                            "minVal": "1",
+                                            "maxVal": "10",
+                                            "allowRelative": false,
+                                            "showControls": true,
+                                            "type": "numberField"
+                                        }
+                                    ],
+                                    "flow": "vertical",
+                                    "align": "left",
+                                    "type": "panel"
+                                }
+                            ],
+                            "flow": "horizontal",
+                            "align": "center",
+                            "type": "panel"
+                        },
+                        {
+                            "key": "",
+                            "cssClass": "",
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "contents": [
+                                {
+                                    "key": "",
+                                    "cssClass": "",
+                                    "role": "0",
+                                    "permission": "0",
+                                    "tooltip": "",
+                                    "contents": [
+                                        {
+                                            "key": "power_value",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": "",
+                                            "defaultValue": "0",
+                                            "size": "full-size",
+                                            "allowDecimal": false,
+                                            "minVal": "0",
+                                            "maxVal": "",
+                                            "allowRelative": false,
+                                            "showControls": true,
+                                            "type": "numberField"
+                                        },
+                                        {
+                                            "key": "",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "On-Foot: Athletics / Combat",
+                                            "label": null,
+                                            "defaultValue": null,
+                                            "size": "full-size",
+                                            "icon": "",
+                                            "value": "<strong>Power</strong>",
+                                            "prefix": "",
+                                            "suffix": "",
+                                            "rollMessage": "<p>${#?{Modifier}}$</p>\n<p><strong>Power Test</strong></p>\n<p><strong>Roll:</strong></p>\n<p>${roll:=[1d20 + :Modifier:]}$\n<p><strong>Result:</strong></p>\n<p>\n${roll == 1 ? 'Critical Fail' : roll == 20 ? 'Critical Success' : roll >= power_value ? 'Fail' : 'Success'}$",
+                                            "altRollMessage": "<p><strong>Power Test</strong></p>\n<p><strong>Roll:</strong></p>\n<p>${roll:=[1d20]}$\n<p><strong>Result:</strong></p>\n<p>\n${roll == 1 ? 'Critical Fail' : roll == 20 ? 'Critical Success' : roll >= power_value ? 'Fail' : 'Success'}$",
+                                            "style": "label",
+                                            "type": "label"
+                                        }
+                                    ],
+                                    "flow": "vertical",
+                                    "align": "center",
+                                    "type": "panel"
+                                },
+                                {
+                                    "key": "",
+                                    "cssClass": "",
+                                    "role": "0",
+                                    "permission": "0",
+                                    "tooltip": "",
+                                    "contents": [
+                                        {
+                                            "key": "mobility_value",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": "",
+                                            "defaultValue": "0",
+                                            "size": "full-size",
+                                            "allowDecimal": false,
+                                            "minVal": "0",
+                                            "maxVal": "",
+                                            "allowRelative": false,
+                                            "showControls": true,
+                                            "type": "numberField"
+                                        },
+                                        {
+                                            "key": "",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "On-Foot: Acrobatics / Stealth",
+                                            "label": null,
+                                            "defaultValue": null,
+                                            "size": "full-size",
+                                            "icon": "",
+                                            "value": "<strong>Mobility</strong>",
+                                            "prefix": "",
+                                            "suffix": "",
+                                            "rollMessage": "<p>${#?{Modifier}}$</p>\n<p><strong>Mobility Test</strong></p>\n<p><strong>Roll:</strong></p>\n<p>${roll:=[1d20 + :Modifier:]}$\n<p><strong>Result:</strong></p>\n<p>\n${roll == 1 ? 'Critical Fail' : roll == 20 ? 'Critical Success' : roll >= mobility_value ? 'Fail' : 'Success'}$",
+                                            "altRollMessage": "<p><strong>Mobility Test</strong></p>\n<p><strong>Roll:</strong></p>\n<p>${roll:=[1d20]}$\n<p><strong>Result:</strong></p>\n<p>\n${roll == 1 ? 'Critical Fail' : roll == 20 ? 'Critical Success' : roll >= mobility_value ? 'Fail' : 'Success'}$",
+                                            "style": "label",
+                                            "type": "label"
+                                        }
+                                    ],
+                                    "flow": "vertical",
+                                    "align": "center",
+                                    "type": "panel"
+                                },
+                                {
+                                    "key": "",
+                                    "cssClass": "",
+                                    "role": "0",
+                                    "permission": "0",
+                                    "tooltip": "",
+                                    "contents": [
+                                        {
+                                            "key": "system_value",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": "",
+                                            "defaultValue": "0",
+                                            "size": "full-size",
+                                            "allowDecimal": false,
+                                            "minVal": "0",
+                                            "maxVal": "",
+                                            "allowRelative": false,
+                                            "showControls": true,
+                                            "type": "numberField"
+                                        },
+                                        {
+                                            "key": "",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "On-Foot: Espionage / Intellect",
+                                            "label": null,
+                                            "defaultValue": null,
+                                            "size": "full-size",
+                                            "icon": "",
+                                            "value": "<strong>System</strong>",
+                                            "prefix": "",
+                                            "suffix": "",
+                                            "rollMessage": "<p>${#?{Modifier}}$</p>\n<p><strong>System Test</strong></p>\n<p><strong>Roll:</strong></p>\n<p>${roll:=[1d20 + :Modifier:]}$\n<p><strong>Result:</strong></p>\n<p>\n${roll == 1 ? 'Critical Fail' : roll == 20 ? 'Critical Success' : roll >= system_value ? 'Fail' : 'Success'}$",
+                                            "altRollMessage": "<p><strong>System Test</strong></p>\n<p><strong>Roll:</strong></p>\n<p>${roll:=[1d20]}$\n<p><strong>Result:</strong></p>\n<p>\n${roll == 1 ? 'Critical Fail' : roll == 20 ? 'Critical Success' : roll >= system_value ? 'Fail' : 'Success'}$",
+                                            "style": "label",
+                                            "type": "label"
+                                        }
+                                    ],
+                                    "flow": "vertical",
+                                    "align": "center",
+                                    "type": "panel"
+                                },
+                                {
+                                    "key": "",
+                                    "cssClass": "",
+                                    "role": "0",
+                                    "permission": "0",
+                                    "tooltip": "",
+                                    "contents": [
+                                        {
+                                            "key": "presence_value",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": "",
+                                            "defaultValue": "0",
+                                            "size": "full-size",
+                                            "allowDecimal": false,
+                                            "minVal": "0",
+                                            "maxVal": "",
+                                            "allowRelative": false,
+                                            "showControls": true,
+                                            "type": "numberField"
+                                        },
+                                        {
+                                            "key": "",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "On-Foot: Coax / Intrigue",
+                                            "label": null,
+                                            "defaultValue": null,
+                                            "size": "full-size",
+                                            "icon": "",
+                                            "value": "<strong>Presence</strong>",
+                                            "prefix": "",
+                                            "suffix": "",
+                                            "rollMessage": "<p>${#?{Modifier}}$</p>\n<p><strong>Presence Test</strong></p>\n<p><strong>Roll:</strong></p>\n<p>${roll:=[1d20 + :Modifier:]}$\n<p><strong>Result:</strong></p>\n<p>\n${roll == 1 ? 'Critical Fail' : roll == 20 ? 'Critical Success' : roll >= presence_value ? 'Fail' : 'Success'}$",
+                                            "altRollMessage": "<p><strong>Presence Test</strong></p>\n<p><strong>Roll:</strong></p>\n<p>${roll:=[1d20]}$\n<p><strong>Result:</strong></p>\n<p>\n${roll == 1 ? 'Critical Fail' : roll == 20 ? 'Critical Success' : roll >= presence_value ? 'Fail' : 'Success'}$",
+                                            "style": "label",
+                                            "type": "label"
+                                        }
+                                    ],
+                                    "flow": "vertical",
+                                    "align": "center",
+                                    "type": "panel"
+                                },
+                                {
+                                    "key": "",
+                                    "cssClass": "",
+                                    "role": "0",
+                                    "permission": "0",
+                                    "tooltip": "",
+                                    "contents": [
+                                        {
+                                            "key": "hit_die",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": "",
+                                            "defaultValue": "d4",
+                                            "size": "full-size",
+                                            "options": [
+                                                { "key": "4", "value": "d4" },
+                                                { "key": "6", "value": "d6" },
+                                                { "key": "8", "value": "d8" },
+                                                { "key": "10", "value": "d10" }
+                                            ],
+                                            "tableKey": null,
+                                            "tableKeyColumn": null,
+                                            "tableLabelColumn": null,
+                                            "type": "select"
+                                        },
+                                        {
+                                            "key": "",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": null,
+                                            "defaultValue": null,
+                                            "size": "full-size",
+                                            "icon": "",
+                                            "value": "<strong>Hit Die</strong>",
+                                            "prefix": "",
+                                            "suffix": "",
+                                            "rollMessage": "<p><strong>Hit Die:</strong></p>\n<p>${roll:=[d:hit_die:]}$</p>",
+                                            "altRollMessage": "",
+                                            "style": "label",
+                                            "type": "label"
+                                        }
+                                    ],
+                                    "flow": "vertical",
+                                    "align": "center",
+                                    "type": "panel"
+                                },
+                                {
+                                    "key": "",
+                                    "cssClass": "",
+                                    "role": "0",
+                                    "permission": "0",
+                                    "tooltip": "",
+                                    "contents": [
+                                        {
+                                            "key": "damage_die",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": "",
+                                            "defaultValue": "d4",
+                                            "size": "full-size",
+                                            "options": [
+                                                { "key": "4", "value": "d4" },
+                                                { "key": "6", "value": "d6" },
+                                                { "key": "8", "value": "d8" },
+                                                { "key": "10", "value": "d10" }
+                                            ],
+                                            "tableKey": null,
+                                            "tableKeyColumn": null,
+                                            "tableLabelColumn": null,
+                                            "type": "select"
+                                        },
+                                        {
+                                            "key": "",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": null,
+                                            "defaultValue": null,
+                                            "size": "full-size",
+                                            "icon": "",
+                                            "value": "<strong>Damage Die</strong>",
+                                            "prefix": "",
+                                            "suffix": "",
+                                            "rollMessage": "<p><strong>Damage Die:</strong></p>\n<p>${roll:=[d:damage_die:]}$</p>",
+                                            "altRollMessage": "",
+                                            "style": "label",
+                                            "type": "label"
+                                        }
+                                    ],
+                                    "flow": "vertical",
+                                    "align": "center",
+                                    "type": "panel"
+                                },
+                                {
+                                    "key": "",
+                                    "cssClass": "",
+                                    "role": "0",
+                                    "permission": "0",
+                                    "tooltip": "",
+                                    "contents": [
+                                        {
+                                            "key": "reactor_die",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": "",
+                                            "defaultValue": "d4",
+                                            "size": "full-size",
+                                            "options": [
+                                                { "key": "4", "value": "d4" },
+                                                { "key": "6", "value": "d6" },
+                                                { "key": "8", "value": "d8" },
+                                                { "key": "10", "value": "d10" }
+                                            ],
+                                            "tableKey": null,
+                                            "tableKeyColumn": null,
+                                            "tableLabelColumn": null,
+                                            "type": "select"
+                                        },
+                                        {
+                                            "key": "",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": null,
+                                            "defaultValue": null,
+                                            "size": "full-size",
+                                            "icon": "",
+                                            "value": "<strong>Reactor Die</strong>",
+                                            "prefix": "",
+                                            "suffix": "",
+                                            "rollMessage": "<p><strong>Reactor Die:</strong></p>\n<p>${roll:=[d:reactor_die:]}$</p>\n\n<p><strong>Result:</strong></p>\n<p>\n${roll <= 2 ? 'Fail, downgrade reactor die or overheat' : 'Pass'}$</p>",
+                                            "altRollMessage": "",
+                                            "style": "label",
+                                            "type": "label"
+                                        }
+                                    ],
+                                    "flow": "vertical",
+                                    "align": "center",
+                                    "type": "panel"
+                                }
+                            ],
+                            "flow": "horizontal",
+                            "align": "center",
+                            "type": "panel"
+                        }
+                    ],
+                    "key": "custom_header",
+                    "cssClass": null,
+                    "role": 0,
+                    "permission": 0,
+                    "tooltip": null,
+                    "flow": null,
+                    "align": null,
+                    "type": "panel"
+                },
+                "body": {
+                    "contents": [
+                        {
+                            "key": "",
+                            "cssClass": "",
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "contents": [
+                                {
+                                    "key": "abilities_tab",
+                                    "cssClass": null,
+                                    "role": "0",
+                                    "permission": "0",
+                                    "tooltip": "",
+                                    "contents": [
+                                        {
+                                            "key": "abilities_table",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "rowLayout": [
+                                                {
+                                                    "key": "ability_name",
+                                                    "cssClass": null,
+                                                    "role": "0",
+                                                    "permission": "0",
+                                                    "tooltip": "",
+                                                    "label": "",
+                                                    "defaultValue": "",
+                                                    "size": "medium",
+                                                    "charList": "",
+                                                    "maxLength": "",
+                                                    "type": "textField",
+                                                    "align": "left",
+                                                    "colName": "Name"
+                                                },
+                                                {
+                                                    "key": "ability_effect",
+                                                    "cssClass": null,
+                                                    "role": "0",
+                                                    "permission": "0",
+                                                    "tooltip": "",
+                                                    "label": "",
+                                                    "defaultValue": "",
+                                                    "size": null,
+                                                    "style": "dialog",
+                                                    "type": "textArea",
+                                                    "align": "left",
+                                                    "colName": "Effect"
+                                                }
+                                            ],
+                                            "head": true,
+                                            "deleteWarning": true,
+                                            "type": "dynamicTable"
+                                        }
+                                    ],
+                                    "name": "Abilities",
+                                    "type": "tab"
+                                },
+                                {
+                                    "key": "modules_tab",
+                                    "cssClass": null,
+                                    "role": "0",
+                                    "permission": "0",
+                                    "tooltip": "",
+                                    "contents": [
+                                        {
+                                            "key": "modules_table",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "rowLayout": [
+                                                {
+                                                    "key": "module_name",
+                                                    "cssClass": null,
+                                                    "role": "0",
+                                                    "permission": "0",
+                                                    "tooltip": "",
+                                                    "label": "",
+                                                    "defaultValue": "",
+                                                    "size": "medium",
+                                                    "charList": "",
+                                                    "maxLength": "",
+                                                    "type": "textField",
+                                                    "align": "left",
+                                                    "colName": "Name"
+                                                },
+                                                {
+                                                    "key": "module_effect",
+                                                    "cssClass": null,
+                                                    "role": "0",
+                                                    "permission": "0",
+                                                    "tooltip": "",
+                                                    "label": "",
+                                                    "defaultValue": "",
+                                                    "size": "full-size",
+                                                    "style": "dialog",
+                                                    "type": "textArea",
+                                                    "align": "left",
+                                                    "colName": "Effect"
+                                                }
+                                            ],
+                                            "head": true,
+                                            "deleteWarning": true,
+                                            "type": "dynamicTable"
+                                        }
+                                    ],
+                                    "name": "Modules",
+                                    "type": "tab"
+                                },
+                                {
+                                    "key": "equipment_tab",
+                                    "cssClass": null,
+                                    "role": "0",
+                                    "permission": "0",
+                                    "tooltip": "",
+                                    "contents": [
+                                        {
+                                            "key": "equipment_table",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "rowLayout": [
+                                                {
+                                                    "key": "item_quantity",
+                                                    "cssClass": null,
+                                                    "role": "0",
+                                                    "permission": "0",
+                                                    "tooltip": "",
+                                                    "label": "",
+                                                    "defaultValue": "",
+                                                    "size": "small",
+                                                    "allowDecimal": false,
+                                                    "minVal": "",
+                                                    "maxVal": "",
+                                                    "allowRelative": false,
+                                                    "showControls": true,
+                                                    "type": "numberField",
+                                                    "align": "center",
+                                                    "colName": "Quantity"
+                                                },
+                                                {
+                                                    "key": "item_name",
+                                                    "cssClass": null,
+                                                    "role": "0",
+                                                    "permission": "0",
+                                                    "tooltip": "",
+                                                    "label": "",
+                                                    "defaultValue": "",
+                                                    "size": "full-size",
+                                                    "charList": "",
+                                                    "maxLength": "",
+                                                    "type": "textField",
+                                                    "align": "center",
+                                                    "colName": "Item"
+                                                },
+                                                {
+                                                    "key": "item_notes",
+                                                    "cssClass": null,
+                                                    "role": "0",
+                                                    "permission": "0",
+                                                    "tooltip": "",
+                                                    "label": "",
+                                                    "defaultValue": "",
+                                                    "size": null,
+                                                    "style": "dialog",
+                                                    "type": "textArea",
+                                                    "align": "center",
+                                                    "colName": "Notes"
+                                                }
+                                            ],
+                                            "head": true,
+                                            "deleteWarning": true,
+                                            "type": "dynamicTable"
+                                        }
+                                    ],
+                                    "name": "Equipment",
+                                    "type": "tab"
+                                },
+                                {
+                                    "key": "notes_tab",
+                                    "cssClass": null,
+                                    "role": "0",
+                                    "permission": "0",
+                                    "tooltip": "",
+                                    "contents": [
+                                        {
+                                            "key": "character_notes",
+                                            "cssClass": "",
+                                            "role": "0",
+                                            "permission": "0",
+                                            "tooltip": "",
+                                            "label": "",
+                                            "defaultValue": "",
+                                            "size": null,
+                                            "style": "sheet",
+                                            "type": "textArea"
+                                        }
+                                    ],
+                                    "name": "Notes",
+                                    "type": "tab"
+                                }
+                            ],
+                            "type": "tabbedPanel"
+                        }
+                    ],
+                    "key": "custom_body",
+                    "cssClass": null,
+                    "role": 0,
+                    "permission": 0,
+                    "tooltip": null,
+                    "flow": null,
+                    "align": null,
+                    "type": "panel"
+                },
+                "display": {
+                    "width": "700",
+                    "height": "600",
+                    "fix_size": false,
+                    "pp_width": "0",
+                    "pp_height": "0"
+                },
+                "attributeBar": {},
+                "activeEffects": {}
+            },
+            "flags": { "custom-system-builder": { "version": "2.1.0" } }
+        }
+    ],
+    "items": []
+}

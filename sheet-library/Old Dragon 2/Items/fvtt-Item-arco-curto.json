@@ -1,0 +1,189 @@
+{
+    "name": "Arco Curto",
+    "type": "equippableItem",
+    "img": "icons/weapons/bows/shortbow-leather.webp",
+    "system": {
+        "hidden": [],
+        "header": {
+            "contents": [
+                {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "contents": [
+                        {
+                            "key": "item_carga",
+                            "cssClass": "",
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "label": "Carga: ",
+                            "defaultValue": "0",
+                            "size": "full-size",
+                            "allowDecimal": false,
+                            "minVal": "",
+                            "maxVal": "",
+                            "allowRelative": false,
+                            "showControls": false,
+                            "type": "numberField"
+                        },
+                        {
+                            "key": "arma_custo",
+                            "cssClass": "",
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "label": "Custo:",
+                            "defaultValue": "0po",
+                            "size": "full-size",
+                            "charList": "",
+                            "maxLength": "",
+                            "type": "textField"
+                        },
+                        {
+                            "key": "item_equipado",
+                            "cssClass": "",
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "label": "Equipado?",
+                            "defaultValue": null,
+                            "size": "full-size",
+                            "type": "checkbox"
+                        }
+                    ],
+                    "flow": "grid-3",
+                    "align": "center",
+                    "type": "panel"
+                },
+                {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "contents": [
+                        {
+                            "key": "arma_ataque_mod",
+                            "cssClass": "",
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "label": "Modificador de Ataque:",
+                            "defaultValue": "0",
+                            "size": "medium",
+                            "allowDecimal": false,
+                            "minVal": "",
+                            "maxVal": "",
+                            "allowRelative": false,
+                            "showControls": true,
+                            "type": "numberField"
+                        }
+                    ],
+                    "flow": "horizontal",
+                    "align": "left",
+                    "type": "panel"
+                },
+                {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "contents": [
+                        {
+                            "key": "",
+                            "cssClass": "",
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "label": null,
+                            "defaultValue": null,
+                            "size": "small",
+                            "icon": "",
+                            "value": "Descrição: ",
+                            "prefix": "",
+                            "suffix": "",
+                            "rollMessage": "",
+                            "altRollMessage": "",
+                            "style": "label",
+                            "type": "label"
+                        },
+                        {
+                            "key": "arma_desc",
+                            "cssClass": "",
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "label": "",
+                            "defaultValue": "",
+                            "size": "full-size",
+                            "charList": "",
+                            "maxLength": "",
+                            "type": "textField"
+                        }
+                    ],
+                    "flow": "horizontal",
+                    "align": "left",
+                    "type": "panel"
+                }
+            ],
+            "cssClass": null,
+            "role": 0,
+            "permission": 0,
+            "tooltip": null,
+            "flow": null,
+            "align": null,
+            "type": "panel"
+        },
+        "body": {
+            "contents": []
+        },
+        "display": {
+            "width": "600",
+            "height": "600",
+            "fix_size": false,
+            "pp_width": "64",
+            "pp_height": "64"
+        },
+        "template": "xETxsioRIwODYUkE",
+        "props": {
+            "item_carga": "2",
+            "arma_custo": "25po",
+            "item_equipado": false,
+            "arma_ataque_mod": "0",
+            "arma_desc": "Média, Disparo (30), Duas Mãos"
+        },
+        "modifiers": [
+            {
+                "priority": 0,
+                "key": "item_carga",
+                "operator": "add",
+                "formula": "${item_carga}$"
+            }
+        ],
+        "unique": false
+    },
+    "effects": [],
+    "flags": {
+        "custom-system-builder": {
+            "version": "2.1.0"
+        },
+        "exportSource": {
+            "world": "olddragon2",
+            "system": "custom-system-builder",
+            "coreVersion": "10.290",
+            "systemVersion": "2.1.0"
+        }
+    },
+    "_stats": {
+        "systemId": "custom-system-builder",
+        "systemVersion": "2.1.0",
+        "coreVersion": "10.290",
+        "createdTime": 1668544232887,
+        "modifiedTime": 1668546562461,
+        "lastModifiedBy": "N5JqJ4jX09flFcz7"
+    }
+}

@@ -1,0 +1,68 @@
+{
+    "name": "custom-system-builder",
+    "version": "6.1.2",
+    "description": "Build your custom system without any line of code !",
+    "keywords": [
+        "builder",
+        "custom",
+        "foundryvtt",
+        "sheet",
+        "system"
+    ],
+    "homepage": "https://gitlab.com/custom-system-builder/custom-system-builder#readme",
+    "bugs": {
+        "url": "https://gitlab.com/custom-system-builder/custom-system-builder/issues"
+    },
+    "license": "ISC",
+    "author": "LinkedFluuuush",
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@gitlab.com/custom-system-builder/custom-system-builder.git"
+    },
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "clean": "rm -rf ./dist/*",
+        "lint": "oxlint",
+        "format": "oxfmt",
+        "compile": "NODE_OPTIONS=--max-old-space-size=8192 tsc",
+        "compile-release": "NODE_OPTIONS=--max-old-space-size=8192 tsc --sourceMap false --declarationMap false",
+        "build": "npm run format && npm run lint && npm run clean && npm run compile && npm run copy-files",
+        "build-libs": "webpack --config webpack.config.js",
+        "build-release": "npm run clean && npm run compile-release && npm run copy-files",
+        "copy-files": "cp -R ./src/lib ./dist && cp -R ./src/css ./dist && cp -R ./src/templates ./dist && cp -R ./src/lang ./dist && cp -R ./src/img ./dist && cp ./system.json ./dist",
+        "update-manifest": "tsx ./bin/updateSystemJson.ts",
+        "package": "npm run build-release && mkdir -p out && (cd dist/; zip -r ../out/custom-system-builder.zip ./; cp ./system.json ../out)",
+        "start-13": "npm run build && ./run-foundry.sh run -v 13",
+        "start-test-13": "npm run build && ./run-foundry.sh run -v 13 -s autoTest",
+        "start": "npm run build && ./run-foundry.sh run -v 14",
+        "start-test": "npm run build && ./run-foundry.sh run -v 14 -s autoTest",
+        "test": "./run-foundry.sh run -v 11 -s autoTest --wait-for-start; tree tests/expected_data/screenshots/base/ -dfi --noreport | sed 's@tests/expected_data/screenshots/base/@@' | tail -n +2 | xargs -I{} mkdir -p \"tests/output/{}\"; codeceptjs run --steps --reporter mochawesome;",
+        "test-debug": "./run-foundry.sh run -v 11 -s autoTest --wait-for-start; tree tests/expected_data/screenshots/base/ -dfi --noreport | sed 's@tests/expected_data/screenshots/base/@@' | tail -n +2 | xargs -I{} mkdir -p \"tests/output/{}\"; codeceptjs run --steps --grep \"@only\";",
+        "doc": "typedoc --plugin typedoc-plugin-rename-defaults --entryPointStrategy expand --out public src/module",
+        "updateVersion": "tsx ./bin/checkTranslationStructure.ts && tsx ./bin/updateVersion.ts",
+        "doRelease": "git checkout beta && git merge develop && git checkout main && git merge beta && git tag ",
+        "prepare": "husky"
+    },
+    "dependencies": {
+        "npm-check-updates": "^23.1.0"
+    },
+    "devDependencies": {
+        "fvtt-types": "github:League-of-Foundry-Developers/foundry-vtt-types#main",
+        "globals": "^17.13.0",
+        "husky": "^9.1.7",
+        "lint-staged": "^17.6.0",
+        "mathjs": "^15.2.0",
+        "oxfmt": "^0.72.0",
+        "oxlint": "^1.87.0",
+        "oxlint-tsgolint": "^7.0.2003",
+        "tsx": "^4.23.15",
+        "typescript": "^7.0.2",
+        "webpack": "^5.111.1",
+        "webpack-cli": "^7.2.3"
+    },
+    "allowScripts": {
+        "github:League-of-Foundry-Developers/foundry-vtt-types": true,
+        "esbuild": true
+    }
+}
