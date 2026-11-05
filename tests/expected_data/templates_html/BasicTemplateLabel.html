@@ -1,0 +1,78 @@
+<!-- Copyright 2024 Jean-Baptiste Louvet-Daniel
+   - 
+   - This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at https://mozilla.org/MPL/2.0/. -->
+
+<form class="editable _template custom-system-actor" autocomplete="off">
+    <div class="custom-system-actor-content">
+        <header class="sheet-header">
+            <div class="profile-img-container" style="width: 64px; height: 64px; flex: 0 0 64px">
+                <img class="profile-img" src="icons/svg/mystery-man.svg" data-edit="img" title="AutoTest_Template" />
+            </div>
+            <div class="header-fields">
+                <h1 class="charname">
+                    <input name="name" type="text" value="AutoTest_Template" placeholder="Name" />
+                </h1>
+
+                <div class="custom-system-sheet-actions">
+                    <input type="button" class="custom-system-configure-display" value="Configure sheet display" />
+                    <input
+                        type="button"
+                        class="custom-system-configure-attributes"
+                        value="Configure hidden attributes"
+                    />
+                    <input
+                        type="button"
+                        class="custom-system-configure-attribute-bars"
+                        value="Configure attribute bars"
+                    />
+                    <input
+                        type="button"
+                        class="custom-system-configure-status-effects"
+                        value="Configure status effects"
+                    />
+                    <input type="button" class="custom-system-reload-all-sheets" value="Reload all character sheets" />
+                </div>
+                <div class="custom-system-sheet-actions">
+                    <input class="custom-system-undo" type="button" value="Undo" />
+                    <input class="custom-system-redo" disabled="" type="button" value="Redo" />
+                </div>
+
+                <div class="custom-system-customHeader">
+                    <div
+                        class="custom-system-component-contents custom_header custom-system-component-root custom-system-panel"
+                    >
+                        <div class="custom-system-template-tab-controls custom-system-droppable-container">
+                            <a class="item custom-system-template-tab-controls-add-element" title="Add new element"
+                                ><i class="fas fa-plus-circle custom-system-clickable custom-system-add-component"></i
+                            ></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="custom-system-customBody">
+            <div class="custom-system-component-contents custom_body custom-system-component-root custom-system-panel">
+                <div
+                    class="custom-system-component-contents label_key custom-system-component-root custom-system-field custom-system-field-root custom-system-field-full-size"
+                    title="Label tooltip"
+                    draggable="true"
+                >
+                    <span class="custom-system-label-root custom-system-editable-component"
+                        ><div class="custom-system-label-icons"></div>
+                        <div class="custom-system-label custom-system-label-label" data-name="label_key" data-value="">
+                            Label text
+                        </div></span
+                    >
+                </div>
+                <div class="custom-system-template-tab-controls custom-system-droppable-container">
+                    <a class="item custom-system-template-tab-controls-add-element" title="Add new element"
+                        ><i class="fas fa-plus-circle custom-system-clickable custom-system-add-component"></i
+                    ></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

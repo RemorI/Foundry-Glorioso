@@ -1,0 +1,229 @@
+{
+    "name": "Bad Day",
+    "type": "equippableItem",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+        "hidden": [],
+        "header": {
+            "contents": [],
+            "key": "custom_header",
+            "cssClass": null,
+            "role": 0,
+            "permission": 0,
+            "tooltip": null,
+            "visibilityFormula": null,
+            "flow": null,
+            "align": null,
+            "type": "panel"
+        },
+        "body": {
+            "contents": [
+                {
+                    "key": "",
+                    "cssClass": "",
+                    "role": 0,
+                    "permission": 0,
+                    "tooltip": null,
+                    "visibilityFormula": null,
+                    "contents": [
+                        {
+                            "key": "",
+                            "cssClass": "",
+                            "role": 0,
+                            "permission": 0,
+                            "tooltip": null,
+                            "visibilityFormula": null,
+                            "label": null,
+                            "defaultValue": null,
+                            "size": "full-size",
+                            "icon": "",
+                            "value": "Weakness",
+                            "prefix": "",
+                            "suffix": "",
+                            "rollMessage": "",
+                            "altRollMessage": "",
+                            "style": "title",
+                            "type": "label"
+                        },
+                        {
+                            "key": "",
+                            "cssClass": "",
+                            "role": 0,
+                            "permission": 0,
+                            "tooltip": null,
+                            "visibilityFormula": null,
+                            "contents": [
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": 0,
+                                        "permission": 0,
+                                        "tooltip": null,
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Level",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "Level",
+                                        "cssClass": "",
+                                        "role": 0,
+                                        "permission": 0,
+                                        "tooltip": null,
+                                        "visibilityFormula": null,
+                                        "label": "",
+                                        "defaultValue": "0",
+                                        "size": "full-size",
+                                        "allowDecimal": false,
+                                        "minVal": "0",
+                                        "maxVal": "",
+                                        "allowRelative": false,
+                                        "showControls": true,
+                                        "controlsStyle": "hover",
+                                        "type": "numberField"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": "",
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Credits",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "Credits",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": "",
+                                        "label": "",
+                                        "defaultValue": "0",
+                                        "size": "full-size",
+                                        "allowDecimal": false,
+                                        "minVal": "0",
+                                        "maxVal": "",
+                                        "allowRelative": false,
+                                        "showControls": true,
+                                        "controlsStyle": "hover",
+                                        "type": "numberField"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": 0,
+                                        "permission": 0,
+                                        "tooltip": null,
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Description",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "Description",
+                                        "cssClass": "",
+                                        "role": 0,
+                                        "permission": 0,
+                                        "tooltip": null,
+                                        "visibilityFormula": null,
+                                        "label": "",
+                                        "defaultValue": "",
+                                        "size": null,
+                                        "style": "dialog",
+                                        "type": "textArea"
+                                    }
+                                ]
+                            ],
+                            "cols": "2",
+                            "rows": "3",
+                            "layout": "cc",
+                            "type": "table"
+                        }
+                    ],
+                    "flow": "vertical",
+                    "align": "center",
+                    "type": "panel"
+                }
+            ],
+            "key": "custom_body",
+            "cssClass": null,
+            "flow": null,
+            "align": null,
+            "type": "panel",
+            "role": 0,
+            "permission": 0,
+            "tooltip": null,
+            "visibilityFormula": null
+        },
+        "display": {
+            "width": "600",
+            "height": "600",
+            "fix_size": false,
+            "pp_width": "64",
+            "pp_height": "64"
+        },
+        "template": "ua12xWzfC7PttDxf",
+        "props": {
+            "name": "Bad Day",
+            "Level": "1",
+            "Description": "",
+            "Credits": "2"
+        },
+        "modifiers": [],
+        "unique": false,
+        "templateSystemUniqueVersion": 3750449753
+    },
+    "effects": [],
+    "folder": "Dx6Tviwp7jeg4St1",
+    "flags": {
+        "custom-system-builder": {
+            "version": "2.3.1"
+        },
+        "exportSource": {
+            "world": "example",
+            "system": "custom-system-builder",
+            "coreVersion": "11.307",
+            "systemVersion": "2.3.1"
+        }
+    },
+    "_stats": {
+        "systemId": "custom-system-builder",
+        "systemVersion": "2.3.1",
+        "coreVersion": "11.307",
+        "createdTime": 1692134935440,
+        "modifiedTime": 1692135048764,
+        "lastModifiedBy": "qW8zGX9Ha3g8siz3"
+    }
+}

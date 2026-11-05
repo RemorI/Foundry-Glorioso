@@ -1,0 +1,493 @@
+{
+    "name": "Sword",
+    "type": "equippableItem",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+        "hidden": [],
+        "header": {
+            "contents": [],
+            "key": "custom_header",
+            "cssClass": null,
+            "role": 0,
+            "permission": 0,
+            "tooltip": null,
+            "visibilityFormula": null,
+            "flow": null,
+            "align": null,
+            "type": "panel"
+        },
+        "body": {
+            "contents": [
+                {
+                    "key": "",
+                    "cssClass": "",
+                    "role": 0,
+                    "permission": 0,
+                    "tooltip": null,
+                    "visibilityFormula": null,
+                    "contents": [
+                        {
+                            "key": "",
+                            "cssClass": "",
+                            "role": 0,
+                            "permission": 0,
+                            "tooltip": null,
+                            "visibilityFormula": null,
+                            "label": null,
+                            "defaultValue": null,
+                            "size": "full-size",
+                            "icon": "",
+                            "value": "Weapon",
+                            "prefix": "",
+                            "suffix": "",
+                            "rollMessage": "",
+                            "altRollMessage": "",
+                            "style": "title",
+                            "type": "label"
+                        },
+                        {
+                            "key": "",
+                            "cssClass": "",
+                            "role": "0",
+                            "permission": "0",
+                            "tooltip": "",
+                            "visibilityFormula": null,
+                            "contents": [
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": 0,
+                                        "permission": 0,
+                                        "tooltip": null,
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Skill",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "Skill",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": null,
+                                        "label": "",
+                                        "defaultValue": "Mounted Combat",
+                                        "size": "full-size",
+                                        "options": [
+                                            {
+                                                "key": "Mounted Combat",
+                                                "value": "Mounted Combat"
+                                            },
+                                            {
+                                                "key": "One Handed Fight",
+                                                "value": "One Handed Fight"
+                                            },
+                                            {
+                                                "key": "Ranged Combat",
+                                                "value": "Ranged Combat"
+                                            },
+                                            {
+                                                "key": "Body Weapons",
+                                                "value": "Body Weapons"
+                                            },
+                                            {
+                                                "key": "Two-handed fight",
+                                                "value": "Two-handed fight"
+                                            }
+                                        ],
+                                        "tableKey": null,
+                                        "tableKeyColumn": null,
+                                        "tableLabelColumn": null,
+                                        "type": "select"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": 0,
+                                        "permission": 0,
+                                        "tooltip": null,
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Specialization",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "Specialization",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": null,
+                                        "label": "",
+                                        "defaultValue": "Exotic Weapons",
+                                        "size": "full-size",
+                                        "options": [
+                                            {
+                                                "key": "Exotic Weapons",
+                                                "value": "Exotic Weapons"
+                                            },
+                                            {
+                                                "key": "Slashing Weapons",
+                                                "value": "Slashing Weapons"
+                                            },
+                                            {
+                                                "key": "Improvised Weapons",
+                                                "value": "Improvised Weapons"
+                                            },
+                                            {
+                                                "key": "Shields",
+                                                "value": "Shields"
+                                            },
+                                            {
+                                                "key": "Percussion Weapons",
+                                                "value": "Percussion Weapons"
+                                            },
+                                            {
+                                                "key": "Polearms",
+                                                "value": "Polearms"
+                                            },
+                                            {
+                                                "key": "Stabbing Weapons",
+                                                "value": "Stabbing Weapons"
+                                            },
+                                            {
+                                                "key": "Unarmed",
+                                                "value": "Unarmed"
+                                            },
+                                            {
+                                                "key": "Firearms",
+                                                "value": "Firearms"
+                                            },
+                                            {
+                                                "key": "Slings",
+                                                "value": "Slings"
+                                            },
+                                            {
+                                                "key": "Weapon Throw",
+                                                "value": "Weapon Throw"
+                                            }
+                                        ],
+                                        "tableKey": null,
+                                        "tableKeyColumn": null,
+                                        "tableLabelColumn": null,
+                                        "type": "select"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": 0,
+                                        "permission": 0,
+                                        "tooltip": null,
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Damage Type",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "Damage_Type",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": "",
+                                        "label": "",
+                                        "defaultValue": "Sting",
+                                        "size": "full-size",
+                                        "options": [
+                                            {
+                                                "key": "Sting",
+                                                "value": "Sting Damage"
+                                            },
+                                            {
+                                                "key": "Cut",
+                                                "value": "Cut Damage"
+                                            },
+                                            {
+                                                "key": "Bludgeoning",
+                                                "value": "Bludgeoning Damage"
+                                            }
+                                        ],
+                                        "tableKey": null,
+                                        "tableKeyColumn": null,
+                                        "tableLabelColumn": null,
+                                        "type": "select"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Attack Bonus",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "Attack_Bonus",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": null,
+                                        "label": "",
+                                        "defaultValue": "0",
+                                        "size": "full-size",
+                                        "allowDecimal": false,
+                                        "minVal": "",
+                                        "maxVal": "",
+                                        "allowRelative": false,
+                                        "showControls": true,
+                                        "controlsStyle": "hover",
+                                        "type": "numberField"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Parry Bonus",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "Parry_Bonus",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": null,
+                                        "label": "",
+                                        "defaultValue": "0",
+                                        "size": "full-size",
+                                        "allowDecimal": false,
+                                        "minVal": "",
+                                        "maxVal": "",
+                                        "allowRelative": false,
+                                        "showControls": true,
+                                        "controlsStyle": "hover",
+                                        "type": "numberField"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Damage",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "Damage",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": null,
+                                        "label": "",
+                                        "defaultValue": "1d10",
+                                        "size": "full-size",
+                                        "charList": "",
+                                        "maxLength": "",
+                                        "type": "textField"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": null,
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Active?",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "Active",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": null,
+                                        "label": "",
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "type": "checkbox",
+                                        "defaultChecked": false
+                                    }
+                                ],
+                                [
+                                    {
+                                        "key": "",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": "",
+                                        "label": null,
+                                        "defaultValue": null,
+                                        "size": "full-size",
+                                        "icon": "",
+                                        "value": "Description",
+                                        "prefix": "",
+                                        "suffix": "",
+                                        "rollMessage": "",
+                                        "altRollMessage": "",
+                                        "style": "bold",
+                                        "type": "label"
+                                    },
+                                    {
+                                        "key": "Description",
+                                        "cssClass": "",
+                                        "role": "0",
+                                        "permission": "0",
+                                        "tooltip": "",
+                                        "visibilityFormula": "",
+                                        "label": "",
+                                        "defaultValue": "",
+                                        "size": null,
+                                        "style": "dialog",
+                                        "type": "textArea"
+                                    }
+                                ]
+                            ],
+                            "cols": "2",
+                            "rows": "8",
+                            "layout": "cc",
+                            "type": "table"
+                        }
+                    ],
+                    "flow": "vertical",
+                    "align": "center",
+                    "type": "panel"
+                }
+            ],
+            "key": "custom_body",
+            "cssClass": null,
+            "role": 0,
+            "permission": 0,
+            "tooltip": null,
+            "visibilityFormula": null,
+            "flow": null,
+            "align": null,
+            "type": "panel"
+        },
+        "display": {
+            "width": "600",
+            "height": "600",
+            "fix_size": false,
+            "pp_width": "64",
+            "pp_height": "64"
+        },
+        "template": "8f8zxiTsLcPHYjVr",
+        "props": {
+            "name": "Sword",
+            "Skill": "Mounted Combat",
+            "Specialization": "Exotic Weapons",
+            "Damage_Type": "Sting",
+            "Attack_Bonus": "0",
+            "Parry_Bonus": "0",
+            "Damage": "1d10",
+            "Description": "",
+            "Active": false
+        },
+        "modifiers": [],
+        "unique": false,
+        "templateSystemUniqueVersion": 1695295147
+    },
+    "effects": [],
+    "folder": "876YMM8fq6w99DmP",
+    "flags": {
+        "custom-system-builder": {
+            "version": "2.3.1"
+        },
+        "exportSource": {
+            "world": "example",
+            "system": "custom-system-builder",
+            "coreVersion": "11.307",
+            "systemVersion": "2.3.1"
+        }
+    },
+    "_stats": {
+        "systemId": "custom-system-builder",
+        "systemVersion": "2.3.1",
+        "coreVersion": "11.307",
+        "createdTime": 1692198577951,
+        "modifiedTime": 1692198679508,
+        "lastModifiedBy": "qW8zGX9Ha3g8siz3"
+    }
+}

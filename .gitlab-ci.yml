@@ -1,0 +1,155 @@
+image: node:24-alpine
+
+stages:
+    - build
+    - deploy
+    - doc
+
+.prepare:
+    before_script:
+        - apk add curl zip git
+        - export NODE_OPTIONS="--max-old-space-size=8192"
+        - npm install --frozen-lockfile
+
+.deploy-wiki:
+    stage: doc
+    before_script:
+        - apk add git openssh-client
+        - git config --global user.email "pipeline@gitlab.com"
+        - git config --global user.name "Automated Pipeline"
+        - eval $(ssh-agent -s)
+        - chmod 400 "$WIKI_SSH_KEY"
+        - ssh-add "$WIKI_SSH_KEY"
+        - mkdir -p ~/.ssh
+        - chmod 700 ~/.ssh
+        - cp "$SSH_KNOWN_HOSTS" ~/.ssh/known_hosts
+        - chmod 644 ~/.ssh/known_hosts
+        - npm install --frozen-lockfile
+    script:
+        - git clone $CSB_WIKI_URL wikiOutput
+        - npm exec tsx bin/deployWiki.ts ${WIKI_VERSION}
+        - mkdir -p wikiOutput/.gitlab && cp docs/.gitlab/redirects.yml wikiOutput/.gitlab/redirects.yml
+        - npm exec tsx bin/generateSidebar.ts wikiOutput > wikiOutput/_sidebar.md
+        - cd wikiOutput && git add . && git status && ( git diff-index --quiet HEAD || ( git commit -m "$CI_COMMIT_MESSAGE" && git push ) )
+
+build-branch:
+    extends: .prepare
+    stage: build
+    script:
+        - npm run build
+    except:
+        refs:
+            - develop
+            - main
+            - beta
+            - tags
+
+build-unstable:
+    extends: .prepare
+    stage: deploy
+    script:
+        - npm run update-manifest "unstable-${CI_PIPELINE_IID}-${CI_COMMIT_SHORT_SHA}" "unstable"
+        - npm run package
+    artifacts:
+        paths:
+            - out
+        expire_in: 30 seconds
+    only:
+        refs:
+            - develop
+
+build-beta:
+    extends: .prepare
+    stage: deploy
+    script:
+        - CI_COMMIT_TAG=$(git describe --tags --abbrev=0)
+        - npm run update-manifest "${CI_COMMIT_TAG}" "beta"
+        - npm run package
+    artifacts:
+        paths:
+            - out
+        expire_in: 30 seconds
+    only:
+        refs:
+            - beta
+
+build-release:
+    extends: .prepare
+    stage: deploy
+    script:
+        - npm run update-manifest "${CI_COMMIT_TAG}"
+        - npm run package
+        - |
+            curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" \
+                 --upload-file out/custom-system-builder.zip \
+                 --request PUT "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/custom-system-builder/${CI_COMMIT_TAG}/custom-system-builder.zip"
+        - |
+            curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" \
+                 --upload-file out/system.json \
+                 --request PUT "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/custom-system-builder/${CI_COMMIT_TAG}/system.json"
+        - RELEASE_DESCRIPTION=$(cat CHANGELOG.md | sed -n '/^## '"${CI_COMMIT_TAG}"'$/,/^## .*$/p' | sed '1d;$d' | sed '$!s/$/\\n/' | tr -d '\n')
+        - PACKAGE_URL="${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/custom-system-builder/${CI_COMMIT_TAG}/custom-system-builder.zip"
+        - MANIFEST_URL="${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/custom-system-builder/${CI_COMMIT_TAG}/system.json"
+        - |
+            curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --header 'Content-Type: application/json' \
+                 --data '{ "name": "'"${CI_COMMIT_TAG}"'", "tag_name": "'"${CI_COMMIT_TAG}"'", "description": "'"${RELEASE_DESCRIPTION}"'", "assets": { "links": [{ "name": "custom-system-builder.zip", "url": "'"${PACKAGE_URL}"'", "filepath": "/custom-system-builder.zip", "link_type":"package" }, { "name": "system.json", "url": "'"${MANIFEST_URL}"'", "filepath": "/system.json", "link_type":"other" }] } }' \
+                 --request POST "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/releases"
+        - |
+            curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --header 'Content-Type: application/json' \
+                 --data '{"milestones": ["'"${CI_COMMIT_TAG}"'"]}' \
+                 --request PUT "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/releases/${CI_COMMIT_TAG}"
+
+    artifacts:
+        paths:
+            - out
+        expire_in: 30 seconds
+    rules:
+        - if: $CI_COMMIT_TAG && $CI_COMMIT_TAG =~ /-rc[0-9]+$/
+          when: never
+        - if: $CI_COMMIT_TAG
+          when: always
+
+pages:
+    stage: doc
+    image: node:24-slim
+    script:
+        - npm install
+        - npm run doc
+    artifacts:
+        paths:
+            - public
+    rules:
+        - if: $CI_COMMIT_TAG && $CI_COMMIT_TAG =~ /-rc[0-9]+$/
+          when: never
+        - if: $CI_COMMIT_TAG
+          when: always
+
+deploy-wiki-stable:
+    extends: .deploy-wiki
+    variables:
+        WIKI_VERSION: stable
+    rules:
+        - if: $CI_COMMIT_TAG && $CI_COMMIT_TAG =~ /-rc[0-9]+$/
+          when: never
+        - if: $CI_COMMIT_TAG
+          when: always
+        - if: $DEPLOY_WIKI_VERSION == "stable"
+          when: always
+
+deploy-wiki-beta:
+    extends: .deploy-wiki
+    variables:
+        WIKI_VERSION: beta
+    only:
+        refs:
+            - beta
+
+changelog:
+    stage: doc
+    image: node:24-slim
+    script:
+        - npm install
+        - npm exec tsx bin/generateDiscordMessages.ts
+    rules:
+        - if: $CI_COMMIT_TAG
+          when: always
