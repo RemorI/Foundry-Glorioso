@@ -1,6 +1,6 @@
 {
-    "id": "custom-system-builder",
-    "title": "Custom System Builder",
+    "id": "Foundry-Glorioso",
+    "title": "Foundry Glorioso",
     "description": "Build your own system with easy to use components",
     "compatibility": {
         "minimum": "14",
@@ -9,21 +9,13 @@
     },
     "authors": [
         {
-            "name": "Jean-Baptiste Louvet-Daniel",
-            "email": "linkedfluuuush@gmail.com",
-            "discord": "LinkedFluuuush"
+            "name": "Traveler Omega"
         },
         {
-            "name": "Martin1522",
-            "email": "martindeutsch152@outlook.de",
-            "discord": "Martin1522"
+            "name": "Morpierde"
         },
         {
-            "name": "adorablecoin",
-            "discord": "adorablecoin"
-        },
-        {
-            "name": "Caloup"
+            "name": "Blight"
         }
     ],
     "relationships": {

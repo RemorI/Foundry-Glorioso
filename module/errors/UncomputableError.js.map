@@ -1,0 +1,1 @@
+{"version":3,"file":"UncomputableError.js","sourceRoot":"","sources":["../../../src/module/errors/UncomputableError.ts"],"names":[],"mappings":"AAAA;;;;;;GAMG;AAIH;;GAEG;AACH,MAAM,OAAO,iBAAkB,SAAQ,KAAK;IAUpB,MAAM;IACN,OAAO;IACP,KAAK;IAXzB;;;;;;OAMG;IACH,YACI,OAAe,EACC,MAAc,EACd,OAAe,EACf,KAAwC;QAExD,KAAK,CAAC,OAAO,CAAC,CAAC;sBAJC,MAAM;uBACN,OAAO;qBACP,KAAK;IAGzB,CAAC;CACJ"}
