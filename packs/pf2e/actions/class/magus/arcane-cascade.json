@@ -1,0 +1,37 @@
+{
+    "_id": "HbejhIywqIufrmVM",
+    "folder": "g2JzdD3E9YrGGaFr",
+    "img": "systems/pf2e/icons/actions/OneAction.webp",
+    "name": "Arcane Cascade",
+    "system": {
+        "actionType": {
+            "value": "action"
+        },
+        "actions": {
+            "value": 1
+        },
+        "category": "offensive",
+        "description": {
+            "value": "<p>You cycle arcane power through your body and weapon using specialized forms, breathing, or footwork. While you're in the stance, your melee Strikes gain the arcane trait (making them magical) and deal 1 extra force damage, and you gain resistance 1 to damage from spells. If you have the @UUID[Compendium.pf2e.classfeatures.Item.Weapon Specialization] class feature, the damage and resistance increase to 2, and if you have @UUID[Compendium.pf2e.classfeatures.Item.Greater Weapon Specialization], they increase to 3.</p>\n<p>If you Cast a Spell and then enter Arcane Cascade on the same turn, you can change the damage from the stance to any one damage type that spell could deal instead of force.</p>"
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Impossible Magic"
+        },
+        "rules": [],
+        "selfEffect": {
+            "name": "Stance: Arcane Cascade",
+            "uuid": "Compendium.pf2e.feat-effects.Item.Stance: Arcane Cascade"
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "concentrate",
+                "magus",
+                "stance"
+            ]
+        }
+    },
+    "type": "action"
+}

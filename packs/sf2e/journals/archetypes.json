@@ -1,0 +1,581 @@
+{
+    "_id": "vx5FGEG34AxI2dow",
+    "categories": [],
+    "name": "Archetypes",
+    "ownership": {
+        "default": 0
+    },
+    "pages": [
+        {
+            "_id": "qPVOjyJxsof1qL0N",
+            "category": null,
+            "image": {},
+            "name": "Rules",
+            "sort": 100000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>You gain an archetype by selecting archetype feats instead of your normal feats. First, find the archetype that best fits your character concept. Then select that archetype's dedication feat, using one of your class feat choices. Once you've taken the dedication feat, you can select any feat from that archetype, as long as you meet its prerequisites. Most archetype feats are taken in place of class feats, and so these are called archetype class feats.</p><p>An archetype feat is subject to any restrictions on the class feat it replaces. For example, if you had an ability at 6th level that granted you a bonus class feat, but that class feat had to be 4th level or lower and have the vesk trait, you could use that class feat to take an archetype class feat, but only one of 4th level or lower with the vesk trait.</p><p><span style=\"float:right\"><em>Source: Starfinder Player Core pg. 174</em></span></p>",
+                "format": 1
+            },
+            "title": {
+                "level": 1,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "ddYZx5lrWcBxo5xk",
+            "category": null,
+            "image": {},
+            "name": "Dedication Details",
+            "sort": 200000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>Each archetype's dedication feat represents your character's dedicated effort learning a new set of abilities, making it impossible to split your focus and pursue another archetype at the same time. Once you take a dedication feat, you can't select a different dedication feat until you complete your dedication by taking two other feats from your current archetype. You can't retrain a dedication feat as long as you have any other feats from that archetype.</p><p><span style=\"float:right\"><em>Source: Starfinder Player Core pg. 174</em></span></p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "a6OpvookVlJDubSg",
+            "category": null,
+            "image": {},
+            "name": "Additional Feats",
+            "sort": 300000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>Some archetypes include a list of \"Additional Feats\" that appear in other sources. The list includes each feat's level, which might be different than normal when gained from the archetype. You can take the feat as an archetype feat of that level, meaning it counts toward the number of feats required by the archetype's dedication feat. When selected this way, a feat that normally has a class's trait (such as the soldier trait) doesn't have that class trait.</p><p><span style=\"float:right\"><em>Source: Starfinder Player Core pg. 174</em></span></p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "7gznjrW74f35EGz1",
+            "category": null,
+            "image": {},
+            "name": "Feats that Grant Feats",
+            "sort": 400000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>Sometimes an archetype feat lets you select another feat, such as a class feat of a lower level. You must always meet any prerequisites of the feat you gain in this way. These always count as only one feat for the purposes of your dedication; for example, taking the envoy archetype's @UUID[Compendium.sf2e.feats.Item.Basic Leadership] feat to gain the @UUID[Compendium.sf2e.feats.Item.Don't You Die on Me] class feat counts as only one feat, not two.</p><p><span style=\"float:right\"><em>Source: Starfinder Player Core pg. 174</em></span></p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "DOc3Pf8wmVxanTIv",
+            "category": null,
+            "image": {},
+            "name": "Spellcasting Archetypes",
+            "sort": 500000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>Some archetypes grant you a substantial degree of spellcasting, albeit delayed compared to a character from a spellcasting class. The spellcasting ability from a spellcasting archetype also allows you to use Cast a Spell activations of items (such as <em>spell chips</em> and <em>spell gems</em>).</p><p>Spellcasting archetypes always grant the ability to cast cantrips in their dedication, and then they have a basic spellcasting feat, an expert spellcasting feat, and a master spellcasting feat. These feats share their name with the archetype; for instance, the witchwarper's master spellcasting feat is called Master Witchwarper Spellcasting. All spell slots you gain from spellcasting archetypes are subject to the restrictions within the archetype. For instance, the mystic archetype allows you to pick a connection when you take its dedication feat. If you pick a connection granting divine spells, the archetype then grants you spell slots you can use only to cast divine spells you prepare as a mystic, even if you are a witchwarper with occult spells in your repertoire.</p><h2>Basic Spellcasting Feat</h2><p>Usually available at 4th level, these feats grant a 1st-rank spell slot. At 6th level, they grant you a 2nd-rank spell slot, and if you have a spell repertoire, you can select one spell from your repertoire as a signature spell. At 8th level, they grant you a 3rd-rank spell slot. Archetypes refer to these benefits as the \"basic spellcasting benefits.\"</p><h2>Expert Spellcasting Feat</h2><p>Typically taken at 12th level, these feats make you an expert in spell attack modifiers and spell DCs and grant you a 4th-rank spell slot. If you have a spell repertoire, you can select a second spell from your repertoire as a signature spell. At 14th level, they grant you a 5th-rank spell slot, and at 16th level, they grant you a 6th-rank spell slot. Archetypes refer to these benefits as the \"expert spellcasting benefits.\"</p><h2>Master Spellcasting Feat</h2><p>Usually found at 18th level, these feats make you a master in spell attack modifiers and spell DCs and grant you a 7th-rank spell slot. If you have a spell repertoire, you can select a third spell from your repertoire as a signature spell. At 20th level, they grant you an 8th-rank spell slot. Archetypes refer to these benefits as the \"master spellcasting benefits.\"</p><p><span style=\"float:right\"><em>Source: Starfinder Player Core pg. 174</em></span></p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "s7yMOPsFEu9qDuCB",
+            "category": null,
+            "image": {},
+            "name": "Special Archetypes",
+            "sort": 600000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>Some archetype feats in other books have the skill trait, allowing you to take them in place of a skill feat rather than a class feat. A skill feat still counts to satisfy the requirement of the dedication. There are also class archetypes that can modify your class's abilities as soon as 1st level. You can never have more than one class archetype.</p><p><span style=\"float:right\"><em>Source: Starfinder Player Core pg. 174</em></span></p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "hRwljfc61s3nmHe4",
+            "category": null,
+            "image": {},
+            "name": "Multiclass Dedications",
+            "sort": 700000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>These allow you to diversify your training into another class's specialties. You can't select a multiclass archetype's dedication feat if you are already a member of that class.</p><p><span style=\"float:right\"><em>Source: Starfinder Player Core pg. 174</em></span></p>",
+                "format": 1
+            },
+            "title": {
+                "level": 1,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "tJZr2a7hVMpeMvU0",
+            "category": null,
+            "image": {},
+            "name": "Envoy",
+            "sort": 800000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>You step up and lead others to victory while manipulating those who stand in your way.</p>\n<p>@Embed[Compendium.sf2e.feats.Item.wUqOzEWcNX9ohLE2 inline header=true traits=true publication=true journalLink=false]</p>\n<p>@Embed[Compendium.sf2e.feats.Item.7oChczYtNoWFII3r inline header=true traits=true publication=true]</p>\n<p>@Embed[Compendium.sf2e.feats.Item.DTTFeuW10H7QRAlE inline header=true traits=true publication=true]</p>\n<p>@Embed[Compendium.sf2e.feats.Item.WOZoG1rikcQ0eCb4 inline header=true traits=true publication=true]</p>\n<p>@Embed[Compendium.sf2e.feats.Item.3ahX6ykhR0eUbvGX inline header=true traits=true publication=true]</p>\n<p>@Embed[Compendium.sf2e.feats.Item.bUQPddjc1Y7CpLBh inline header=true traits=true publication=true]</p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "qvvveaB7dnbiJjgG",
+            "category": null,
+            "image": {},
+            "name": "Mystic",
+            "sort": 900000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>You channel a fundamental force of the universe.</p><p>@Embed[Compendium.sf2e.feats.Item.7kCWmCSwlKQqQkLh inline header=true traits=true publication=true journalLink=false]</p><p>@Embed[Compendium.sf2e.feats.Item.aE3S7P6x9p1HRJtl inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.9x7Ke7cc6BUheOUJ inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.kK5JtGm6PQh7DT7Q inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.BLUUkk43oBILzC8s inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.ILx4TaKIN9SEtRhh inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.0tF69rIc308iAbaq inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.vlUtA0fGdDcyNA37 inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.gzVKE7AgtPtmNHYe inline header=true traits=true publication=true]</p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "GRlMj9GBfQurYjR0",
+            "category": null,
+            "image": {},
+            "name": "Operative",
+            "sort": 1000000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>You're a professional with crack aim and lethal instincts.</p><p>@Embed[Compendium.sf2e.feats.Item.V0Qm2R3YUmS9fKrE inline header=true traits=true publication=true journalLink=false]</p><p>@Embed[Compendium.sf2e.feats.Item.B8LtCLANsVLU85zv inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.0qw5IWck23QimHc6 inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.KNAHp7MLPMso8K3d inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.uc5siPW4LQ5eXviI inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.E6qvaboWcvQXhoFT inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.Dd2326p0pqJaAwxi inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.OW2RzoTyDGm1tl0x inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.UKN0Vm7kR7J2SsWj inline header=true traits=true publication=true]</p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "M0qBmGZ6Gbi9DHzE",
+            "category": null,
+            "image": {},
+            "name": "Solarian",
+            "sort": 1100000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>You are a solar knight attuned to the powerful forces of gravity and light, manifesting the cosmic cycle into armaments made of stellar energy.</p><p>@Embed[Compendium.sf2e.feats.Item.1hp73yUEZoKWaV27 inline header=true traits=true publication=true journalLink=false]</p><p>@Embed[Compendium.sf2e.feats.Item.RRjp2xNrzVQO9sDp inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.Ee3rEmM1ZSuGxohf inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.VXUhOC7xHqoJXy21 inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.wAerjBkKUHYXNbmB inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.1udHBHV6m2JFFtd1 inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.pUjY86BZzj5pFbDa inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.ZqDLcOYIGlAB5qzN inline header=true traits=true publication=true]</p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "pNf6YRj0ilnSYwcn",
+            "category": null,
+            "image": {},
+            "name": "Soldier",
+            "sort": 1200000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>You're a stalwart shield who never stops blasting while protecting your allies from danger, including from your own terrifying destruction.</p><p>@Embed[Compendium.sf2e.feats.Item.5U1q1pLm3eBIHCXl inline header=true traits=true publication=true journalLink=false]</p><p>@Embed[Compendium.sf2e.feats.Item.DlrCIyIAXZqoHFMx inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.7usqQckH1Mx2FzqC inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.U0FX5NnFLYj3eTv1 inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.ITyH6Le70UdKBXea inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.aezc7s7aGw8wJgAV inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.RhiQWWUdbwoUqBOD inline header=true traits=true publication=true]</p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "0zIwv4pBobwXGZvQ",
+            "category": null,
+            "image": {},
+            "name": "Witchwarper",
+            "sort": 1300000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>You can draw on the infinite possibilities of other universes and timelines to warp reality with powerful magic.</p><p>@Embed[Compendium.sf2e.feats.Item.P8nPDOlSIiKnkQAy inline header=true traits=true publication=true journalLink=false]</p><p>@Embed[Compendium.sf2e.feats.Item.qdYOLC9JVaA8tGuR inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.jISf3f2KiAj56NJD inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.g7xhT2A6IqTohPCU inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.ZkKybSkWvM1Xbr2T inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.Ea4bswXApUsR4dGW inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.PZPSwGS5mR1B66dA inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.GgZfDFqZsvdT9ohg inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.2xEv22i8cPgGrmBb inline header=true traits=true publication=true]</p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "wC2Wd8rvAgYL6NCz",
+            "category": null,
+            "image": {},
+            "name": "Archetypes",
+            "sort": 1400000,
+            "src": null,
+            "system": {},
+            "text": {
+                "format": 1
+            },
+            "title": {
+                "level": 1,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "CLVCOT4R4PsKCOBC",
+            "category": null,
+            "image": {},
+            "name": "AbadarCorp Rep",
+            "sort": 1500000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>Some corporate work takes AbadarCorp staff outside the boardroom. Reps willing to take on big risks are often fast-tracked for lucrative promotions and sent on coveted luxury business trips.</p><p>@Embed[Compendium.sf2e.feats.Item.MRfRe8pL4rzDrXRE inline header=true traits=true publication=true journalLink=false]</p><p>@Embed[Compendium.sf2e.feats.Item.IJvX7FJ40i84XPuR inline hr=false header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.RnKrdgguZzuVb8Tv inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.cI7HyW33qezimXWG inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.wlYpPyBKa0rT52Oa inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.nbwTRNqbVwy7io1d inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.k25vcbGtu5bsPF4h inline header=true traits=true publication=true]</p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "FBSAwwkdBfmHPb2D",
+            "category": null,
+            "image": {},
+            "name": "Hellknight",
+            "sort": 1600000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>Hellknights are ruthless warriors bound by diabolic oaths and wicked armor. Unranked conscripts who survive the grueling Hellknight Test are initiated into the Measure and the Chain.</p><p>@Embed[Compendium.sf2e.feats.Item.filmD2J3y8UoVQIh inline header=true traits=true publication=true journalLink=false]</p><p>@Embed[Compendium.sf2e.feats.Item.LH1IEKqeb5wYj1XR inline hr=false header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.3SJtpZK58WKpC2SO inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.WpJCB3dCycbIzG3w inline hr=false header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.sKZJDPCrCehAC3Sq inline hr=false header=true traits=true publication=true]</p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "F7Na3LjOknIosP83",
+            "category": null,
+            "image": {},
+            "name": "Knight of Golarion",
+            "sort": 1700000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>A Knight of Golarion devotes their life to justice, honor, and the preservation of lost Golarion's cultures. While not all members worship Iomedae, all uphold her values and practice them in their actions.</p><p>@Embed[Compendium.sf2e.feats.Item.Z0lKny0VVq0zf3UY inline header=true traits=true publication=true journalLink=false]</p><p>@Embed[Compendium.sf2e.feats.Item.ZOuBKbHt7E3BrksL inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.4Yxq6DxG3K9f41zK inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.eJBTtj66SdMvLoQM inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.WcDJMMPoAO2v26TN inline hr=false header=true traits=true publication=true]</p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "9W89zXYRobxnEOA3",
+            "category": null,
+            "image": {},
+            "name": "Space Pirate",
+            "sort": 1800000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>You've chosen a pirate's life, flying through the cosmos in search of plunder with a Free Captain's crew or as an upstart independent.</p><p><strong>Additional Feats: </strong></p><ul><li><p><strong>4th</strong> @UUID[Compendium.sf2e.feats.Item.Menacing Laughter]</p></li><li><p><strong>6th</strong> @UUID[Compendium.sf2e.feats.Item.Twin Draw]</p></li><li><p><strong>10th</strong> @UUID[Compendium.sf2e.feats.Item.Opening Volley]</p></li></ul><p>@Embed[Compendium.sf2e.feats.Item.8aGoy6Jaw4pDFZyN inline header=true traits=true publication=true journalLink=false]</p><p>@Embed[Compendium.sf2e.feats.Item.1FeZiKaHCoKpnsMb inline hr=false header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.gT70L4yEjpklDkxZ inline hr=false header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.vjNtbPCT4SatU894 inline hr=false header=true traits=true publication=true]</p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "KeDD3FTsGyj5lSnT",
+            "category": null,
+            "image": {},
+            "name": "Starfinder Field Agent",
+            "sort": 1900000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>You are a trained agent of the Starfinder Society, a group of adventures, scholars, and xenoarchaeologists seeking knowledge, treasure, and secrets across the galaxy.</p><p><strong>Additional Feats: </strong></p><ul><li><p><strong>4th</strong> @UUID[Compendium.sf2e.feats.Item.Danger Awareness]</p></li></ul><p>@Embed[Compendium.sf2e.feats.Item.kWOLT8dsYXWwmk2l inline header=true traits=true publication=true journalLink=false]</p><p>@Embed[Compendium.sf2e.feats.Item.0jw2LbYkT7WkfYi4 inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.dvbF2j5DKQgliV4p inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.725sU5S9ZXXpkO1P inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.BuTSr1Lo8vRxZ2cb inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.RbZCiRjHjF8g081P inline hr=false header=true traits=true publication=true]</p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "rk2VU7bKKHd59nBv",
+            "category": null,
+            "image": {},
+            "name": "Xenoarchaeologist",
+            "sort": 2000000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>You yearn to uncover the secrets of the past. You rely on your wits, training, and a fair share of luck during expeditions, in the interest of living to see another one!</p><p>@Embed[Compendium.sf2e.feats.Item.i5OwninARF668ud8 inline header=true traits=true publication=true journalLink=false]</p><p>@Embed[Compendium.sf2e.feats.Item.zvNI1GGW7xzA677q inline hr=false header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.7eSdek1tvNhQ61dU inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.aQ2VW51nBxfNXaTQ inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.jks2kk95Mt47rW6r inline hr=false header=true traits=true publication=true]</p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "xDaTqWGIR4LGAsPg",
+            "category": null,
+            "image": {},
+            "name": "Xenodruid",
+            "sort": 2100000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>You've learned to connect with the immense, vital power of planets where lifeforms evolved and flourished.</p><p>@Embed[Compendium.sf2e.feats.Item.UTA9Fk6V6tPFkMdj inline header=true traits=true publication=true journalLink=false]</p><p>@Embed[Compendium.sf2e.feats.Item.SEqvBdZITnGXTIhS inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.GbG5m7R3ZjvHXq3Z inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.kPndV25wPdTvTriq inline header=true traits=true publication=true]</p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "vlLPKQRmeC2SbU9a",
+            "category": null,
+            "image": {},
+            "name": "Index",
+            "sort": 0,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<h2>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.qPVOjyJxsof1qL0N]{Rules}</h2><table border=\"1\" class=\"pf2e\"><tbody><tr><td><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.a6OpvookVlJDubSg]{Additional Feats}</p></td><td><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.ddYZx5lrWcBxo5xk]{Dedication Details}</p></td><td><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.7gznjrW74f35EGz1]{Feats that Grant Feats}</p></td></tr><tr><td><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.s7yMOPsFEu9qDuCB]{Special Archetypes}</p></td><td colspan=\"2\"><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.DOc3Pf8wmVxanTIv]{Spellcasting Archetypes}</p></td></tr></tbody></table><h2>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.hRwljfc61s3nmHe4]{Multiclass Dedications}</h2><table border=\"1\" class=\"pf2e\"><tbody><tr><td><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.tJZr2a7hVMpeMvU0]{Envoy}</p></td><td><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.qvvveaB7dnbiJjgG]{Mystic}</p></td><td><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.GRlMj9GBfQurYjR0]{Operative}</p></td></tr><tr><td><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.M0qBmGZ6Gbi9DHzE]{Solarian}</p></td><td><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.pNf6YRj0ilnSYwcn]{Soldier}</p></td><td><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.0zIwv4pBobwXGZvQ]{Witchwarper}</p></td></tr></tbody></table><h2>Archetypes</h2><table border=\"1\" class=\"pf2e\"><tbody><tr><td><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.CLVCOT4R4PsKCOBC]{Abadarcorp Rep}</p></td><td><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.nprQxP28O7Vz0jBA]{Eyeswide Detective}</p></td><td><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.1rPdrDavNjjA1CKl]{Franchise Manager}</p></td></tr><tr><td><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.OHyhN6rwBXpxalic]{Ghost Courier}</p></td><td><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.FBSAwwkdBfmHPb2D]{Hellknight}</p></td><td><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.F7Na3LjOknIosP83]{Knights of Golarion}</p></td></tr><tr><td><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.nDzaEti2C8ifTxWg]{Peacekeeper}</p></td><td><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.9W89zXYRobxnEOA3]{Space Pirate}</p></td><td><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.KeDD3FTsGyj5lSnT]{Starfinder Field Agent}</p></td></tr><tr><td colspan=\"2\"><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.rk2VU7bKKHd59nBv]{Xenoarchaeologist}</p></td><td><p>@UUID[Compendium.sf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.xDaTqWGIR4LGAsPg]{Xenodruid}</p></td></tr></tbody></table>",
+                "format": 1
+            },
+            "title": {
+                "level": 1,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "nprQxP28O7Vz0jBA",
+            "category": null,
+            "image": {},
+            "name": "Eyeswide Detective",
+            "sort": 1550000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<ul class=\"tags paizo-style\"><li class=\"tag rarity uncommon\"><p>Uncommon</p></li></ul><p>You are one of the sharp minds whom the Eyeswide Agency is proud to call detective, or headscanner.</p><p>@Embed[Compendium.sf2e.feats.Item.ImihAbdr9smqJy60 inline header=true traits=true publication=true journalLink=false hr=false]</p><p>@Embed[Compendium.sf2e.feats.Item.D02rzZbahZmHmf23 inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.sOPJdbmdO9LPj9Ku inline hr=false header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.rv6hhsxfZwI7vfyR inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.SYTMDYejQnhlOWqU inline hr=false header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.RDwKC2xVJVhCjGlE inline hr=false header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.NtPBYZcQY5tsokfB inline hr=false header=true traits=true publication=true]</p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "1rPdrDavNjjA1CKl",
+            "category": null,
+            "image": {},
+            "name": "Franchise Manager",
+            "sort": 1575000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>Whether your business was bought out or you climbed the corporate ladder, you've become the manager of your own company. Though your business is a subsidiary of a larger corporate entity, like the Aspis Consortium, you've been given a great deal of freedom in your day-to-day operations.</p><p>@Embed[Compendium.sf2e.feats.Item.IzEcNoh2nuCzDNFx inline header=true traits=true publication=true journalLink=false hr=false]</p><p>@Embed[Compendium.sf2e.feats.Item.eyblfsR01aT1igfz inline hr=false header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.cqcLrR2nLyI0I3eB inline hr=false header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.hn0E9y3cADjvLhQY inline hr=false header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.9oOcVKp84ibKm01u inline hr=false header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.V5J6eCtDpPE2PNL6 inline hr=false header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.iLDxpOuMi60QBG8c inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.tIjrB1XNWEZSDpvn inline header=true traits=true publication=true]</p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "OHyhN6rwBXpxalic",
+            "category": null,
+            "image": {},
+            "name": "Ghost Courier",
+            "sort": 1587500,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<ul class=\"tags paizo-style\"><li class=\"tag rarity uncommon\"><p>Uncommon</p></li></ul><p>You're a Ghost Courier: an explorer, daredevil, and urban archaeologist who wades into the unreality of the Ghost Levels on Absalom Station hoping to return with secrets, treasure, and hidden lore.</p><p>@Embed[Compendium.sf2e.feats.Item.L5eWGPz5Cl7P7fpW inline header=true traits=true publication=true journalLink=false]</p><p>@Embed[Compendium.sf2e.feats.Item.9XB03rIA5j5OvHTE inline hr=false header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.C6YUmy4PN0flf6Tz inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.UpPdTgFylu6MpQ9e inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.pBGhR46rPx7fQpL8 inline hr=false header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.I0xwXfPJfLOUVIjK inline hr=false header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.tZpDvVvEqBGIKJ2n inline hr=false header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.6UvslFbWnywQCd7A inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.ILy2kHsRAJzxsTPQ inline header=true traits=true publication=true]</p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        },
+        {
+            "_id": "nDzaEti2C8ifTxWg",
+            "category": null,
+            "image": {},
+            "name": "Peacekeeper",
+            "sort": 1750000,
+            "src": null,
+            "system": {},
+            "text": {
+                "content": "<p>As a peacekeeper, you've trained to preserve and protect life from dangerous monsters and nefarious villains. Whether as a member of the Stewards or as a new recruit for any interplanetary defense force, you're called to leave your home world behind and become a protector of the wider galaxy.</p><p>@Embed[Compendium.sf2e.feats.Item.1COfftBsjrZm7sxw inline header=true traits=true publication=true journalLink=false]</p><p>@Embed[Compendium.sf2e.feats.Item.H2SuX6ESfafI9L4W inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.9ilguOX3mtpkUTVS inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.HARh7WrBQ2I7cAhB inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.NpmfE2NkfP9CH1ES inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.86s64k7sH45Sr6Lh inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.FY7tx79zrMwmo5OQ inline hr=false header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.RYu4iCHGFUJBG2Av inline header=true traits=true publication=true]</p><p>@Embed[Compendium.sf2e.feats.Item.zmpqzYgqpQxLyARh inline header=true traits=true publication=true]</p>",
+                "format": 1
+            },
+            "title": {
+                "level": 2,
+                "show": true
+            },
+            "type": "text",
+            "video": {
+                "controls": true,
+                "volume": 0.5
+            }
+        }
+    ]
+}

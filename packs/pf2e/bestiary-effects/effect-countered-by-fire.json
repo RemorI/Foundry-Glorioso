@@ -1,0 +1,60 @@
+{
+    "_id": "a4bZrBNL17zPjDiH",
+    "img": "icons/magic/fire/flame-burning-campfire-rocks.webp",
+    "name": "Effect: Countered by Fire",
+    "system": {
+        "description": {
+            "value": "<p>You take a –1 circumstance penalty to attack rolls and AC, and your jaws Strike doesn't deal electricity damage.</p>"
+        },
+        "duration": {
+            "expiry": "turn-end",
+            "sustained": false,
+            "unit": "rounds",
+            "value": 1
+        },
+        "level": {
+            "value": 1
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Lost Omens Draconic Codex"
+        },
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "selector": [
+                    "ac",
+                    "attack"
+                ],
+                "type": "circumstance",
+                "value": -1
+            },
+            {
+                "key": "DamageAlteration",
+                "mode": "override",
+                "predicate": [
+                    "damage:type:electricity"
+                ],
+                "property": "dice-number",
+                "selectors": [
+                    "jaws-damage"
+                ],
+                "slug": "base",
+                "value": 0
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

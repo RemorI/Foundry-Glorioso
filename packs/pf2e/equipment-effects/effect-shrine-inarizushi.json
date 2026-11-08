@@ -1,0 +1,49 @@
+{
+    "_id": "ORdhj3IAvYACNGkJ",
+    "img": "systems/pf2e/icons/equipment/consumables/other-consumables/shrine-inarizushi.webp",
+    "name": "Effect: Shrine Inarizushi",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.equipment-srd.Item.Shrine Inarizushi]</p>\n<p>You gain a +1 status bonus to Perception check to Search.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "hours",
+            "value": 1
+        },
+        "level": {
+            "value": 1
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Blog"
+        },
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "action:seek"
+                ],
+                "selector": [
+                    "perception"
+                ],
+                "type": "status",
+                "value": 1
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

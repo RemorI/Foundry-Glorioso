@@ -1,0 +1,38 @@
+{
+    "_id": "N02sHmzuF9XQj93m",
+    "folder": "RAW6ntoMLwWtLX0C",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Resilient Shell",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "class",
+        "description": {
+            "value": "<p>Your eidolon is resilient against attacks. They gain resistance 5 to physical damage. At 17th level, the resistance increases to 6.</p>"
+        },
+        "level": {
+            "value": 14
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Impossible Magic"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "evolution",
+                "summoner"
+            ]
+        }
+    },
+    "type": "feat"
+}

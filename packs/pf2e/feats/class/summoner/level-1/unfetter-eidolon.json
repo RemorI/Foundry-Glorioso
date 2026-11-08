@@ -1,0 +1,37 @@
+{
+    "_id": "2bCbfQ0KCSSYpg2q",
+    "folder": "t9YjVtaVtRJEhN9q",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Unfetter Eidolon",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "class",
+        "description": {
+            "value": "<p>You can allow your eidolon to travel far from your side. You learn the @UUID[Compendium.pf2e.spells-srd.Item.Unfetter Eidolon] link spell.</p>"
+        },
+        "level": {
+            "value": 1
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Impossible Magic"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "summoner"
+            ]
+        }
+    },
+    "type": "feat"
+}

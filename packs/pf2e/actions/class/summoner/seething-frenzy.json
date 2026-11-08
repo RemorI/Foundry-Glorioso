@@ -1,0 +1,34 @@
+{
+    "_id": "nSTMF6kYIt6rXhJx",
+    "folder": "LkjMKhSIthBOzEc0",
+    "img": "systems/pf2e/icons/actions/OneAction.webp",
+    "name": "Seething Frenzy",
+    "system": {
+        "actionType": {
+            "value": "action"
+        },
+        "actions": {
+            "value": 1
+        },
+        "category": "defensive",
+        "description": {
+            "value": "<p>Your eidolon's fury boils over into a reckless, out-of-control frenzy. While frenzied, your eidolon is affected by @UUID[Compendium.pf2e.spells-srd.Item.Boost Eidolon] and gains temporary Hit Points equal to your level, but takes a –1 penalty to AC. Your eidolon can't voluntarily end the frenzy or start another frenzy while in the frenzy. The frenzy and the accompanying temporary Hit Points last for 1 minute or until your eidolon is no longer manifested, whichever comes first, after which they can't start another frenzy for 1 minute.</p>\n<p>When your eidolon makes a Furious Strike while in a Seething Frenzy, the status bonus from boost eidolon is 3 per damage die. The extra damage die from Furious Strike still doesn't count toward <em>boost eidolon</em>'s bonus, as normal for weapon dice added by abilities.</p>"
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Impossible Magic"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "concentrate",
+                "eidolon",
+                "emotion",
+                "mental"
+            ]
+        }
+    },
+    "type": "action"
+}

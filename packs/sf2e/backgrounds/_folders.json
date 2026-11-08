@@ -1,0 +1,101 @@
+[
+    {
+        "_id": "3SFWKhzBesp37sy9",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": null,
+        "name": "Galaxy Guide",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "DLg0zDC5MHpO9SYL",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "BzhyIRBW6UKtg6oG",
+        "name": "Invasion's Edge",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "9DzgrrI9HDXpQ0Ws",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": null,
+        "name": "Player Core",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "29j3vwkW38Wt2OXu",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "BzhyIRBW6UKtg6oG",
+        "name": "Playtest",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "CTq6jMA7ukzDHwjq",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "BzhyIRBW6UKtg6oG",
+        "name": "Beyond the Blood Door",
+        "sort": 100000,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "6MTWumQFoXrDW8Jx",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": "ZTc4AWysETKK5IZ0",
+        "name": "Guilt of the Grave World",
+        "sort": 100000,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "BzhyIRBW6UKtg6oG",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": null,
+        "name": "Starfinder Society",
+        "sort": 100000,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "ZTc4AWysETKK5IZ0",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": null,
+        "name": "Adventure Paths",
+        "sort": 200000,
+        "sorting": "a",
+        "type": "Item"
+    },
+    {
+        "_id": "FSNnPgMOy8JVEnXb",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": null,
+        "name": "Tech Core",
+        "sort": 300000,
+        "sorting": "a",
+        "type": "Item"
+    }
+]

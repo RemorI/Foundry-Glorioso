@@ -1,0 +1,53 @@
+{
+    "_id": "00gozjbtueYWop0w",
+    "img": "systems/pf2e/icons/default-icons/effect.svg",
+    "name": "Effect: Hell's Bane",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.Hell's Bane]</p>\n<p>You gain a +4 status bonus to damage against the marked creature.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "minutes",
+            "value": 1
+        },
+        "fromSpell": false,
+        "level": {
+            "value": 8
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Adventure Path: Hellbreakers"
+        },
+        "rules": [
+            {
+                "key": "TokenMark",
+                "slug": "hells-bane"
+            },
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "target:mark:hells-bane"
+                ],
+                "selector": [
+                    "damage"
+                ],
+                "type": "status",
+                "value": 4
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "value": []
+        }
+    },
+    "type": "effect"
+}

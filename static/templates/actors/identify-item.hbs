@@ -1,0 +1,40 @@
+<div class="item-header">
+    <img src="{{item.img}}" alt="" />
+    <span class="name">{{item.name}}</span>
+</div>
+<section class="identification-dcs" aria-labelledby="{{id}}-dcs">
+    <h2 id="{{id}}-dcs">
+        {{#if isMagic}}
+            {{localize "PF2E.identification.IdentifyMagicDCs"}}
+        {{else if isAlchemical}}
+            {{localize "PF2E.identification.IdentifyAlchemyDCs"}}
+        {{else}}
+            {{localize "PF2E.identification.IdentifyGenericDCs"}}
+        {{/if}}
+    </h2>
+    <dl class="dcs striped">
+        {{#each rows as |row|}}
+            <dt data-tooltip-text="{{row.breakdown}}">{{localize row.label}}</dt>
+            <dd data-tooltip-text="{{row.breakdown}}">
+                {{row.dc}}
+                <span class="sr-only">({{row.breakdown}})</span>
+            </dd>
+        {{/each}}
+    </dl>
+</section>
+<div class="form-group slim">
+    <label for="{{id}}-adjustment">{{localize "PF2E.identification.Difficulty"}}</label>
+    <div class="form-fields">
+        <select id="{{id}}-adjustment" data-adjustment>
+            {{selectOptions adjustments valueAttr="value" labelAttr="label" selected=adjustment}}
+        </select>
+    </div>
+</div>
+<div class="form-footer">
+    <button type="button" class="post-skill-checks" data-action="postSkillChecks">
+        <i class="fa-solid fa-message" aria-hidden="true"></i>{{localize "PF2E.identification.PostSkillsToChat"}}
+    </button>
+    <button type="button" class="update-identification" data-action="updateIdentification" value="identified">
+        <i class="fa-regular fa-circle-question" aria-hidden="true"></i>{{localize "PF2E.identification.Identify"}}
+    </button>
+</div>

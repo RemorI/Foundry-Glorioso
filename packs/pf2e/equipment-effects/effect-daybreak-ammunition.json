@@ -1,0 +1,53 @@
+{
+    "_id": "5exj14jbFVvz5fQt",
+    "img": "systems/pf2e/icons/equipment/consumables/ammunition/silencing-shot.webp",
+    "name": "Effect: Daybreak Ammunition",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.equipment-srd.Item.Daybreak Ammunition]</p>\n<p>You shed bright light in a 10-foot radius.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "rounds",
+            "value": 1
+        },
+        "fromSpell": false,
+        "level": {
+            "value": 3
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": ""
+        },
+        "rules": [
+            {
+                "key": "TokenLight",
+                "value": {
+                    "animation": {
+                        "intensity": 1,
+                        "speed": 1,
+                        "type": "pulse"
+                    },
+                    "bright": 10,
+                    "color": "#975335",
+                    "coloration": 101,
+                    "dim": 0,
+                    "shadows": 0.2
+                }
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "value": []
+        }
+    },
+    "type": "effect"
+}

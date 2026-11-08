@@ -1,0 +1,24 @@
+[
+    {
+        "_id": "me2gOUoFNJ5Gy2eJ",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": null,
+        "name": "Murder in Metal City",
+        "sort": 100000,
+        "sorting": "a",
+        "type": "Actor"
+    },
+    {
+        "_id": "4NVMBpVA6SErB7bJ",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": null,
+        "name": "Rescue on Raxil",
+        "sort": 200000,
+        "sorting": "a",
+        "type": "Actor"
+    }
+]

@@ -1,0 +1,50 @@
+{
+    "_id": "pkD8SLooxP55tibr",
+    "img": "icons/sundries/scrolls/scroll-worn-tan.webp",
+    "name": "Codebreaker's Parchment",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0.1
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>This finely crafted, seemingly mundane parchment is useful for writing sensitive documents. When words are written on this parchment, they instantly scramble into unrecognizable script, requiring a DC 20 check to @UUID[Compendium.pf2e.actionspf2e.Item.Decipher Writing]. Both of the parchment's activations require speaking a password or pass phrase, imbued into the parchment when created. A character must critically succeed on the check to Identify Magic when examining the parchment to learn the password.</p><hr /><p><strong>Activate—Burn After Reading</strong> <span class=\"action-glyph\">1</span> (concentrate)</p>\n<p><strong>Effect</strong> The words on the parchment seem to catch fire, completely burning away while leaving the parchment unharmed and ready to bear more text.</p><hr /><p><strong>Activate—Decode Writing</strong> <span class=\"action-glyph\">1</span> (concentrate)</p>\n<p><strong>Effect</strong> The scrambled words align into the originally written script.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 3
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 45
+            }
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Impossible Magic"
+        },
+        "quantity": 1,
+        "rules": [],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "magical"
+            ]
+        },
+        "usage": {
+            "value": "held-in-two-hands"
+        }
+    },
+    "type": "equipment"
+}

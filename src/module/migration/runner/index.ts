@@ -1,0 +1,467 @@
+import type { ActorPF2e } from "@actor";
+import type { ActorSourcePF2e } from "@actor/data/index.ts";
+import type WorldCollection from "@client/documents/abstract/world-collection.d.mts";
+import type CompendiumCollection from "@client/documents/collections/compendium-collection.d.mts";
+import type { CompendiumIndexData } from "@client/documents/collections/compendium-collection.d.mts";
+import type { ItemPF2e } from "@item";
+import type { ItemSourcePF2e } from "@item/base/data/index.ts";
+import type { MacroPF2e } from "@module/macro.ts";
+import type { MigrationBase } from "@module/migration/base.ts";
+import { MigrationRunnerBase } from "@module/migration/runner/base.ts";
+import type { UserPF2e } from "@module/user/index.ts";
+import type { ScenePF2e, TokenDocumentPF2e } from "@scene";
+import { Progress } from "@system/progress.ts";
+import * as R from "remeda";
+
+export class MigrationRunner extends MigrationRunnerBase {
+    /** Failure reasons from the most recent migration run, keyed by document UUID */
+    static lastRunFailures = new Map<string, string>();
+
+    override needsMigration(): boolean {
+        return super.needsMigration(game.settings.get(SYSTEM_ID, "worldSchemaVersion"));
+    }
+
+    /** Read the schema version from a compendium index entry */
+    static schemaVersionFromIndex(entry: CompendiumIndexData): number {
+        const system = entry.system ?? entry.data;
+        return Number(system?._migration?.version ?? system?.schema?.version);
+    }
+
+    /** Flatten an error and its cause into a single human-readable message */
+    static #flattenError(error: unknown): string {
+        const parts: string[] = [];
+        for (let current: unknown = error; current instanceof Error; current = current.cause) {
+            parts.push(current.message);
+        }
+        return parts.length > 0 ? parts.join(": ") : String(error);
+    }
+
+    /** Ensure that an actor or item reflects the current data schema before it is created */
+    static async ensureSchemaVersion(document: ActorPF2e | ItemPF2e, migrations: MigrationBase[]): Promise<void> {
+        if (migrations.length === 0) return;
+        const currentVersion = this.LATEST_SCHEMA_VERSION;
+
+        if ((Number(document.schemaVersion) || 0) < currentVersion) {
+            const runner = new this(migrations);
+            const source = document._source;
+            const updated = await (async () => {
+                try {
+                    return "items" in source
+                        ? await runner.getUpdatedActor(source, runner.migrations)
+                        : await runner.getUpdatedItem(source, runner.migrations);
+                } catch {
+                    return null;
+                }
+            })();
+
+            if (updated) {
+                // Ensure new items have IDs and deleted items are removed
+                if ("items" in updated && "items" in document._source) {
+                    for (const updatedItem of updated.items) {
+                        updatedItem._id ??= fu.randomID();
+                    }
+
+                    const itemSources = document._source.items;
+                    for (const itemSource of [...itemSources]) {
+                        if (!updated.items.some((i) => i._id === itemSource._id)) {
+                            itemSources.splice(itemSources.indexOf(itemSource), 1);
+                        }
+                    }
+                }
+
+                document.updateSource(updated);
+            }
+        }
+
+        document.updateSource({ "system._migration.version": currentVersion });
+        // Discriminate between item and actor without importing, which would throw errors on the migration test
+        if ("items" in document && "prototypeToken" in document) {
+            for (const item of document.items) {
+                if (!item.schemaVersion) {
+                    item.updateSource({ "system._migration.version": currentVersion });
+                }
+            }
+        }
+    }
+
+    /** Migrate actor or item documents in batches of 100 */
+    async #migrateDocuments<TDocument extends ActorPF2e<null> | ItemPF2e<null>>(
+        collection: WorldCollection<TDocument> | CompendiumCollection<TDocument>,
+        migrations: MigrationBase[],
+        progress?: Progress,
+    ): Promise<void> {
+        const pack = "metadata" in collection ? collection.metadata.id : null;
+        const updateGroup: TDocument["_source"][] = [];
+        // Have familiars go last so that their data migration and re-preparation happen after their master's
+        for (const [index, document] of collection.contents.sort((a) => (a.type === "familiar" ? 1 : -1)).entries()) {
+            // Yield periodically so the progress bar and busy indicators keep painting during a long run.
+            if (index % 25 === 24) await new Promise((resolve) => setTimeout(resolve, 0));
+            if (updateGroup.length === 100) {
+                await this.#saveUpdateGroup(collection, updateGroup, pack, progress);
+            }
+            const updated =
+                "prototypeToken" in document
+                    ? await this.#migrateActor(migrations, document, { pack })
+                    : await this.#migrateItem(migrations, document);
+            if (updated) updateGroup.push(updated);
+        }
+        if (updateGroup.length > 0) {
+            await this.#saveUpdateGroup(collection, updateGroup, pack, progress);
+        }
+    }
+
+    /** Save a batch, retrying one-by-one on failure so a single rejected document doesn't sink the batch, and
+     *  recording each rejection reason. */
+    async #saveUpdateGroup<TDocument extends ActorPF2e<null> | ItemPF2e<null>>(
+        collection: WorldCollection<TDocument> | CompendiumCollection<TDocument>,
+        updateGroup: TDocument["_source"][],
+        pack: string | null,
+        progress?: Progress,
+        { diff = true }: { diff?: boolean } = {},
+    ): Promise<void> {
+        const DocumentClass = collection.documentClass;
+        try {
+            await DocumentClass.updateDocuments(updateGroup, { noHook: true, pack, diff });
+        } catch (batchError) {
+            console.warn(batchError);
+            for (const source of updateGroup) {
+                try {
+                    await DocumentClass.updateDocuments([source], { noHook: true, pack, diff });
+                } catch (error) {
+                    console.warn(error);
+                    const uuid = collection.get(source._id ?? "")?.uuid;
+                    if (uuid) MigrationRunner.lastRunFailures.set(uuid, MigrationRunner.#flattenError(error));
+                }
+            }
+        } finally {
+            progress?.advance({ by: updateGroup.length });
+            updateGroup.length = 0;
+        }
+    }
+
+    /**
+     * Remove special keys from object with side-effects without applying them.
+     * Sometimes data may be persisted with special keys and not removing them causes issues.
+     * Remove once https://github.com/foundryvtt/foundryvtt/issues/13201 is complete if it also covers saved documents
+     */
+    #removeSpecialKeys<T>(data: T) {
+        if (Array.isArray(data)) {
+            for (const value of data) {
+                this.#removeSpecialKeys(value);
+            }
+        } else if (R.isPlainObject(data)) {
+            for (const key of Object.keys(data)) {
+                if (key.startsWith("-=")) {
+                    delete data[key];
+                } else {
+                    this.#removeSpecialKeys(data[key]);
+                }
+            }
+        }
+
+        return data;
+    }
+
+    async #migrateItem(migrations: MigrationBase[], item: ItemPF2e): Promise<ItemSourcePF2e | null> {
+        const baseItem = this.#removeSpecialKeys(item.toObject());
+
+        try {
+            return await this.getUpdatedItem(baseItem, migrations);
+        } catch (error) {
+            // Output the error, since this means a migration threw it
+            ui.notifications.error(`Error thrown while migrating ${item.name} (${item.uuid})`);
+            console.error(error);
+            MigrationRunner.lastRunFailures.set(item.uuid, MigrationRunner.#flattenError(error));
+            return null;
+        }
+    }
+
+    async #migrateActor(
+        migrations: MigrationBase[],
+        actor: ActorPF2e,
+        options: { pack?: Maybe<string> } = {},
+    ): Promise<ActorSourcePF2e | null> {
+        const pack = options.pack;
+        const baseActor = this.#removeSpecialKeys(actor.toObject());
+
+        const updatedActor = await (async () => {
+            try {
+                return await this.getUpdatedActor(baseActor, migrations);
+            } catch (error) {
+                // Output the error, since this means a migration threw it
+                if (error instanceof Error) {
+                    console.error(`Error thrown while migrating ${actor.uuid}: `, error);
+                }
+                MigrationRunner.lastRunFailures.set(actor.uuid, MigrationRunner.#flattenError(error));
+                return null;
+            }
+        })();
+        if (!updatedActor) return null;
+
+        if (actor._source.effects.some((e) => e.statuses.some((s) => s !== "dead"))) {
+            // What are these doing here?
+            await actor.deleteEmbeddedDocuments("ActiveEffect", [], { deleteAll: true });
+        }
+
+        const baseItems = [...baseActor.items];
+        const updatedItems = [...updatedActor.items];
+
+        // We pull out the items here so that the embedded document operations get called
+        const itemDiff = this.diffCollection(baseItems, updatedItems);
+        const finalDeleted = itemDiff.deleted.filter((id) => actor.items.has(id));
+        if (finalDeleted.length > 0) {
+            try {
+                await actor.deleteEmbeddedDocuments("Item", finalDeleted, { noHook: true, pack });
+            } catch (error) {
+                // Output as a warning, since this merely means data preparation following the update
+                // (hopefully intermittently) threw an error
+                console.warn(error);
+            }
+        }
+        const finalUpdated = itemDiff.updated.filter((i) => actor.items.has(i._id!));
+        updatedActor.items = [...itemDiff.inserted, ...finalUpdated];
+
+        return updatedActor;
+    }
+
+    async #migrateWorldJournalEntry(journalEntry: JournalEntry, migrations: MigrationBase[]): Promise<void> {
+        if (!migrations.some((migration) => !!migration.updateJournalEntry)) return;
+
+        try {
+            const updated = await this.getUpdatedJournalEntry(journalEntry.toObject(), migrations);
+            const changes = fu.diffObject(journalEntry.toObject(), updated);
+            if (Object.keys(changes).length > 0) {
+                await journalEntry.update(changes, { noHook: true });
+            }
+        } catch (error) {
+            console.warn(error);
+        }
+    }
+
+    async #migrateWorldMacro(macro: MacroPF2e, migrations: MigrationBase[]): Promise<void> {
+        if (!migrations.some((migration) => !!migration.updateMacro)) return;
+
+        try {
+            const updatedMacro = await this.getUpdatedMacro(macro.toObject(), migrations);
+            const changes = fu.diffObject(macro.toObject(), updatedMacro);
+            if (Object.keys(changes).length > 0) {
+                await macro.update(changes, { noHook: true });
+            }
+        } catch (error) {
+            console.warn(error);
+        }
+    }
+
+    async #migrateWorldTable(table: RollTable, migrations: MigrationBase[]): Promise<void> {
+        if (!migrations.some((migration) => !!migration.updateTable)) return;
+
+        try {
+            const updatedMacro = await this.getUpdatedTable(table.toObject(), migrations);
+            const changes = fu.diffObject(table.toObject(), updatedMacro);
+            if (Object.keys(changes).length > 0) {
+                table.update(changes, { noHook: true });
+            }
+        } catch (error) {
+            console.warn(error);
+        }
+    }
+
+    async #migrateSceneToken(
+        token: TokenDocumentPF2e<ScenePF2e>,
+        migrations: MigrationBase[],
+    ): Promise<foundry.documents.TokenSource | null> {
+        if (!migrations.some((migration) => !!migration.updateToken)) return token.toObject();
+
+        try {
+            const updatedToken = await this.getUpdatedToken(token, migrations);
+            const changes = fu.diffObject(token.toObject(), updatedToken);
+
+            if (Object.keys(changes).length > 0) {
+                try {
+                    await token.update(changes, { noHook: true });
+                } catch (error) {
+                    console.warn(error);
+                }
+            }
+            return updatedToken;
+        } catch (error) {
+            console.error(error);
+            return null;
+        }
+    }
+
+    async #migrateUser(user: UserPF2e, migrations: MigrationBase[]): Promise<void> {
+        if (!migrations.some((migration) => !!migration.updateUser)) return;
+
+        try {
+            const baseUser = user.toObject();
+            const updatedUser = await this.getUpdatedUser(baseUser, migrations);
+            const changes = fu.diffObject(user.toObject(), updatedUser);
+            if (Object.keys(changes).length > 0) {
+                await user.update(changes, { noHook: true });
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    /** Migrates all documents in a compendium. Since getDocuments() already migrates, this merely loads and saves them */
+    async runCompendiumMigration<T extends ActorPF2e<null> | ItemPF2e<null>>(
+        compendium: CompendiumCollection<T>,
+    ): Promise<void> {
+        const pack = compendium.metadata.id;
+
+        ui.notifications.info("PF2E.Migrations.Starting", { format: { version: game.system.version } });
+        const documents = await compendium.getDocuments();
+
+        // Clear stale failures from a previous run over this pack
+        for (const uuid of MigrationRunner.lastRunFailures.keys()) {
+            if (uuid.startsWith(`Compendium.${pack}.`)) MigrationRunner.lastRunFailures.delete(uuid);
+        }
+
+        // These documents were already migrated in memory when loaded, so a normal update would see nothing to
+        // save. Force-replace every field and skip diffing so the changes actually reach the database.
+        const updates = documents.map(
+            (d) =>
+                R.mapValues(d.toObject() as Record<string, unknown>, (v, k) =>
+                    k === "_id" ? v : foundry.data.operators.ForcedReplacement.create(v),
+                ) as unknown as T["_source"],
+        );
+        for (const batch of R.chunk(updates, 100)) {
+            await this.#saveUpdateGroup(compendium, [...batch], pack, undefined, { diff: false });
+        }
+        ui.notifications.info("PF2E.Migrations.Finished", { format: { version: game.system.version } });
+
+        // Verify the results: a save can resolve without anything being persisted
+        const index = await compendium.getIndex({
+            fields: [fu.randomID(), "system._migration", "system.schema", "data.schema"],
+        });
+        const outdated = index.filter(
+            (e) => !(MigrationRunner.schemaVersionFromIndex(e) >= MigrationRunner.LATEST_SCHEMA_VERSION),
+        ).length;
+        if (outdated > 0) {
+            ui.notifications.warn("PF2E.Migrations.StillOutdated", { format: { count: String(outdated) } });
+        }
+    }
+
+    async runMigrations(migrations: MigrationBase[]): Promise<void> {
+        if (migrations.length === 0) return;
+
+        /** A roughly estimated "progress max" to reach, for display in the progress bar */
+        const progress = new Progress({
+            label: _loc("PF2E.Migrations.Running"),
+            max:
+                game.actors.size +
+                game.items.size +
+                game.scenes.contents.flatMap((s) => s.tokens.contents).filter((t) => !t.actorLink).length,
+        });
+
+        // Migrate World Actors
+        await this.#migrateDocuments(game.actors, migrations, progress);
+
+        // Migrate World Items
+        await this.#migrateDocuments(game.items, migrations, progress);
+
+        // Migrate world journal entries
+        for (const entry of game.journal) {
+            await this.#migrateWorldJournalEntry(entry, migrations);
+        }
+
+        const promises: Promise<unknown>[] = [];
+        // Migrate World Macros
+        for (const macro of game.macros) {
+            promises.push(this.#migrateWorldMacro(macro, migrations));
+        }
+
+        // Migrate World RollTables
+        for (const table of game.tables) {
+            promises.push(this.#migrateWorldTable(table, migrations));
+        }
+
+        for (const user of game.users) {
+            promises.push(this.#migrateUser(user, migrations));
+        }
+
+        // call the free-form migration function. can really do anything
+        for (const migration of migrations) {
+            if (migration.migrate) promises.push(migration.migrate());
+        }
+
+        // the we should wait for the promises to complete before updating the tokens
+        // because the unlinked tokens might not need to be updated anymore since they
+        // base their data on global actors
+        await Promise.allSettled(promises);
+
+        // Migrate tokens and synthetic actors
+        let tokensProcessed = 0;
+        for (const scene of game.scenes) {
+            for (const token of scene.tokens) {
+                // Yield periodically, as in #migrateDocuments: this phase dominates on token-heavy worlds.
+                tokensProcessed += 1;
+                if (tokensProcessed % 25 === 0) await new Promise((resolve) => setTimeout(resolve, 0));
+                const { actor } = token;
+                if (!actor) continue;
+
+                const wasSuccessful = !!(await this.#migrateSceneToken(token, migrations));
+                if (!wasSuccessful) continue;
+
+                // Only migrate if the delta of the synthetic actor has migratable data
+                const deltaSource = token.delta?._source;
+                const hasMigratableData =
+                    (!!deltaSource && !!deltaSource.flags?.pf2e) ||
+                    ((deltaSource ?? {}).items ?? []).length > 0 ||
+                    Object.keys(deltaSource?.system ?? {}).length > 0;
+
+                if (actor.isToken) {
+                    if (hasMigratableData) {
+                        const updated = await this.#migrateActor(migrations, actor);
+                        if (updated) {
+                            try {
+                                await actor.update(updated, { noHook: true });
+                            } catch (error) {
+                                console.warn(error);
+                            }
+                        }
+                    }
+                    progress.advance();
+                }
+            }
+        }
+
+        // *Something* was miscalculated, but migrations are complete: close the progress bar.
+        if (progress.value < progress.max) progress.close();
+    }
+
+    async runMigration(force = false): Promise<void> {
+        MigrationRunner.lastRunFailures.clear();
+        const schemaVersion = {
+            latest: MigrationRunner.LATEST_SCHEMA_VERSION,
+            current: game.settings.get(SYSTEM_ID, "worldSchemaVersion"),
+        };
+        const systemVersion = game.system.version;
+
+        ui.notifications.info("PF2E.Migrations.Starting", { format: { version: systemVersion } });
+
+        const migrationsToRun = force
+            ? this.migrations
+            : this.migrations.filter((x) => schemaVersion.current < x.version);
+
+        // We need to break the migration into phases sometimes.
+        // for instance, if a migration creates an item, we need to push that to
+        // the foundry backend in order to get an id for the item.
+        // This way if a later migration depends on the item actually being created,
+        // it will work.
+        const migrationPhases: MigrationBase[][] = [[]];
+        for (const migration of migrationsToRun) {
+            migrationPhases[migrationPhases.length - 1].push(migration);
+            if (migration.requiresFlush) {
+                migrationPhases.push([]);
+            }
+        }
+
+        for (const migrationPhase of migrationPhases) {
+            if (migrationPhase.length) await this.runMigrations(migrationPhase);
+        }
+        await game.settings.set(SYSTEM_ID, "worldSchemaVersion", schemaVersion.latest);
+    }
+}

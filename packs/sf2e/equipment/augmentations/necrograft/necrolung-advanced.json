@@ -1,0 +1,70 @@
+{
+    "_id": "vvoIYWfv7OGgeEqR",
+    "folder": "ZfJ4Whszk7bGARUG",
+    "img": "icons/commodities/biological/pustules-red.webp",
+    "name": "Necrolung (Advanced)",
+    "system": {
+        "baseItem": null,
+        "bulk": {
+            "value": 0
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>Spongy black webbing radiates from this grayish purple mass of necrotized flesh that pulses when exposed to air. Specially grown in vats from waste produced in the necrograft manufacturing process, necrolungs allow living creatures to breathe efficiently and safely on Eox. You can breathe in any toxic atmosphere for up to 24 hours without taking damage, and you gain a +2 status bonus to saves against inhaled diseases and poisons.</p>\n<p>Installing or removing a necrolung takes only 1 minute and requires no skill checks as it slithers down your throat and integrates into your respiratory system. Unlike a commercial necrolung, this augmentation does count toward your implant limit.</p>"
+        },
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 10
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "sp": 9000
+            }
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Tech Core"
+        },
+        "quantity": 1,
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "item:trait:inhaled",
+                    {
+                        "or": [
+                            "item:trait:disease",
+                            "item:trait:poison"
+                        ]
+                    }
+                ],
+                "selector": [
+                    "saving-throw"
+                ],
+                "slug": "necrolung",
+                "type": "item",
+                "value": 2
+            }
+        ],
+        "size": "med",
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "necrograft"
+            ]
+        },
+        "usage": {
+            "value": "implanted"
+        }
+    },
+    "type": "equipment"
+}

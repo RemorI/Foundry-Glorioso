@@ -1,0 +1,38 @@
+{
+    "_id": "eNeSl5UNaqDwyNkp",
+    "folder": "YM8bZCKVGHokQXCG",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Eidolon's Wrath",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "class",
+        "description": {
+            "value": "<p>Your eidolon gains the @UUID[Compendium.pf2e.spells-srd.Item.Eidolon's Wrath] link spell, which they cast, instead of you. You determine the damage type when you gain the feat: acid, cold, electricity, fire, sonic, spirit, vitality, or void. As normal, your eidolon shares your Focus Points.</p>"
+        },
+        "level": {
+            "value": 6
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Impossible Magic"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "evolution",
+                "summoner"
+            ]
+        }
+    },
+    "type": "feat"
+}

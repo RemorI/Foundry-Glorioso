@@ -1,0 +1,53 @@
+{
+    "_id": "xS8ybzuqPSi3Jb8k",
+    "folder": "phXimIMG3QAD5oIz",
+    "img": "systems/pf2e/icons/actions/Passive.webp",
+    "name": "(Clockwork Creature) Wind-Up",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "interaction",
+        "description": {
+            "value": "<p>24 hours, [[/act disable-device dc=0]], standby</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.WindUp]</p>"
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Monster Core 2"
+        },
+        "rules": [
+            {
+                "itemId": "{item|id}",
+                "key": "ItemAlteration",
+                "mode": "override",
+                "property": "name",
+                "value": "PF2E.NPCAbility.ClockworkCreature.WindUp.Name"
+            },
+            {
+                "domain": "perception",
+                "key": "RollOption",
+                "label": "PF2E.NPCAbility.ClockworkWindUp",
+                "option": "wind-up",
+                "toggleable": true
+            },
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "wind-up"
+                ],
+                "selector": "perception",
+                "type": "circumstance",
+                "value": -2
+            }
+        ],
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "action"
+}

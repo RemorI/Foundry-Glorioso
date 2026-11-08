@@ -1,0 +1,50 @@
+{
+    "_id": "CUgmb7g65vYNT2hn",
+    "img": "icons/magic/earth/explosion-lava-stone-orange.webp",
+    "name": "Effect: Curse of Boiling Blood",
+    "system": {
+        "description": {
+            "value": "<p>You gain weakness to fire 20 and are slowed 1.</p>"
+        },
+        "duration": {
+            "expiry": null,
+            "sustained": false,
+            "unit": "unlimited",
+            "value": -1
+        },
+        "level": {
+            "value": 21
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Monster Core"
+        },
+        "rules": [
+            {
+                "key": "Weakness",
+                "type": "fire",
+                "value": 20
+            },
+            {
+                "key": "GrantItem",
+                "onDeleteActions": {
+                    "grantee": "restrict"
+                },
+                "uuid": "Compendium.pf2e.conditionitems.Item.Slowed"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

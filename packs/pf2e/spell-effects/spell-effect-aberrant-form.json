@@ -1,0 +1,521 @@
+{
+    "_id": "OH3sdHE6xWwOjq9v",
+    "img": "systems/pf2e/icons/spells/aberrant-form.webp",
+    "name": "Spell Effect: Aberrant Form",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.spells-srd.Item.Aberrant Form]</p>\n<p>You transform yourself into a Large aberration. You gain the aberration trait, as well as the following statistics and abilities:</p><ul><li><p>AC = 18 + your level. Ignore your armor's check penalty and Speed reduction.</p></li><li><p>13 temporary Hit Points.</p></li><li><p>Darkvision.</p></li><li><p>One or more unarmed melee attacks specific to the battle form you choose, which are the only attacks you can Strike with. You're trained with them. Your attack modifier is +18, and your damage bonus is +8. These attacks are Strength based (for the purpose of the enfeebled condition, for example). If your unarmed attack modifier is higher, you can use it instead.</p></li><li><p>Athletics modifier of +20, unless your own modifier is higher.</p></li></ul><p>You also gain specific abilities based on the type of aberration you choose:</p><ul><li><p><strong>Chuul</strong></p><ul><li><p>Speed 30 feet, swim 25 feet</p></li><li><p><strong>Melee</strong> <span class=\"action-glyph\">1</span> claw (reach 10 feet), <strong>Damage</strong> 2d8 bludgeoning, and after a successful Strike, you can spend an action to attempt to @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.Grab] the target.</p></li></ul></li><li><p><strong>Gogiteth</strong></p><ul><li><p>Speed 40 feet, climb 30 feet</p></li><li><p><strong>Melee</strong> <span class=\"action-glyph\">1</span> jaws, <strong>Damage</strong> 2d10 piercing, and after a successful Strike, you can spend an action to attempt to @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.Grab] the target</p></li><li><p><strong>Melee</strong> <span class=\"action-glyph\">1</span> leg (agile, reach 10 feet), <strong>Damage</strong> 2d6+8 piercing.</p></li></ul></li><li><p><strong>Gug</strong></p><ul><li><p>Speed 40 feet, climb 20 feet</p></li><li><p><strong>Melee</strong> <span class=\"action-glyph\">1</span> jaws (reach 10 feet), <strong>Damage</strong> 2d12 piercing</p></li><li><p><strong>Melee</strong> <span class=\"action-glyph\">1</span> claw (agile, reach 10 feet), <strong>Damage</strong> 2d8+8 slashing</p></li><li><p>your multiple joints allow you to fit through tight spaces as if you were a Medium creature.</p></li></ul></li><li><p><strong>Ofalth</strong></p><ul><li><p>Speed 30 feet;</p></li><li><p>+2 circumstance bonus on saves against disease and poison</p></li><li><p><strong>Melee</strong> <span class=\"action-glyph\">1</span> fist (reach 10 feet), <strong>Damage</strong> 2d12 bludgeoning.</p></li></ul></li></ul><hr /><p><strong>Heightened (6th)</strong> Your battle form is Huge, and the reach of your attacks increases by 5 feet. You must have space to expand, or the spell is lost. You instead gain AC = 21 + your level, 26 temporary Hit Points, attack modifier +22, damage bonus +13, and Athletics +23.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "minutes",
+            "value": 1
+        },
+        "fromSpell": false,
+        "level": {
+            "value": 5
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Impossible Magic"
+        },
+        "rules": [
+            {
+                "choices": [
+                    {
+                        "label": "PF2E.BattleForm.AberrantForm.ChoiceSet.Chuul",
+                        "value": "chuul"
+                    },
+                    {
+                        "label": "PF2E.BattleForm.AberrantForm.ChoiceSet.Gogiteth",
+                        "value": "gogiteth"
+                    },
+                    {
+                        "label": "PF2E.BattleForm.AberrantForm.ChoiceSet.Gug",
+                        "value": "gug"
+                    },
+                    {
+                        "label": "PF2E.BattleForm.AberrantForm.ChoiceSet.Ofalth",
+                        "value": "ofalth"
+                    }
+                ],
+                "key": "ChoiceSet",
+                "prompt": "PF2E.SpecificRule.Prompt.Form",
+                "rollOption": "aberrant-form"
+            },
+            {
+                "brackets": [
+                    {
+                        "start": 5,
+                        "value": {
+                            "armorClass": {
+                                "modifier": "18 + @actor.level"
+                            },
+                            "size": "lg",
+                            "skills": {
+                                "athletics": {
+                                    "modifier": 20
+                                }
+                            },
+                            "strikes": {
+                                "claw": {
+                                    "damage": {
+                                        "modifier": 8
+                                    },
+                                    "img": "icons/creatures/claws/pincer-crab-brown.webp",
+                                    "modifier": 18,
+                                    "traits": [
+                                        "reach-10"
+                                    ]
+                                }
+                            },
+                            "tempHP": 13
+                        }
+                    },
+                    {
+                        "start": 6,
+                        "value": {
+                            "armorClass": {
+                                "modifier": "21 + @actor.level"
+                            },
+                            "size": "huge",
+                            "skills": {
+                                "athletics": {
+                                    "modifier": 23
+                                }
+                            },
+                            "strikes": {
+                                "claw": {
+                                    "damage": {
+                                        "modifier": 13
+                                    },
+                                    "modifier": 22,
+                                    "traits": [
+                                        "reach-15"
+                                    ]
+                                }
+                            },
+                            "tempHP": 26
+                        }
+                    }
+                ],
+                "key": "BattleForm",
+                "overrides": {
+                    "senses": {
+                        "darkvision": {}
+                    },
+                    "speeds": {
+                        "land": 30,
+                        "swim": 25
+                    },
+                    "strikes": {
+                        "claw": {
+                            "ability": "str",
+                            "baseType": "claw",
+                            "category": "unarmed",
+                            "damage": {
+                                "damageType": "bludgeoning",
+                                "dice": 2,
+                                "die": "d8"
+                            },
+                            "traits": [
+                                "reach-10"
+                            ]
+                        }
+                    },
+                    "traits": [
+                        "aberration"
+                    ]
+                },
+                "predicate": [
+                    "aberrant-form:chuul"
+                ]
+            },
+            {
+                "key": "Note",
+                "predicate": [
+                    "aberrant-form:chuul"
+                ],
+                "selector": "claw-damage",
+                "text": "PF2E.BattleForm.Note.Grab",
+                "title": "{item|name}"
+            },
+            {
+                "brackets": [
+                    {
+                        "start": 5,
+                        "value": {
+                            "armorClass": {
+                                "modifier": "18 + @actor.level"
+                            },
+                            "size": "lg",
+                            "skills": {
+                                "athletics": {
+                                    "modifier": 20
+                                }
+                            },
+                            "strikes": {
+                                "jaws": {
+                                    "damage": {
+                                        "modifier": 8
+                                    },
+                                    "modifier": 18,
+                                    "traits": [
+                                        "reach-10"
+                                    ]
+                                },
+                                "leg": {
+                                    "damage": {
+                                        "modifier": 8
+                                    },
+                                    "modifier": 18,
+                                    "traits": [
+                                        "agile",
+                                        "reach-10"
+                                    ]
+                                }
+                            },
+                            "tempHP": 13
+                        }
+                    },
+                    {
+                        "start": 6,
+                        "value": {
+                            "armorClass": {
+                                "modifier": "21 + @actor.level"
+                            },
+                            "size": "huge",
+                            "skills": {
+                                "athletics": {
+                                    "modifier": 23
+                                }
+                            },
+                            "strikes": {
+                                "jaws": {
+                                    "damage": {
+                                        "modifier": 13
+                                    },
+                                    "modifier": 22,
+                                    "traits": [
+                                        "reach-15"
+                                    ]
+                                },
+                                "leg": {
+                                    "damage": {
+                                        "modifier": 13
+                                    },
+                                    "modifier": 22,
+                                    "traits": [
+                                        "agile",
+                                        "reach-15"
+                                    ]
+                                }
+                            },
+                            "tempHP": 26
+                        }
+                    }
+                ],
+                "key": "BattleForm",
+                "overrides": {
+                    "senses": {
+                        "darkvision": {}
+                    },
+                    "speeds": {
+                        "climb": 30,
+                        "land": 40
+                    },
+                    "strikes": {
+                        "jaws": {
+                            "ability": "str",
+                            "baseType": "jaws",
+                            "category": "unarmed",
+                            "damage": {
+                                "damageType": "piercing",
+                                "dice": 2,
+                                "die": "d10"
+                            },
+                            "img": "icons/creatures/abilities/mouth-teeth-crooked-blue.webp",
+                            "traits": [
+                                "reach-10"
+                            ]
+                        },
+                        "leg": {
+                            "ability": "str",
+                            "baseType": "leg",
+                            "category": "unarmed",
+                            "damage": {
+                                "damageType": "piercing",
+                                "dice": 2,
+                                "die": "d6"
+                            },
+                            "img": "icons/commodities/biological/legs-insect-brown.webp",
+                            "traits": [
+                                "agile",
+                                "reach-10"
+                            ]
+                        }
+                    },
+                    "traits": [
+                        "aberration"
+                    ]
+                },
+                "predicate": [
+                    "aberrant-form:gogiteth"
+                ]
+            },
+            {
+                "key": "Note",
+                "predicate": [
+                    "aberrant-form:gogiteth"
+                ],
+                "selector": "jaws-damage",
+                "text": "PF2E.BattleForm.Note.Grab",
+                "title": "{item|name}"
+            },
+            {
+                "brackets": [
+                    {
+                        "start": 5,
+                        "value": {
+                            "armorClass": {
+                                "modifier": "18 + @actor.level"
+                            },
+                            "size": "lg",
+                            "skills": {
+                                "athletics": {
+                                    "modifier": 20
+                                }
+                            },
+                            "strikes": {
+                                "claw": {
+                                    "damage": {
+                                        "modifier": 8
+                                    },
+                                    "modifier": 18,
+                                    "traits": [
+                                        "agile",
+                                        "reach-10"
+                                    ]
+                                },
+                                "jaws": {
+                                    "damage": {
+                                        "modifier": 8
+                                    },
+                                    "modifier": 18,
+                                    "traits": [
+                                        "reach-10"
+                                    ]
+                                }
+                            },
+                            "tempHP": 13
+                        }
+                    },
+                    {
+                        "start": 6,
+                        "value": {
+                            "armorClass": {
+                                "modifier": "21 + @actor.level"
+                            },
+                            "size": "huge",
+                            "skills": {
+                                "athletics": {
+                                    "modifier": 23
+                                }
+                            },
+                            "strikes": {
+                                "claw": {
+                                    "damage": {
+                                        "modifier": 13
+                                    },
+                                    "modifier": 22,
+                                    "traits": [
+                                        "agile",
+                                        "reach-15"
+                                    ]
+                                },
+                                "jaws": {
+                                    "damage": {
+                                        "modifier": 13
+                                    },
+                                    "modifier": 22,
+                                    "traits": [
+                                        "reach-15"
+                                    ]
+                                }
+                            },
+                            "tempHP": 26
+                        }
+                    }
+                ],
+                "key": "BattleForm",
+                "overrides": {
+                    "senses": {
+                        "darkvision": {}
+                    },
+                    "speeds": {
+                        "climb": 20,
+                        "land": 40
+                    },
+                    "strikes": {
+                        "claw": {
+                            "ability": "str",
+                            "baseType": "claw",
+                            "category": "unarmed",
+                            "damage": {
+                                "damageType": "slashing",
+                                "dice": 2,
+                                "die": "d8"
+                            },
+                            "img": "icons/commodities/claws/claw-brown-black.webp",
+                            "traits": [
+                                "agile",
+                                "reach-10"
+                            ]
+                        },
+                        "jaws": {
+                            "ability": "str",
+                            "baseType": "jaws",
+                            "category": "unarmed",
+                            "damage": {
+                                "damageType": "piercing",
+                                "dice": 2,
+                                "die": "d12"
+                            },
+                            "img": "icons/creatures/abilities/mouth-teeth-misshapen-pink.webp",
+                            "traits": [
+                                "reach-10"
+                            ]
+                        }
+                    },
+                    "traits": [
+                        "aberration"
+                    ]
+                },
+                "predicate": [
+                    "aberrant-form:gug"
+                ]
+            },
+            {
+                "key": "Note",
+                "predicate": [
+                    "aberrant-form:gug",
+                    "action:squeeze"
+                ],
+                "selector": "acrobatics",
+                "text": "PF2E.BattleForm.AberrantForm.GugSqueezeNote",
+                "title": "{item|name}"
+            },
+            {
+                "brackets": [
+                    {
+                        "start": 5,
+                        "value": {
+                            "armorClass": {
+                                "modifier": "18 + @actor.level"
+                            },
+                            "size": "lg",
+                            "skills": {
+                                "athletics": {
+                                    "modifier": 20
+                                }
+                            },
+                            "strikes": {
+                                "fist": {
+                                    "damage": {
+                                        "modifier": 8
+                                    },
+                                    "modifier": 18,
+                                    "traits": [
+                                        "reach-10"
+                                    ]
+                                }
+                            },
+                            "tempHP": 13
+                        }
+                    },
+                    {
+                        "start": 6,
+                        "value": {
+                            "armorClass": {
+                                "modifier": "21 + @actor.level"
+                            },
+                            "size": "huge",
+                            "skills": {
+                                "athletics": {
+                                    "modifier": 23
+                                }
+                            },
+                            "strikes": {
+                                "fist": {
+                                    "damage": {
+                                        "modifier": 13
+                                    },
+                                    "modifier": 22,
+                                    "traits": [
+                                        "reach-15"
+                                    ]
+                                }
+                            },
+                            "tempHP": 26
+                        }
+                    }
+                ],
+                "key": "BattleForm",
+                "overrides": {
+                    "senses": {
+                        "darkvision": {}
+                    },
+                    "speeds": {
+                        "land": 30
+                    },
+                    "strikes": {
+                        "fist": {
+                            "ability": "str",
+                            "category": "unarmed",
+                            "damage": {
+                                "damageType": "bludgeoning",
+                                "dice": 2,
+                                "die": "d12"
+                            },
+                            "img": "systems/pf2e/icons/unarmed-attacks/fist.webp",
+                            "traits": [
+                                "reach-10"
+                            ]
+                        }
+                    },
+                    "traits": [
+                        "aberration"
+                    ]
+                },
+                "predicate": [
+                    "aberrant-form:ofalth"
+                ]
+            },
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "aberrant-form:ofalth",
+                    "item:trait:disease"
+                ],
+                "selector": [
+                    "saving-throw"
+                ],
+                "type": "circumstance",
+                "value": 2
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "value": []
+        }
+    },
+    "type": "effect"
+}

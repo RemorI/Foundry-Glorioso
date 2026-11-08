@@ -1,0 +1,48 @@
+name: Anachronism Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      module:
+        description: Module
+        required: true
+        type: choice
+        options:
+          - pf2e-anachronism
+          - sf2e-anachronism
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: pnpm/setup@v3
+        with:
+          cache: true
+
+      - name: Build
+        run: 'pnpm build:anachronism --module=${{ inputs.module }}'
+
+      - name: Update Manifest
+        run: |
+          MODULE_VERSION=$(grep -oP '(?<="version": ")[^"]+' dist/${{ inputs.module }}/module.json | tr -d '\n')
+          perl -pi -E "s|latest/download/${{ inputs.module }} \\.zip|download/$MODULE_VERSION/${{ inputs.module }}.zip|" dist/${{ inputs.module }}/module.json
+          echo "moduleVersion=$MODULE_VERSION" >> $GITHUB_ENV
+
+      - name: Zip Files
+        working-directory: './dist/${{ inputs.module }}'
+        run: zip -r ./module.zip ./*
+
+      - name: Create Version Release
+        id: create_version_release
+        uses: ncipollo/release-action@v1
+        with:
+          name: '${{ env.moduleVersion }} (${{ inputs.module }})'
+          allowUpdates: false
+          draft: false
+          prerelease: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: "./dist/${{ inputs.module }}/module.json,./dist/${{ inputs.module }}/module.zip"
+          tag: '${{ inputs.module }}-${{ env.moduleVersion }}'

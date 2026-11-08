@@ -1,0 +1,37 @@
+{
+    "_id": "u5cPwhuCd3xTAlWl",
+    "folder": "t9YjVtaVtRJEhN9q",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Extend Boost",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "class",
+        "description": {
+            "value": "<p>You can increase the duration of your eidolon's boosts. You learn the @UUID[Compendium.pf2e.spells-srd.Item.Extend Boost] link spell.</p>"
+        },
+        "level": {
+            "value": 1
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Impossible Magic"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "summoner"
+            ]
+        }
+    },
+    "type": "feat"
+}

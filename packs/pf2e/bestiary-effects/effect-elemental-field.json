@@ -1,0 +1,47 @@
+{
+    "_id": "f8HuM5Ar6SSHNHBx",
+    "img": "icons/magic/lightning/bolt-strike-forked-blue.webp",
+    "name": "Effect: Elemental Field",
+    "system": {
+        "description": {
+            "value": "<p>You take a –1 status penalty to saves against electricity spells.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "minutes",
+            "value": 1
+        },
+        "level": {
+            "value": 2
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Monster Core"
+        },
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "item:trait:electricity",
+                    "item:type:spell"
+                ],
+                "selector": "saving-throw",
+                "type": "status",
+                "value": -1
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "value": []
+        }
+    },
+    "type": "effect"
+}

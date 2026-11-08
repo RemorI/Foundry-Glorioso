@@ -1,0 +1,762 @@
+## 1.7.0
+
+### System Improvements
+
+- (Chromatic Penguin) Keep ammunition rules off alternate weapon usages
+- (Dantar) Display confirmation dialog when clicking to remove rule elements
+- (Dantar) Inherit runes and materials from linked weapons for NPC attacks
+- (Dantar) Make Shift a default confirmation skip button
+- (In3luki) Add `defense` filter to Compendium Browser spell tab
+- (stwlam) Add support for applying elite/weak adjustments to non-persisted NPCs
+
+### Bugfixes
+
+- (Cerapter) Fix ammunition crafted with `CraftingAbility.craft()` not getting the infused trait
+- (Chromatic Penguin) Allow 8-digit organized play numbers and brush up level bump toggle styling
+- (Chromatic Penguin) Default troop movement to Stride when combat starts
+- (Chromatic Penguin) Fix hotbar macros for roll option toggles with suboptions
+- (Chromatic Penguin) Fix NPC class DC for critical specialization saves
+- (Chromatic Penguin) Fix token resize errors when no scene is viewed
+- (Chromatic Penguin) Hide parties and party members a user does not have permission to see in the directory
+- (Chromatic Penguin) Place templates exclusively on the currently viewed scene level
+- (Chromatic Penguin) Prevent V1 sheet styles from leaking into V2 sheets
+- (Chromatic Penguin) Refrain from resolving ignored RollOptions
+- (Dantar) Make lore proficiencies adjust to sheet width
+- (stwlam) Fix handling of `syncWeaponFeatures` flag when regenerating NPC attacks
+
+### Data Updates
+
+- (Ikaguia) Add automation for Exceptional Reach, Long Reach, Stretching Reach, and Whirling Swipe
+- (kromko) Fix minor formatting issues and inline links in technomancer feats
+- (kromko) Improve formatting of tables in Improving Equipment journal page
+- (Longstrider) Add "One regional language" to ancestries
+- (Longstrider) Add spellshape feats to technomancer Programming Languages
+- (Longstrider) Automate technomancer basics and brush up feat descriptions
+- (Longstrider) Brush up grenadier, junkomancer, mechanic, and nanocyte archetypes
+- (Longstrider) Fix Magefoil Grenades' and Szynegation Grenades' groups and base items
+- (nobbyfix) Fix Nanite Snipe's traits, damage type, and description
+- (steve148) Fix Null Space Chamber's price and Server of the Streamer's skill name
+- (Tikael) Fix description of SF2e android Constructed feature
+- (Tikael) Make Glitching, Suppressed, and Untethered condition items
+
+### Under the Hood
+
+- (Chromatic Penguin) Add AppV2 actor base sheet
+- (Dantar) Make land speed nullable
+- (stwlam) Divert system token management to upstream API
+
+## 1.6.1
+
+### Bugfixes
+
+- (Chromatic Penguin) Fix detached window handling across apps
+- (Chromatic Penguin) Fix missing spell level on spell prep links
+- (Chromatic Penguin) Fix modifier tooltip type options on Firefox and brush up value stepper
+- (Dantar) Fix familiar abilities formatting
+- (Dantar) Fix skill proficiency selector sizing on Firefox
+- (Dantar) Make Pick-a-thing's placeholder localizable
+- (Dantar) Prevent AE-likes pushing duplicate entries onto complex-object arrays
+
+### Data Updates
+
+- (Ambrose) Add Improvised Weapons entry and correct Improving Equipment section in GM screen
+- (Ambrose) Add missing Junk Grenade spell and localize Junk trait
+- (Ambrose) Correct Necrotic Infusion (Tactical)'s name
+- (Dantar) Fix grenade rarities
+- (kromko) Add missing localizations
+- (kromko) Add missing trait to mechanic class features and prerequisite to Quickened Nanites
+- (kromko) Correct corrosive grenade names
+- (kromko) Fix formatting and capitalization in some item and spell names and descriptions
+- (kromko) Update necrolung description and rules, and remove the superior version
+- (Longstrider) Brush up mechanic class features, actions, and feats
+- (nobbyfix) Add localization for Tech Core armor traits
+- (nobbyfix) Update publication source for various Starfinder items
+- (Tikael) Fix usage of Arcane Adapter and Impact Enhancer
+
+### Under the Hood
+
+- (Chromatic Penguin) Convert `AncestrySystemData` to `TypeDataModel`
+
+## 1.6.0
+
+### Highlights
+
+- (Ambrose, Mecha Maya, Rigo, Tikael) Add Tech Core content
+
+### System Improvements
+
+- (Chromatic Penguin) Add `affects` option to `AdjustDegreeOfSuccess`
+- (Chromatic Penguin) Add temporary HP roll options
+- (Chromatic Penguin) Use listed damage for PC Strike REs with a fixed attack modifier
+- (Dantar) Allow Strike RE for PCs to use own or fixed attack modifier
+- (Dantar) Brush up persistent damage chat card
+- (Dantar) Show travel speed breakdown tooltip
+- (Idle) Add `preselectChoices` to auras
+- (kromko) Apply derived feat traits in compendium browser filters
+- (kromko) Improve feat embed headings and support a generic feature level label
+- (stwlam) Make RE-created lore skills non-editable from PC and NPC sheets
+- (stwlam) Prepare base data of lore skills early enough for AE-likes
+- (Supe) Close tooltip when opening scene darkness slider
+
+### Bugfixes
+
+- (Ambrose) Fix localization for World Clock settings in Scene config
+- (Chromatic Penguin) Allow null NPC skill bases and show the resolved modifier as placeholder
+- (Chromatic Penguin) Always give magazine weapons a capacity of 1
+- (Chromatic Penguin) Brush up compendium browser accessibility and theming
+- (Chromatic Penguin) Fix class features without a source ID not being granted on level up
+- (Chromatic Penguin) Fix logo border and PF logo showing on SF limited character sheet
+- (Chromatic Penguin) Fix mirrored tokens ignoring scale in chat portraits
+- (Chromatic Penguin) Keep drag data for content links in detached and AppV2 windows
+- (HeliumAnt) Fix parchment backgrounds when served under a route prefix
+- (kromko) Strip special characters and lower diacritic marks in ABC Picker search
+- (stwlam) Check that token is on viewed level in `TokenPF2e#_isVisionSource`
+- (stwlam) Handle unquantified Reach trait when determining reach of NPC attacks
+- (stwlam) Honor `Scene#environment#darknessLock` in `ScenePF2e#darknessSyncedToTime`
+
+### Data Updates
+
+- (kromko) Change SF archetypes journal to use enhanced feat embeds
+- (kromko) Clean up some equipment effects
+- (kromko) Consolidate some lores
+- (kromko) Fix a few embedded item sources
+- (kromko) Fix some broken links
+- (kromko) Fix typo in Blinding Awe description
+- (kromko) Remove inline checks and links from trait descriptions
+- (Longstrider) Add Medicinal Trinket effect
+- (Longstrider) Add missing traits to Strength in Numbers
+- (Longstrider) Add Nightmare spell link to Desna entries
+- (Longstrider) Brush up brenneri, copaxi, fonqugon, formian, ijtikri, izalguun, madrosarai, maraquoi, moyishuu, and novian feats
+- (Longstrider) Brush up Secrets of the Swarm item descriptions
+- (steve148) Fix functionary's mask rarity
+- (theksi) Add actors and items from Starfinder Society scenarios 2-01 through 2-06
+- (Tikael) Clean up and localize background lore skills
+
+### Under the Hood
+
+- (stwlam) Consolidate perception preparation among creature actors
+
+## 1.5.1
+
+### System Improvements
+
+- (Chromatic Penguin) Add Raise a Shield button to NPC sheet when shield is held
+- (Chromatic Penguin) Convert `SpellcastingCreateAndEditDialog` to `ApplicationV2` and Svelte
+- (Chromatic Penguin) Convert Treat Wounds and Encouraging Words to `DialogV2` and action macros
+- (Dantar) Include Ancestry trait in feat filters
+- (kromko) Add header, traits, and publication options to feat embeds
+- (stwlam) Allow `RuleElement#resolveValue` to return `null` from string inputs
+- (stwlam) Make world clock's dawn and dusk times configurable
+- (stwlam) Re-render world clock and sync darkness on all scenes upon setting change
+- (stwlam) Set initial value of world clock's time convention according to locale
+
+### Bugfixes
+
+- (Chromatic Penguin) Apply inline check roll options to defense DCs
+- (Chromatic Penguin) Fix apply-once weaknesses triggering when persistent damage is first applied
+- (Chromatic Penguin) Fix TokenImage rule overrides on world load
+- (Chromatic Penguin) Fix versatile and modular toggles on basic unarmed strike
+- (Chromatic Penguin) Fix versatile toggle on combination weapons' melee usage
+- (Chromatic Penguin) Only count tokens inside an effect area's highlighted squares
+- (Dantar) Acquire modifier adjustments for Sweep and Backswing
+- (Dantar) Add label for `force` field of BaseSpeed rule element
+- (sgennaoui) Fix flanking for tiny creatures
+
+### Data Updates
+
+- (Ambrose) Add missing resistances and weaknesses to the Hardlight Scamp
+- (Dantar) Add speed bonus to Speed of Thought
+- (Dantar) Add universal Ancestry trait to feats
+- (Dantar) Make BattleForm remove unmentioned speeds (Errata)
+- (Longstrider) Add Starfinder Society notes to Galactic Adventures, Player Core, and Tales from the Vast items
+- (Longstrider) Fix +3 Weapon Potency Crystal item level
+- (Tikael) Fix action cost of Elemental Weapon
+- (Tikael) Fix damage of Wight Scientist's Needler Pistol
+- (Tikael) Fix errors in Close Quarters feature and Talphi ancestry
+
+### Under the Hood
+
+- (Chromatic Penguin) Adopt shared `TextSearch`/`SearchInput` in ABC picker, formula picker, roll inspector, and trade dialog
+
+## 1.5.0
+
+### Highlights
+
+- (SpartanCPA) Add Secrets of the Swarm content
+
+### System Improvements
+
+- (Chromatic Penguin) Convert `CreatureConfig`, `IdentifyItemPopup`, and several inline confirmation dialogs to `ApplicationV2`
+- (Dantar) Add `force` option to the `BaseSpeed` rule element
+- (FolkvangrForgent) Fit emanations created from region tools to hovered tokens
+- (Idle) Add roll option to differentiate actual casting from send-to-chat
+- (Idle) Allow inline template distance to use `resolve`
+- (kromko) Remove empty filters and traits not associated with any items in compendium browser
+- (oWave) Make `_validateType` throw errors instead of returning them
+- (sgennaoui) Expire the Greater Cover effect from tower shields
+- (steve148) Allow attaching upgrades with "installed-on" usage
+- (stwlam) Limit selection of "coin" category in treasure sheet to standard coin items
+- (stwlam) Pull recent core updates to token-appearance template to system copy
+- (stwlam) Refrain from showing default icons in item chat cards
+
+### Bugfixes
+
+- (Dantar) Keep selected key attribute when refreshing Class item
+- (Dantar) Prevent modifier duplication on derived speeds
+- (FolkvangrForgent) Add missing ellipse shape to footprint function
+- (Idle) Do not consume charges if a trick-magic-item check fails or is canceled
+- (Idle) Fix `TagSelectorBasic` not displaying current selections for `number` values
+- (kromko) Fix Compendium Browser sort by price
+- (kromko) Localize Compendium Browser option to sort by name
+- (Maksim) Fix Earn Income chat roll label localization
+- (neonyuzu) Cap character sheet HP input to max less unrecoverable
+- (stwlam) Revert "Always use action image for unusable actions in character sheet"
+
+### Data Updates
+
+- (Dantar) Add REs for feats deriving speeds not from land
+- (Dantar) Add REs for travel-speed bonuses
+- (Dire Weasel) Fix some terrain predicates
+- (kromko) Fix Light Armor Mastery embed in Envoy class journal
+- (kromko) Fix localization key for DoS upgrade against emotion effect
+- (kromko) Remove out of place controlled description from in front of Conditions page in SF GM Screen journal
+- (Longstrider) Brush up bantrid feat descriptions
+- (Longstrider) Make solarian potency crystal bonus apply to maneuvers
+- (Rigo) Update several TokenLight rule elements to use Adaptive Attenuation
+- (SpartanCPA) Correct typos in Starfinder Equipment compendia
+- (SpartanCPA) Localize increased degree of success for emotion effects
+- (SpartanCPA) Support flaming runes on NPC attacks
+- (theksi) Add SFS 2-01 actors
+- (Tikael) Add icons for Secrets of the Swarm ancestries
+
+### Under the Hood
+
+- (Idle) Bundle all operations into a single server query in the `applyActorGroupUpdate` helper
+
+## 1.4.1
+
+### System Improvements
+
+- (Chromatic Penguin) Convert XP macro to `ApplicationV2`
+- (Dantar) Allow item alteration RE to add thrown trait
+- (stwlam) Remove system intervention in creating chat bubbles following changes in FVTT 14.366
+- (stwlam) Automatically swap out standardized ancestry traits with parent actors' ancestry traits
+
+### Bugfixes
+
+- (Chromatic Penguin) Restore rules-accurate measured-template coverage
+- (Chromatic Penguin) Fix duplicate lore prevention in NPC skill editor
+- (Chromatic Penguin) Fix light mode parchment backgrounds
+- (Chromatic Penguin) Support choosing ancestry attribute boosts and flaws with multiple options
+- (Dantar) Apply materials from base damage to splash damage roll
+- (kromko) Localize takable-once option on feat details tab
+- (kromko) Prevent Actor sheet from erroring when IWR references a homebrew damage type that doesn't exist in the world
+- (stwlam) Keep finesse trait on ranged weapons generated from thrown usage variants
+
+### Data Updates
+
+- (Ambrose) Add missing languages for Gnarefuroid and Vulkarisu ancestries
+- (DocSchlock) Brush up Guilt of the Grave World
+- (kromko) Add predicate to Urog's Conglobation Immobilized RE
+- (Longstrider) Add skill feat link to Clinging Gnarefuroid heritage
+- (Longstrider) Add skill feat link to Vault Diviner background
+- (Longstrider) Brush up Absalom Station archetypes
+- (Longstrider) Brush up Absalom Station items
+- (Longstrider) Brush up gnarefuroid feats
+- (Longstrider) Brush up nuar feats
+- (Longstrider) Brush up vulkarisu feats
+- (Longstrider) Fix some SF weapon categories
+- (Tikael) Add icons for new Starfinder ancestries
+
+## 1.4.0
+
+# Highlights
+
+- (Ambrose) Add Beyond the Blood Door content
+- (Ambrose) Starfinder Adventure: Rescue on Raxil content
+- (Ambrose, Mecha Maya, Tikael) Add Absalom Station content
+
+### System Improvements
+
+- (Chromatic Penguin) Convert `AdjustmentDialog`, `CompendiumMigrationStatus`, `LootNPCsPopup`, `MigrationSummary`, `NPCSkillsEditor`, `SpellPreparationSheet`, and `TrickMagicItemPopup` to `ApplicationV2`
+- (Supe) Always use action image for unusable actions in character sheet
+
+### Bugfixes
+
+- (Chromatic Penguin) Fix opening settings menus and logging prefixes in SF2e
+- (Chromatic Penguin) Fix shield block button not untoggling after applying damage
+- (Chromatic Penguin) Fix double applied penalties when battle form statistics are compared with actor's own
+- (Chromatic Penguin) Fix PF2e style table borders in `ApplicationV2`
+- (Chromatic Penguin) Fix trait and grip toggles on battle form strikes
+- (Chromatic Penguin) Fix weapon trait toggles on attached weapons
+- (Dantar) Update weapon damage die calculation for errata
+- (stwlam) Prevent `onDeleteActions` being dropped from Choice Set rule elements
+- (Supe) Fix ammo quantity input when there is more than one type
+
+### Data Updates
+- (Ambrose) Add missing traditions from Sift the Sphere
+- (Ambrose) Add missing traits to Vulkarisu items and effect
+- (Ambrose) Fix image path for UBP item/currency
+- (Dantar) Add effects to multi-weapon aim
+- (Dantar) Fix Talphi size
+- (Dire Weasel) Fix automation for Irreproachable Contemplative
+- (Kromko) Fix Gooey Engulf inline escape action's DC
+- (Longstrider) Add witchwarper dedication errata
+- (Longstrider) Fix Despair Crystal formatting and Explorer Buggy publication
+- (Longstrider) Fix Quantum Reaver and Reaction Breacher stats
+
+## 1.3.0
+
+### Bugfixes
+
+- (Chromatic Penguin) Accept a leading "+" in modifier dialog inputs on Firefox
+- (Chromatic Penguin) Apply roll options to inline damage rolled from effect tooltips
+- (Chromatic Penguin) Fix attribute builder breaking after opening it for a second character
+- (Chromatic Penguin) Fix background color on dragged equipment
+- (Chromatic Penguin) Fix Cursebound being unusable in SF2e
+- (Chromatic Penguin) Fix runes added to handwraps via item alterations not applying to unarmed strikes
+- (Chromatic Penguin) Fix senses granted via Details not upgrading
+- (Chromatic Penguin) Fix stale and clobbered state in Svelte applications
+- (Chromatic Penguin) Fix total price not updating on item transfer dialogs
+- (Chromatic Penguin) Fix two-handed grip toggle on Strike rule elements
+- (Chromatic Penguin) Improve trade initiation: party-sheet member drops, request expiry with alerts on both sides, prevent sending to familiars
+- (Chromatic Penguin) Improve visual accessibility of spell slot number input
+- (Chromatic Penguin) Include origin item roll options in effects dragged from a sheet
+- (Chromatic Penguin) Match self-applied effect card body to the standard action card
+- (Chromatic Penguin) Recalculate encounter threat/XP when a combatant's level or alliance changes
+- (Chromatic Penguin) Remove manipulate trait from alchemical bomb strikes
+- (Chromatic Penguin) Truncate long names, fix broken search icon in Trade Dialog
+- (Chromatic Penguin) Snapshot area fire save DC in chat message context
+- (Dantar) Add back TakesNoDamage text on applyDamage card
+- (Dantar) Apply each persistent damage from dragged formula
+- (Dantar) Make clown car respect elevation and levels
+- (Dantar) Prevent chat bubbles if message isn't in the in-character style
+- (Kromko) Fix not being able to remove spells from deities
+- (Noisyink) Use check icon for trade accept button in unaccepted state
+- (stwlam) Prevent some some fields in the Aura RE form from resetting their values
+- (Supe) Fix issues with transferring credits
+
+### Data Updates
+
+- (Kromko) Add prerequisite to Folded Paradoxes feat
+- (Kromko) Change Stellar Rush to give bonus to all speeds
+- (Longstrider) Add SF2e ancestries and versatile heritages trait descriptions
+- (Longstrider) Add Sunburst Garland (SFS 1-10) and fix item effects levels
+
+## 1.2.0
+
+### System Improvements
+
+- (Dire Weasel) Add support for ring templates
+- (Geliogabalus) Add weapon boost automation
+- (JiDW) Improve Dice So Nice integration with Damage Type
+- (stwlam) Set cone angle to 90 when created from scene controls
+- (stwlam) Set default token ring to steel
+- (Supe) Add expend tag to weapon description and strikes
+
+### Bugfixes
+
+- (iDantar) Hide ActorsDeadAtZero setting from players
+- (In3luki) Restore missing radio buttons in shield block dialog
+- (In3luki) Restore missing reroll icons in chat context menu
+- (Chromatic Penguin) Fix hiding roll opposer names
+- (Noisyink) Fix DOM helpers returning null cross-window in PopOut!
+- (Noisyink) Preserve token mirror state when applying TokenImage scale override
+- (stwlam) Allow "base" actor and item subtypes to construct
+- (stwlam) Set `ignored` if predicate fails in `StrikeRuleElement#beforePrepareData`
+- (Supe) Fix icon of add/remove currency dialog
+- (Supe) Fix tags in dark mode formula picker
+- (Supe) Include piloting/computers in RK skills list in party sheet
+
+### Data Updates
+
+- (Ambrose) Add localization to Coshyco's Adjust Shape ability
+- (Geliogabalus) Fix missing Tool Rat statistics
+- (iDantar) Make Izalguun Large
+- (Kromko) Add missing SF physical item compendiumSources; remove non-compendium compendiumSources
+- (Kromko) Clean up whitespace around inline buttons
+- (Kromko) Fix invalid language keys
+- (Longstrider) Set augmentations' Bulk to 0
+- (Noisyink) Add toggleable Glitching Failure roll option
+- (Rigo) Fix bad id on Burrowing Charge
+
+### Under the Hood
+
+- (Noisyink) Avoid duplicate feat group slots in custom campaigns slots
+- (stwlam) Remove migrations for foundry versions up to and including 10
+- (stwlam) Support retrieval of highest and lowest save from creatures
+
+## 1.1.2
+
+### System Improvements
+
+- (stwlam) Add "robot" trait to creature identification
+
+### Bugfixes
+
+- (Chromatic Penguin) Refresh token bars on Temp HP updates.
+- (Kromko) Fix item transfer message localization
+- (steve148) Update changelog link in foundry to the new one
+- (stwlam) Fix aura rule forms not updating includeSelf
+- (stwlam) Fix tokens being visible when partially clipping through a wall
+- (Supe) Fix errors migrating certain old effects with invalid badge min/max fields
+- (Supe) Fix issues attack rolls using item spellcasting features such as kinetic activation
+- (Supe) Remove invalid expend and unprepare buttons from flexible spellcasting
+
+### Data Updates
+
+- (Ambrose) Add missing ryphorian trait description
+- (Ambrose) Correct Flash Grenade item descriptions
+- (Ambrose) Add Tales from the Vast content
+- (Kromko) Add missing localization strings
+- (steve148) Add sniper weapon crit specialization
+
+## 1.1.1
+
+### Bugfixes
+
+- (stwlam) Restore close button to attack popout
+- (Supe) Fix migration failure on certain embedded spells in consumables
+
+### Data Updates
+
+- (Kromko) Fix reposition link in Magnetic Orb Bantrid's description
+
+## 1.1.0
+
+### System Improvements
+
+- (stwlam) Have darkness lights work like darkness regions when controlling a token with darkvision
+
+### Bugfixes
+
+- (Dantar) Apply holy/unholy to sanctified NPC attacks
+- (Dantar) Fix precision immunity crit damage miscalculation
+- (Chromatic Penguin) Fix updating scene darkness via darkness adjuster tool
+- (oWave) Fix feat delete on ABCSheet silently failing
+- (Rigo) Use modifier type to find proficiency modifier in mythic rerolls
+- (stwlam) Add system roll-link listeners to detached windows
+- (stwlam) Fix setting message mode for slash command damage rolls, checks with the "secret" trait
+- (Supe) Avoid coercing boost to number in trait config
+- (Supe) Fix tag strikethrough when rerolling untrained improvisation using mythic proficiency
+- (Supe) Fix troop creation in unviewed scenes
+- (Supe) Prevent troop token flags from being saved to prototype tokens
+- (Supe) Propagate elite/weak updates to all troop siblings
+
+### Data Updates
+
+- (Ambrose) Add missing languages to select Galactic Ancestries ancestries
+- (Ambrose) Add Society Boons from Scenario #1-15
+- (Rigo) Fix Note selectors in Solar Weapon effects
+- (Rigo) Suppress volley trait penalty with Sniper operative specialization
+- (Tikael) Fix nodocite hunter level
+
+## 1.0.3
+
+### Bugfixes
+
+- (stwlam) Fix field name in appearance tab of `TokenConfig`
+- (stwlam) Fix show damage dialog toggle
+- (stwlam) Restore overlay icon on tokens of dead actors
+- (stwlam) Restore status effects title bar
+- (Supe) Fix colors of whisper and blind inline rolls in dark mode
+- (Supe) Fix empty tooltips flashing when hovering over the effect panel
+- (Supe) Fix items and actions sent by players defaulting to blind
+- (Supe) Fix styling of character language tags
+
+### Data Updates
+
+- (Ambrose) Add an index to the Ancestry Journals and link to GM and Player screens
+- (Ambrose) Add Osharu language to the Osharu ancestry
+- (Ambrose) Correct weapon group for Orocoran's Projective Vomit Ancestral Unarmed Attack
+- (Kromko) Fix spell link in Mutant Goblin's Mutant Magic
+- (Longstrider) Correct GA ancestries' descriptions
+
+## 1.0.2
+
+### System Improvements
+
+- (7H3LaughingMan) Allow modification of roll-twice behavior in damage-roll hooks
+- (stwlam) Convert Check Prompt Generator to `ApplicationV2`, add raw output preview
+- (Supe) Convert Attack Proficiencies dialog to `DialogV2`
+
+### Bugfixes
+
+- (In3luki) Fix Compendium Browser header controls
+- (In3luki) Fix updating physical-item prices
+- (In3luki) Fix `TextEditorPF2e#_createInlineRoll` failing to return pre-rolled inline rolls
+- (stwlam) Fix double-barrel icon on PC sheet
+- (stwlam) Fix handling of damage changes in NPC Attack sheet
+- (stwlam) Fix localization of damage-application chat message
+- (stwlam) Have hearing detection test against region surfaces
+- (stwlam) Restore token effect icons
+
+### Data Updates
+
+- (Ambrose) Add description and spell effect to Monstrosity form
+- (Ambrose) Move Recharge Weapon to the Cantrips folder
+- (Ambrose) Remove Quick Coercion's self-grant RE
+- (Kromko) Add missing Galactic Ancestries localization strings
+- (Longstrider) Fix Golarion ancestries' descriptions
+- (Longstrider) Brush up SF2e versatile heritages
+- (Longstrider) Correct Cryopike's weapon group
+- (Rigo) Fix path to cover-reduction flag in Aim's ephemeral effect
+
+## 1.0.1
+
+### Bugfixes
+
+- (In3luki) Fix detection of inline damage rolls
+- (In3luki) Fix Region shape resetting after release of shape control handles
+- (In3luki, stwlam) Fix localization of check-roll message flavor
+- (stwlam) Fix style incapability with V14 code-mirror elements in Note Rule Element form
+- (stwlam) Fix issue preventing changing viewed scene
+- (stwlam) Restore styling of inline roll links according to roll (now message) mode
+
+### Data Updates
+
+- (Ambrose) Add missing traits to Android ancestry
+- (Ambrose) Correct Fonqugon's land speed
+- (iDantar) Condense bless aura and spell effects
+
+## 1.0.0
+
+### Bugfixes
+
+- (stwlam, Supe, In3luki) Update to support V14
+
+### Data Updates
+
+- (Ambrose) Add missing spellscasting entry and abilities to Hesper
+- (Kromko) Fix Paragon Maratan Headache's level
+
+## 0.0.11
+
+### Bugfixes
+
+- (stwlam) Fix errors with token document flags during data preparation
+
+### Data Updates
+
+- (Ambrose) Correct Insect Form's Mantis damage type
+- (Kromko) Fix Loosen Skin trigger
+- (Kromko) Fix Rubberlimb Orocoran heritage name
+- (Kromko) Fix Tactical Medkit Treat Wounds predicate
+
+## 0.0.10
+
+### Bugfixes
+
+- (stwlam) Fix issue causing stack overflow during some token data preparation
+
+## 0.0.9
+
+### System Improvements
+
+- (stwlam) Add option to NPC Attack items to exempt them from MAP
+
+### Bugfixes
+
+- (stwlam) Fix refreshing scene controls when "Show World Clock" setting is changed
+- (Tikael) Add `item:trait` roll options to action macros
+
+### Data Updates
+
+- (Ambrose, Mecha Maya, Tikael) Add content from Galactic Ancestries
+- (Ambrose) Add missing deities and philosophies
+- (Ambrose) Add Necromancer's Apprentice Background to Duplicates.json and update Armored Coat's id to match PF2e
+- (Ambrose) Add Notes to Scare to Death
+- (Ambrose) Expand GM Screen Chase subsystem journal entry
+- (Ambrose) Update slug for Sharp-Toothed Vlaka's Jaw attack
+- (Kromko) Add Armor base sf2e localization overrides
+- (Kromko) Add description and built-in upgrades to Shobhad Longrifle
+- (Kromko) Add journal links to ancestries, classes and dedications
+- (Kromko) Add REs to Emotionless and Widen Spell to match PF2e, add missing terrain to Terrain Expertise
+- (Kromko) Fix AbadarCorp Rep archetype capitalization
+- (Kromko) Fix Cosmic Dragon Adult Spellcaster's Stellar Breath inline check
+- (Kromko) Fix publication for Emissary, heightening for Summon Instrument, and minor typos
+- (Kromko) Fix Space Pirate archetype journal entry intro
+- (Kromko) Remove `strong` tags around trait lists in Heal/Harm and consumable activations
+- (Longstrider) Add spell effect for Eldritch Bond
+- (Longstrider) Fix Hefty 2 trait description
+- (Longstrider) Fix the Aeon Guard and Veskarium Paratrooper
+- (Maksim) Add deployment toggle to Ultralight Wings
+- (Tikael) Add missing language to Vlaka
+
+### Under the Hood
+
+- (stwlam) Avoid eager construction of all synthetic actors during world load
+- (stwlam) Remove system `JournalSheet` subclass
+
+## 0.0.8
+
+### Bugfixes
+
+- (iDantar) Fix embedded shields not being alterable by rule elements
+- (Justin Hayes) Fix a bug preventing players from trading
+- (Supe) Also resolve persistent damage for troop segments and familiars
+- (Supe) Also sync troop tokens on token creation and deletion
+- (Supe) Fix roll options and selectors passed to inline escape checks
+
+### Data Updates
+
+- (Ambrose) Add missing Animal Form spell and missing forms
+- (Ambrose) Add missing Emotionless Android level 1 ancestry feat
+- (Ambrose) Update Retractable trait description to match SF Player Core text
+- (Kromko) Add missing Dispelling Globe, deduplicate Disappearance, restore `compendiumSource` to actor-embedded spells and refresh them from compendium
+- (Kromko) Add missing localization strings to SF2e
+- (Kromko) Add rituals from Alien Core
+- (Kromko) Fix `@Check` typos for skills and lores
+- (Kromko) Refresh Sihedron Guard Thunderstriker's spell gem
+- (Kromko) Remove duplicate Gambler background
+- (Longstrider) Implement Alien Core creature improvements (A-E)
+- (Tikael) Brush up Guilt of the Grave World NPCs and backgrounds
+- (Tikael) Fix loading of Replica Zo Microphones
+
+## 0.0.7
+
+### Bugfixes
+
+- (Supe) Fixed pinging and delete confirmations for non-troop combatants
+- (Supe) Remove throttle for troop thresholds
+
+### Data Updates
+
+- (Ambrose) Remove heightened 4th rank Enlarge spell effect
+- (eltariel) Update saving throw predicate for Cloned Astrazoan to use "or"
+- (Mecha Maya) Add missing languages from Alien Core
+
+## 0.0.6
+
+### Bugfixes
+
+- (Supe) Fix troop tokens with custom scaling such as from art modules
+
+### Data Updates
+
+- (Cuingamehtar) Fix Host Dragons' Frighful Presence DC
+- (Longstrider) Implement minor creature fixes and "grappled" blanket fix
+- (Tikael) Add icons for remaining SF ancestries and versatile heritages
+
+## 0.0.5
+
+### System Improvements
+
+- (Alex Clark) Add support for weapon capacity item alterations
+- (Mecha Maya) Add Starfinder Pact Standard (AG) to world clock options
+- (Supe) Add system implementation for troops
+- (Supe) Allow saves with a modifier of 0 in hazards
+- (Surge) Add SF2e locale overrides for Home World and Port of Call
+- (Surge) Update SF2e PFS tab for SFS2
+
+### Bugfixes
+
+- (In3luki) Fix missing DC value in some check context flags
+- (In3luki) Fix mutation from `system.time.value` reference in spell filter
+- (Kromko) Fix aura-blind areas appearing when aura touches a wall
+- (Rigo) Fix Take Cover action in SF2e
+- (stwlam) Set condition pack ID according to system in `ConditionManager`
+- (Supe) Propagate magical trait for magical weapon upgrades
+- (Surge) Fix avert gaze and NPC Raise a Shield
+- (Surge) Fix GM Vision toggle button for SF2e
+- (Tikael) Fix logic in DamageAlteration dice face upgrades/downgrades
+- (Tikael) Fix player looting in SF2e
+
+### Data Updates
+
+- (Ambrose) Add Besmara
+- (Ambrose) Add Dragon Form to SF2e proper and remove it from the Duplicates list
+- (Ambrose) Add miscellaneous missing effects to SF2e
+- (Ambrose) Add SF2e GM screen
+- (Ambrose) Correct bonus value for Religious Talisman
+- (Ambrose) Delete and redirect duplicate Guilt of the Grave World actors
+- (Ambrose) Update Murder in Metal City classes, feats, ancestries, ancestry features, heritages and backgrounds.
+- (Ashgar225) Fix Status Effect Duplication
+- (CotillionTheRope) Add missing backgrounds of Gambler, Detective, Emissary, Prisoner, and Raised by Belief
+- (Dire Weasel) Add deadly d4 and d6 traits
+- (Dire Weasel) Update description of Shadow Blast and remove spell overlays
+- (Kromko) Add Sense Direction SF2e localization override
+- (Kromko) Fix Danger Awareness link in archetype journal
+- (Kromko) Fix Recall Knowledge links
+- (Kromko) Link Avert Gaze effect to its action
+- (Kromko) Remove the mention of aiuvarin heritage in SF2e Multitalented feat
+- (Kromko) Straighten single quotes and fix minor whitespace issues
+- (Kromko) Update data of some actors from NPC Core
+- (Longstrider) Add Analyze Environment exploration activity
+- (Longstrider) Add missing skill feats to SF2e
+- (Longstrider) Add Resilient trait description
+- (Longstrider) Brush up Nodocite Incarcerator's Catchapon
+- (Longstrider) Change SF2e Summon Celestial spell to a unique entry
+- (Longstrider) Polish GM Screen journal
+- (Longstrider) Update Specialty Crafting feat and delete incorrect condition links
+- (Mecha Maya) Fix Sensory Diversity feature description formatting.
+- (Rigo) Add Spiritual Armament to Starfinder duplicates list
+- (SpartanCPA) Correct description for New Game
+- (SpartanCPA) Correct size of the Spellcaster Host Dragons
+- (SpartanCPA) Remove duplicated SFS actor
+- (steve148) Add suspended respiration ancestry feature to Sarcecian ancestry
+- (steve148) Fix Walking Armory penalties
+- (steve148) Update description for cosmic and tech traits
+- (steve148) Update Ysoki starting languages list
+- (steve148) Use credits instead of gp in spell cost
+- (Surge) Add SFS2 purchasable boons
+- (Surge) Use token assets for all SF2e iconic prototype tokens
+- (Tikael) Add Consecrated Keycaps from MiMC
+- (Tikael) Add content from SFS 1-15 and 1-16
+- (Tikael) Add missing NPC only Boost trait
+- (Tikael) Change all system flag references to `flags.system`
+- (Tikael) Duplicate Blazing Bolt and Harm from the PF2e spells
+- (Tikael) Fix several issues in SFS actors
+
+## 0.0.4
+
+### Bugfixes
+
+- (Supe) Fix updates to nested ammo wiping the ammo type
+- (Supe) Support apex items that don't require investment
+- (Supe) Adjust bulk resizing such that smaller items on larger actors are 1/2 instead of 1/10.
+- (Supe) Fix effects panel image paths with parenthesis not showing
+- (Tikael) Fix scaling item price by size in SF2e
+
+### Data Updates
+
+- (Ambrose) Correct typo in Solar Shield effect's rule elements
+- (Ambrose) Remove Rare tag from Elebrian
+- (Ambrose) Update feats and class features in SF2e Iconics
+- (Ambrose) Add Android Level 5 feats and select duplicate backgrounds to duplicates list
+- (CotillionTheRope) Add missing Ysoki ancestry feats
+- (Longstrider) Add missing human feats
+- (Kromko) Add tech trait to consumables and refresh physical items and spells for all SF2e actors
+- (Kromko) Rename and merge Double Draw
+- (Infamous Sky) Brush up MiMC actors
+- (Mecha Maya) Add missing monster strike traits from Alien Core
+- (Mecha Maya) Add effects for Enhance Weapon and Enhance Body
+- (Shazburg) Fix level and traits of Big Mouth
+- (Sphess Marine) Fix crafting crit success daily reduction
+- (Simon Ward) Tidy description for Spell Effect: Glow Up
+- (Tikael) Fix loading of Blockthrower and Reality Ripper
+- (Tikael) Automate heightened Protection effect
+
+## 0.0.3
+
+- (Chromatic Penguin) Fix attribute builder not opening in SF2e
+
+## 0.0.2
+
+### System Improvements
+
+- (Mecha Maya, Supe) Add support for modular and add config to SF2e weapons
+- (Chromatic Penguin) Update attribute builder to appv2
+- (stwlam) Add system banner
+- (Supe) Add piloting actions for /act syntax
+
+### Bugfixes
+
+- (Supe) Fixed an issue preventing players from buying items from merchants
+
+### Data Updates
+
+- (Ambrose) Add missing Android and Ysoki Lore Feats
+- (Ambrose) Add missing Fire Wisp and Converted Yearling Arabuk actors
+- (Ambrose) Fix some incorrect item prices
+- (Supe) Update ids of medkits, repair toolkits, and holoskins to match pf2e equivalents

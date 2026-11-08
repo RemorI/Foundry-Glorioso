@@ -1,0 +1,47 @@
+{
+    "_id": "wjhhlh82MABhfxCO",
+    "folder": "QaUJAei0L3HtxPbn",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Strix Vengeance",
+    "system": {
+        "actionType": {
+            "value": "reaction"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "ancestry",
+        "description": {
+            "value": "<p><strong>Frequency</strong> once per 10 minutes</p>\n<p><strong>Trigger</strong> You, or a strix ally you can see, are damaged by an enemy's critical hit.</p><hr /><p>You dedicate yourself to destroying those who harm your kin. Until the end of your next turn, you deal an additional 1d6 precision damage on Strikes against the triggering enemy. The bonus increases to 2d6 if you use a striking weapon or unarmed attack and 3d6 if you use a <em>major striking</em> weapon or unarmed attack.</p>"
+        },
+        "frequency": {
+            "max": 1,
+            "per": "PT10M"
+        },
+        "level": {
+            "value": 5
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Lost Omens Cheliax, Infernal Inheritance"
+        },
+        "rules": [],
+        "selfEffect": {
+            "name": "Effect: Strix Vengeance",
+            "uuid": "Compendium.pf2e.feat-effects.Item.Effect: Strix Vengeance"
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "emotion",
+                "mental",
+                "strix"
+            ]
+        }
+    },
+    "type": "feat"
+}

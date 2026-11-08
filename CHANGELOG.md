@@ -1,1130 +1,886 @@
-<!-- markdownlint-disable MD024 -->
-
-# CHANGELOG
-
-## 6.1.2
-
-### Fixes
-
-- Fixed an issue when computing non-string Formulas
-
-## 6.1.1
-
-### Fixes
-
-- Fixed an issue when computing a Formula consisting only of white spaces
-- Fixed an issue on Item Displayers hidden columns computationnot getting computed fields from item
-
-## 6.1.0
-
-### Features
-
-- [#541] [#544] [#534] Rework computation system to compute each property only once, and fix all computation order issues.
-- Added the option to set a specific initiative formula in every template
-- [#289] Added `fetchInitiative` and `setInitiative` functions to edit initiative with Formulas
-- Added the `list-detailed` format in the `print-effects` function
-
-### Fixes
-
-- [#554] [#523] Fixed Active Effects not multiplying when using status effect counters
-- [#555] Fixed property initialization for Formulas across the system
-
-## 6.0.2
-
-### Fixes
-
-- [#540] Fixed undo and redo buttons not working
-- [#539] Fixed Rich Text Area display in Label configuration
-- [#536] Fixed Rich Text Area alignment
-- Fixed issue causing errors when a Component Type was not recognized
-- Fixed warning in Active Effect definition
-
-## 6.0.1
-
-### Fixes
-
-- Fixed an issue with Active Effects changes on Hidden Attributes
-
-## 6.0.0
-
-### Features
-
-- **BREAKING** - V14 compatibility - System is no longer compatible with v13
-- **BREAKING** - Removed Item Modifiers and Status Effect Modifiers - You should now use Active Effects
-
-### Fixes
-
-- Fixed issue where the contextg menu on Dynamic Table Add Rows button would stay indefinitely open
-- [#532] Fixed item creation dialog to allow creation ofitems with another template than the default
-
-## 5.2.1
-
-### Fixes
-
-- Added missing translations
-- Fixed wiki generation
-- Fixed CSS rule which caused horizontal panels to be unbalanced
-
-## 5.2.0
-
-### Features
-
-- Added the `printEffects` function
-- Added the ability to select an alternative template when creating an Item from an Item displayer
-- [#181] Added Mirror Components
-
-### Fixes
-
-- [#522] Fixed Template Active Effects duplication on Template refresh
-- [#442] Fixed direct dice display showing roll when rolling privately
-
-## 5.1.0
-
-### Features
-
-- Changed Component Config Styling to match with UI-changes from Foundry
-- Added option to adjust the editable-state of a Component by a Formula
-- Added a vertical align option on Panels
-- [#384] Added an Item Creation button on Item Containers
-
-### Fixes
-
-- Suppressed computation errors on the first pass of computation of entities
-- Fixed display of progress bar when reloading multiple sheets from a template
-- Fixed readonly predefined rows in Dynamic Tables, where the first row was editable
-- [#512] Fixed custom size not displaying the custom size field right away in some components
-- [#515] Fixed Tokenizer compatibility
-- [#513] Fixed Title and Subtitle labels not red when clickable
-
-## 5.0.2
-
-### Fixes
-
-- [#503] Fixed CSS classes not applied on the right level on templates
-- [#504] Fixed Active Effect creation process to not update multiple times (and not trigger multiple computations)
-- Fixed Active Effect application process during computation
-- [#498] Added an option in components to display HTML as text in the template view
-- Fixed Item Displayer saving when only one template exists in the world
-
-## 5.0.1
-
-### Fixes
-
-- Added a pop-up to disable the compute intensive 4.5.1 migration check
-- Fixed Item filtering in case the filter formula ends in error
-- Fixed buttons hover color to not be transparent
-- Fixed sheet size changing when updating a field
-
-## 5.0.0
-
-### Features
-
-- **BREAKING** - V13 compatibility - System is no longer compatible with v12
-- **BREAKING** - Template ID and Document Type CSS classes are now at the root of the Application for AppV2
-- **BREAKING** - [#433] The argument `entity` in Formula scripts is now referring directly to the Actor or Item triggering the script. A passthrough property has been added to maintain some compatibility with the `entity.entity` call, but is deprecated and will be removed in CSB 7.0.0 - Foundry v15.
-- Added default images for templates
-- Added icon preview in Label configuration
-- Added a Label to display when an Active Effect Container of a Dynamic Table is empty
-- Changed meter default maximum to 100
-- Added default picture
-- Added the possibility to pass a single string to the `array` function which will be splitted by commas
-- Added a shortcut (`CTRL + Enter`) in the Component Settings Editor which saves the component
-- Added `throwUncomputableError` as a directly callable function in scripts and deprecated the existing `entity.templateSystem.throwUncomputableError` call
-
-### Fixes
-
-- Fixed issue with Dropdown not showing keys when labels are empty
-- Fixed Extensible Table automatic sorting
-- Added a default image to status effects
-- Fixed multiple functions to allow fallback values to be explicitly undefined, to allow handling by the fallback() function
-- Deduplicated dropdown option keys : if multiple of the same key is found, only the first iteration is generated and added to the dropdown
-- Fixed handling of multiple statement formulas (separated with a `;`)
-
-## 4.8.5
-
-### Fixes
-
-- [#507] Fixed an error when trying to access token config from various places like the default token config
-
-## 4.8.4
-
-### Fixes
-
-- Fixed isTemplate getter for Items, which causes issues with Item Piles
-
-## 4.8.3
-
-### Fixes
-
-- Fix for a rendering bug triggering a warning notification on any sheet update for players who have no permissions over the sheet
-- [#496] Fixed Tiny sized inputs size
-
-## 4.8.2
-
-### Fixes
-
-- Fixed Number field controls display
-
-## 4.8.1
-
-### Fixes
-
-- Fixed radio button incorrectly storing its uncomputed value
-- Fixed component editor keeping old forms hidden instead of deleting them, causing collisions
-- [#452] Fixed column visibility handling for Dynamic Tables and Item Displayers
-
-## 4.8.0
-
-### Features
-
-- [#320] Added Picture Component
-- [#212] Added Edition minimum role
-- [#434] Added Readonly mode for predefined lines in Dynamic Tables
-- [#162] Added option to span a component on multiple rows or columns
-- [#452] Added Hidden Columns for Dynamic Tables and Item Displayers
-- Added Template ID as CSS class to User Input Templates windows
-- Added Custom Increments settings in Number Fields (Thanks to adorablecoin)
-
-### Fixes
-
-- [#487] Fixed Rich Text Area dialog editor save when HTML editor is opened
-- Fixed handlebars templates not including the template ID as a CSS class
-- [#490] Fixed id handling for checkboxes and radio buttons + removed unecessary field refocus for sheet v2
-- [#491] Closing a user input no longer triggers the rest of the process and instead cancel the message
-
-## 4.7.3
-
-### Fixes
-
-- [#489] Fixed attribute bars not being selectable in the token config
-
-## 4.7.2
-
-### Fixes
-
-- [#484] Fixed unlinked token initialization
-- [#485] Fixed Panels always collapsible
-- [#486] Fixed component movement causing components to disappear
-- Fixed undo / redo buttons
-
-## 4.7.1
-
-### Fixes
-
-- [#483] Fixed Active Effect Container initialization & display
-
-## 4.7.0
-
-### Features
-
-- Switched Typescript to v12 types
-- Added AppV2 sheets for Actors & Items
-- [#282] Added a Label to display when an Item Container is empty (Thanks to adorablecoin)
-- Switched all dialogs to Appv2 (except deprecated modifier dialog)
-- Allowed Rich Text Areas in User Input Templates
-- [#473] Active effects suggested in Active Effect Containers are now filtered by the tag filter of the Container
-
-## 4.6.7
-
-### Fixes
-
-- [#476] Fixed issue with Active Effect not applying when the final result is 0
-
-## 4.6.6
-
-### Fixes
-
-- [#469] Fix sheetroll sending Label Roll message to chat even if checkbox is unchecked in Label configuration
-- [#471] Fix Active Effect Displayer not displaying any effect if no tag is set in the filter
-
-## 4.6.5
-
-### Fixes
-
-- Fixed active effect values using reference
-- Fixed Active Effect Displayer losing tags field when an error occured on saving
-- [#465] Fixed Active Effect computation when a property is not yet computed in the effect
-- [#461] Replaced text inputs by textareas to allow resizing in Active Effect Config
-- [#464] Improved Active Effect Displayer Description column 1 sentence mode by keeping only the first bullet in case the description is a list
-- [#467] Fixed template active effect reloading - Now deleting active effects from the old template
-
-## 4.6.4
-
-### Fixes
-
-- [#459] Fixed Active Effect upgrade & downgrade modes handling
-- [#460] Fixed Convenient Effects Nested & Sub Effects handling with status effects
-
-## 4.6.3
-
-### Fixes
-
-- [#457] Fixed Active Effect side-effect when coming from an Item
-- Optimized computation by not computing disabled Active Effect keys unless needed
-- Fixed Active Effect application when using a key not present in props
-
-## 4.6.2
-
-### Fixes
-
-- Fixed active effect creation not setting the correct flags
-
-## 4.6.1
-
-### Fixes
-
-- Added missing russian translations
-
-## 4.6.0
-
-### Features
-
-- Added filter system for Active Effect Displayers, based on tags set on Active Effects
-- Added special status effects configuration
-- Added documentation on the tagging system and special status effects configuration
-- Added readonly option to the count column of Active Effect Displayers
-
-### Fixes
-
-- Made Convenient Effects passive by default
-- Fixed modifier conversion to include tags by default and disable active effects according to active modifier groups
-- Fixed global template reloading to not crash when token references a deleted actor
-- Fixed active effect toggling in User Input Template
-- [#455] Fixed active effect handling for other modules
-- Fixed an issue with ActiveEffect creation triggering an error message on other players screens
-- Fixed an issue with transferred ActiveEffect trying to be computed wrongly
-
-## 4.5.1
-
-### Fixes
-
-- Fixed Active Effect computation order
-- Fixed Active Effect application when key formula targets multiple fields (using lookupRef or array function)
-- Fixed Active Effect key computation not using the right trigger entity
-- Added Modifiers to Active Effects conversion
-- Added missing RU translations
-
-## 4.5.0
-
-### Potential issues
-
-- Field calculations are now cast into the most fitting type. This means strings 'true' and 'false' are now cast into the corresponding boolean, and numeric string are now cast to numbers. This can potentially break some Formulas which do the casting manually.
-
-### Deprecations
-
-- Deprecated Item modifiers and Status Effect modifiers, to be removed in CSB 6.0.0 - Foundry 14
-
-### Potential issues
-
-- Field calculations are now cast into the most fitting type. This means strings 'true' and 'false' are now cast into the corresponding boolean, and numeric string are now cast to numbers. This can potentially break some Formulas which do the casting manually.
-
-### Deprecations
-
-- Deprecated Item modifiers and Status Effect modifiers, to be removed in CSB 6.0.0 - Foundry 14
-
-### Features
-
-- Added possibility to use formulas in the classes-field of every Component (conditional formatting)
-- Added `img`, `uuid` and `id` to the standard-properties of every entity
-- Added variable `this` for self-references
-- Added russian translation (thanks to Друманин Дрин (Drumanin Drin))
-- [#446] Added indentation and removed Template History for Template Exports
-- Added progress bar for Template reloads
-- Added more Template reload options (e.g. Tokens in Scenes)
-- Added a checkbox to activate / deactivate Active Effects from a Character Sheet
-- Added Custom Active Effects feature :
-  - Added buttons on active effects to manage a predefined list of Active Effects
-  - Added a Dropdown in the Active Effect Container to optionally select a predefined Active Effect to add
-  - Added full integration of now-recommended module [DFreds Convenient Effects](https://foundryvtt.com/packages/dfreds-convenient-effects)
-  - Added full integration of now-recommended module [Status Counter](https://foundryvtt.com/packages/statuscounter)
-  - Items can now be modified by an Active Effect
-  - [DEPRECATION] Deprecated Item modifiers and Status Effect modifiers, to be removed in CSB 6.0.0 - Foundry 14
-  - Added Active, Origin and Description columns to Active Effect Container
-  - Added Status Effect Customization
-- Added button to open Documentation in Settings Tab
-
-### Fixes
-
-- Fixed an issue with sub templates and user input template not saving correctly
-- Changed requirements for module `Chat Commander`, making it optional
-- [#439] Fixed Rich Text Area left alignment
-- [#448] Fixed Number Field wrongly triggering relative modification when its value is a negative number
-- Fixed an issue with Item Displayer auto-sorting not using column keys to sort items. Both column key and item key work when Auto-sorting
-
-## 4.4.2
-
-### Fixes
-
-- [#430] Fixed an issue with the preCreateChatMessage hook
-- Fixed add multiple rows dialog to autofocus the row count field and validate on enter key
-- Fixed field refocus on update to focus item correctly and not refocus parent actor
-- [#431] Fixed roll parsing for dice pools display
-- [#404] Reworked delay entity saving to make it manual
-
-## 4.4.1
-
-### Fixes
-
-- Fixed system.json referencing an obsolete script
-
-## 4.4.0
-
-### Features
-
-- Added possibility to add multiple rows at once in a Dynamic Table
-- [#138] Added possibility to set a custom width for input fields
-- [#207] Added an option to directly display all rolled dice from a roll in the chat message card
-
-### Fixes
-
-- Fixed an issue when dragging an item from a sheet to the items directory
-- [#427] Fixed an issue on Mac preventing component duplication on drag & drop
-- [#429] Fixed an issue preventing players to add items to their items
-
-## 4.3.2
-
-### Fixes
-
-- [#424] Fixed issue with item duplication
-
-## 4.3.1
-
-### Fixes
-
-- Fixed issue preventing creation of an item inside an item in an actor
-
-## 4.3.0
-
-### Features
-
-- Added ability to add items to other items
-- Added function `fetchFromParent()`, which will replace `fetchFromActor('attached', ...)`
-- Added new functions `alookup()`, `lookupRange()`, `fallback()`, `fetchFromUuid()`, `setValues()`, `array()`
-- Reworked the function `concat()`
-- Added the possibility to have multiple keys inside 1 modifier (separated by comma)
-- Adjusted `lookupRef()` to return an Array instead of a single value due to the change above
-- Adjusted parameter `propertyName` in `setPropertyInEntity()` to also accept an Array due to the change above
-- Switched all Rich Text Editors to ProseMirror
-
-### Fixes
-
-- consoleLog() and consoleTable() now actually let values pass through as they should instead of returning `undefined`
-- Fixed an issue, where user-defined properties could collide with Token-properties
-- [#409] Fixed a bug, where Template IDs wouldn't be exported
-- Fixed a bug, where local variables in Label Roll Messages wouldn't be considered when calling user input dialogs
-- [#379] Fixed a bug causing undefined values in Item Displayers to be populated with the values of previous items
-- [#418] Fixed Dynamic Tables & Item Container sorting system
-- [#397] Fixed Dynamic Tables default value handling, correctly computing default values & formulas in default values
-- [#417] Fixed an issue with text editors opening too small
-- Fixed an issue, where names of Active Effect wouldn't be displayed in ActiveEffectModifiers when using a custom configuration
-
-## 4.2.0
-
-### Features
-
-- Added new Component `ActiveEffectContainer`
-- Added function `find()`, which does the same as `first(lookup(...))`
-- Added more Icons in component config for easier indication (e.g. if a field allows formulas)
-- Added Effect Change Data-handling of Active Effects
-
-### Fixes
-
-- Fixed a bug, where 'See hidden attributes' was missing in Items
-- Fixed deprecation warnings
-- Fixed Label message style to In Character
-- Fixed Item Displayer computation system to compute name and id even if no other column is present
-- Fixed performance issue in function importation
-
-## 4.1.1
-
-### Fixes
-
-- Fixed package builder
-
-## 4.1.0
-
-### Technical Features
-
-- Added mandatory `getTechnicalName` method for Component classes. This will output a warning in the console until Foundry v13 compatibility version.
-- Allowed Component Registration to only take one argument : the Component Class
-
-### Features
-
-- Added the ability to drag and drop rolls to the Macro Hotbar
-- Added translation support
-- Added french translation
-- Added german translation
-
-### Fixes
-
-- Fixed Dynamic Tables wrongly allowing any type of component as a column - Restrictions are back in place
-- Fixed Tabbed Panels not accepting dropped component
-- Fixed Macro rolls from ItemContainer
-
-## 4.0.1
-
-### Fixes
-
-- Fixed Dice so Nice! integration
-- Fixed `setPropertyInEntity()` for unlinked Actors
-
-## 4.0.0
-
-### Technical Features
-
-- Refactored CSB-specific functions in Formula.js to FormulaFunctionImporter.ts
-
-### Features
-
-- **BREAKING** - V12 compatibility - System is no longer compatible with v11
-- **BREAKING** - V12 compatibility - Grid settings have been removed in favor of core Foundry's settings
-- **BREAKING** - Removed deprecated fetchFromDynamicTable and getRefFromDynamicTable functions
-- Added `TemplateSystem#throwUncomputableError()` to force recomputation when encountering undefined properties in the current computation cycle
-
-## 3.2.5
-
-### Fixes
-
-- Fixed issue with 3.2.4 migration on old Dynamic Tables
-
-## 3.2.4
-
-### Fixes
-
-- Fixed an issue where Item Container were not referencable anymore
-- Fixed dynamic table's internal properties adressing
-- Fixed issue with lookup erroring when no data was found
-- Fixed issue with Label prefix & suffix causing sheet to not render when Formula errors
-
-## 3.2.3
-
-### Fixes
-
-- Fixed an issue with Dynamic Tables when deleting rows
-- Fixed issues with 3.2.2 migration not being complete
-
-## 3.2.2
-
-### Fixes
-
-- [#370] Fixed an issue causing lookup to return an empty array when values should be found in keyed Labels
-- Fixed an issue causing Item Containers to retain values of deleted Items
-- Fixed a performance issue with sheet computations
-- Fixed an issue with updates when using fetchFromActor function after setPropertyInEntity
-- Fixed API-links in Readme
-- Fixed Active Effect config
-- Removed 'customProps' from ComputablePhraseOptions
-
-## 3.2.1
-
-### Fixes
-
-- Fixed issue preventing template modifiers edition
-
-## 3.2.0
-
-### Features
-
-- Added button to open the assigned template sheet on a character or item
-- Added display of template modifiers in item modifier dialog
-- Added display of hidden attributes and attribute bars in actors
-- Reworked Meter rendering to allow for value display
-
-### Fixes
-
-- Fixed an issue with Label chat functions
-- Fixed an issue with components nested too deep into sheets
-- [#361] Fixed issue with rich text editors closing on error in component dialogs
-- Fixed an issue with number Field which would not save the value 0 when empty
-
-## 3.1.3
-
-### Fixes
-
-- [#364] Fixed error with lookup function when Table key does not have values
-- Fixed error with ConditionalModifierList computing on Templates
-- Fixed error on component edition falsely believing being in an extensible table
-- Fixed issue with Modifier keys computing in User Input Templates + Local vars editing objects
-- [#366] Fixed issue with Predefined Lines sorting & Undo / Redo handling
-- [#288] Fixed reference displaying in in-sheet rich text editors
-
-## 3.1.2
-
-### Fixes
-
-- Added item filter migration
-- Fixed item container display when bold head and empty column name
-- [#336] Fixed arguments for calls to getConfigForm
-- Fixed issue with Dropdowns in templates
-
-## 3.1.1
-
-### Fixes
-
-- [#363], [#356] Fixed issue with duplicated keys in templates causing actors not to open
-- Fixed issue with lookup computation
-- Fixed issue with Dynamic Tables and Item Containers autosorting
-
-## 3.1.0
-
-### Technical Features
-
-- Switched codebase to TypeScript
-- Switched formula computation to component's code
-- Switched chat message generation to component's code
-
-### Features
-
-- [#280] Labels executing formulas without chat message
-- [#228] Added Filtering & Sorting for Item Containers & Dynamic Tables
-- Added `sameRowIndex()`
-- Added `localVars` & `options` to Script-Expressions
-- Added `lookup` and `lookupRef` functions replacing `fetchFromDynamicTable` and `getRefFromDynamicTable`
-- [#180] Made Item Containers referençable by the `lookup` and `lookupRef` functions, and the `sameRow` and `sameRowRef` inside Item Containers columns
-- Added autocompletion in Text Fields
-- Added `range` option to Number Field display
-- [#232] Added Collapsible Panels
-- [#300] Added Meter element
-- Added option in Settings to set minimum Role for Item Modifier Config
-- Added option in Settings to set minimum Role for Reloading a Sheet
-- Added version switch helper
-- Added ability to drag an item from a sheet using all the item button
-- Added `escapeQuotes` function
-
-### Fixes
-
-- Fixed a bug where tooltip-formulas would not work when using references (Item / Dynamic Table)
-- Fixed a bug where visibility-formulas would not work when using references (Item / Dynamic Table)
-- Fixed a bug where dropdown-formulas would not work when using references (Item / Dynamic Table)
-- Fixed a bug where visibility-formulas would override role & permission-settings
-- Delete-operations in Dynamic Tables now delete rows instead of setting a delete-flag (excluding predefined lines)
-- Item Modifiers now have a bigger input-field for keys
-- Disabled preselected Item Templates when creating an Item Container
-- Fixed a bug where initial Checkbox value wouldn't be set correctly
-- Fixed computation of hidden Dynamic Tables when there were changes in the predefined lines
-- [#342] Fixed a bug where initial Radio Button Group value wouldn't be set correctly
-- [#214] Fixed a bug where Template Filters in Item Containers wouldn't be imported correctly
-- [#328] Reworked Filtering for Item Containers (now uses Formulas)
-- [#346] Values of Attribute Bars are now Numbers instead of Strings (with numbers)
-- [#347] Fixed a bug where sameRow() would always return 0 on empty strings despite having a default-value
-- Fixed a bug where deleted Items wouldn't be removed until re-rendering
-- Fixed a bug where multiple executions of `setPropertyInEntity()` would cause issues with updates
-- [#350] Fixed a bug where updating a Character while an Observer has its sheet opened would cause an error
-- Fixed Label computation when Label has more than 10 Formulas
-- Fixed issue causing component movement in template to add `_copy` suffix
-- Fixed issue with text containing quotes (`'`) in Formulas
-- [#208] Fixed issue with unique items preventing adding a duplicated item to the same actor
-- Fixed an issue where container duplication caused key duplication in its contents
-
-## 3.0.0
-
-### Features
-
-- **BREAKING** - V11 compatibility - System is no longer compatible with v10
-- **BREAKING** - Deprecated formula syntax has been removed
-- Added function 'notify()'
-- Added formula-support for tooltips
-- Added option to use formulas as options in dropdown-lists
-- [#211] allow usage of [dice tags] in roll formula
-- [#313] Added comparison with match in fetchFromDynamicTable
-- [#314] Added option to hide empty ItemContainer
-- Added an option to display Item status in Item Containers for GM
-- Added the option to disable template filtering in Item Containers
-- Added customSystemBuilderInit hook fired after initialization of CSB
-
-### Fixes
-
-- Fixed formula computing when using conditional modifier list in user input template
-- Fixed issue with undeletable predefined lines transferring their status to other lines on line movement
-- [#319] Fixed issue with modifiers when final computed value should be 0
-
-## 2.4.4
-
-### Fixes
-
-- Fixed slow world loading times
-
-## 2.4.3
-
-### Fixes
-
-- Fixed issue with delayed saving functionality on items
-
-## 2.4.2
-
-### Fixes
-
-- Fixed formula computation inside other formulas
-- [#306] Fixed active effect computation
-- Fixed issue in Formulas after using fetchFromActor
-- [#308] Fixed issue causing button labels to be triggered when typing Enter
-- Fixed issue with large sheet saving lags on bulk edition
-- Fixed issue adding non assignable templates in item template choices
-
-## 2.4.1
-
-### Fixes
-
-- Fixed speaker on Label rolls
-- Fixed Dynamic Table roll issue on deletion
-- Added 'linkedEntity' to script-execution as context
-- [#302] Fixed some dialogs width
-
-## 2.4.0
-
-### Features
-
-- Added checked by default option to checkboxes
-- Added control style option to number fields
-- [#155] Added Conditional Modifiers
-- Added 'entity' to script-execution as context
-- Added Dynamic Table functions to User Input Templates triggered from a Dynamic Table
-- Added Formulas to field default values
-- Added Formulas to radio buttons values
-- Added ability to prevent players from adding rows in Dynamic Tables
-- Added ability to prevent players from deleting predefined rows in Dynamic Tables
-
-### Fixes
-
-- Fix NumberField hidden on uneditable, non-template actors
-- [#292] Fixed an issue with keyed-labels in user input templates
-- Fixed an issue preventing the creation of a component with the same key as a Dynamic Table column or Item Container label
-- [#274] Fixed Item image display
-
-## 2.3.1
-
-### Fixes
-
-- Fixed issue with active effects not computing correctly
-- Fixed issue with dice so nice integration and chat messages display
-- [#275] Fixed issue with legacy templates not displaying correctly in new actors & items
-- Fixed issue when using Numbers inside setPropertyInEntity function
-
-## 2.3.0
-
-### Features
-
-- Added consoleLog and consoleTable functions
-- Added undo / redo buttons
-- Added new function: switchCase()
-- Added 'fetchFromActor()' ('getPropertyDataFromActor()' is now deprecated)
-- Added option to use formulas for keys in item modifiers
-- [#200] Added item template modifiers
-- [#126] Added ability to edit properties from Formulas
-- [#153] Added ability to apply modifiers to Dynamic Table Fields
-- [#166] Added predefined lines to Dynamic Tables
-- Updated chat commands library verified version
-- [#215] Added delete warning on component deletion
-- [#205] Added possibility to retrieve the name of Actors and Items with the key 'name'
-- [#233], [#242], [#251] Added possibility to include custom JavaScript
-- [#271] Added ability to reference actor's dynamic table in an item's dropdown list
-- [#170] Added more options to user inputs
-- Added item image display in item containers in place of the briefcase icon
-- [#262] Added Radio Button components
-- Added button style for Labels
-- Added save on close for Rich Text Dialogs
-- [#246] Added User Input Templates
-- Added v11 compatibility
-
-### Fixes
-
-- [#245] Fixed issue where fetchFromActor wouldn´t work in item modifiers
-- [#236] Fixed tabs error when pre-selected or first tab visibility is false
-- [#245] Fixed tabs error when pre-selected or first tab permission is not enough
-- [#264] Fixed import of Item Templates
-- [#201] Fixed dynamic table function usage in Number fields min & max values
-- [#209] Fixed Dice Pool display exploding in chat message explanation
-- [#270] Fixed issue with Table causing error when trying to add a component in a row after an empty row
-- [#216] Fixed issues with default values not added to character from the initial reload
-- Fixed issues with Right click on Labels
-- Fixed issues with chat message visibility
-- Fixed issues with actor & item data handling
-
-## 2.2.7
-
-### Fixes
-
-- Fixed issues with item sub-template edition
-
-## 2.2.6
-
-### Fixes
-
-- Fixed issues with item edition
-
-## 2.2.5
-
-### Fixes
-
-- Fixed issues with drag & drop on tabs
-- Fixed issue which prevented reloading template if template was closed
-- Fixed issue which prevented tab edition
-- Fixed minor HTML generation issues
-- Added basic automated tests
-
-## 2.2.4
-
-### Fixes
-
-- Fixed issue which prevented saving components with no key
-
-## 2.2.3
-
-### Fixes
-
-- Fixed issue which prevented saving components in Dynamic Tables & Item Containers
-- Fixed issue which modified keys on drag&drop
-- Fixed issue which would close component edition window without saving and without any displayed error
-
-## 2.2.2
-
-### Fixes
-
-- Fixed issue which prevented saving components efficiently
-
-## 2.2.1
-
-### Fixes
-
-- [#229] Fixed drag & drop issues
-- [#223] Fixed tab window edit title
-- Fixed tab deletion issue
-
-## 2.2.0
-
-### Features
-
-- [#82] Added Drag&Drop on components to allow movement everywhere
-- [#118] Added possibility to get values of other actors in formulas
-- [#152] Hide elements & tabs with a formula condition
-- Added optional parameter 'comparisonOperator' in 'fetchFromDynamicTable()'
-
-### Fixes
-
-- [#182] Fixed README links with a repo path change
-- [#184] Fixed issue with dialog based Rich Text Area saving in dynamic tables
-- [#186] Fixed issue with rolls inside RTA when posted to chat
-- Fixed issue with macros called from Roll Message after upgrading Advanced Macros to 1.17+
-- Fixed issue preventing import of external actors used as decoration
-
-## 2.1.0
-
-### Features
-
-- Rework attribute bars for full support of Core and Bar Brawl bars
-- Added support for text values for ItemModifier 'set'
-- Added option for ItemModifier 'set' to not set a value if formula result is ''
-- Added new functions: 'replace()', 'replaceAll()' and 'recalculate()'
-
-### Fixes
-
-<!-- markdownlint-disable MD033 -->
-
-- [#168] Fixed issue with map distance measuring
-- [#164] Fixed issue causing error message to be displayed on actor and item creation
-- [#169] Fixed error in console on item reference click
-- [#161] Fixed error on item formula computing
-- [#171] Fixed error with @{<actor>|<propertyKey>} in chat messages
-- [#177] Fixed error log on chat messages containing only numbers
-- [#173] Fixed issue with '$' value in formulas
-
-<!-- markdownlint-enable MD033 -->
-
-## 2.0.1
-
-### Fixes
-
-- Fixed issue with unique items being able to be added to an actor multiple times
-- Fixed issue with items lacking some properties
-- Added mathjs blacklist to check field keys
-
-## 2.0.0
-
-### Features
-
-- **BREAKING** - V10 compatibility - System is no longer compatible with v9
-
-### Fixes
-
-- Fixed issue with Formula functions not returning booleans when asked a boolean value
-
-## 1.7.3
-
-### Fixes
-
-- Fixed Formula referencing issues with other Computed Labels referencing
-- Fixed token data recovering
-
-## 1.7.2
-
-### Fixes
-
-- Fixed user input computation when no default value is entered
-
-## 1.7.1
-
-### Fixes
-
-- Fixed fetchFromDynamicTable to be used with an empty filter
-- Fixed Formula handling to allow macro calling from roll
-- Fixed Panel display when adding grid panels inside other grid panels
-
-## 1.7.0
-
-### Features
-
-- Reworked formula syntax to use functions, which are more flexible than previous syntax
-- Added possibility to use custom formula in Roll Table draws
-- Fixed permission level to edit Item Modifiers
-- Added option to prevent sheet resizing
-
-### Fixes
-
-- Fixed unnecessary HTML encoding
-
-## 1.6.2
-
-### Fixes
-
-- Fixed 's' present at the bottom of Number Field edit dialog
-- Fixed Label display for rollMessage to respect Label style
-- Fixed Table alignment display for Labels
-
-## 1.6.1
-
-### Fixes
-
-- Fixed Label icon display (again)
-- Fixed Label display in Dynamic Tables when label value is empty
-- Fixed issue with Tables being unable to receive any new component
-
-## 1.6.0
-
-### Features
-
-- Added permission system at component level
-- Added unique item option
-- Added capability to use a dynamic table to populate dropdown list choices
-- Added tooltips to components
-- Added prefixes and suffixes to labels : text added before or after the label but not kept in props computation
-- Add custom label for item container 'Name' column
-
-### Fixes
-
-- Fixed Custom CSS setting hint
-- Fixed Label display
-- Removed useless 'Grid of 1 column' option from Panel layouts
-- Fixed Table error when other container is changed to Table
-- Added a check to prevent addition of multiple fields with the same key to a template
-- Fixed context menu to only appear for labels with keys
-- Fixed issue with Item Containers not working in items
-
-## 1.5.3
-
-### Fixes
-
-- Fixed Label display (yet again)
-- Fixed props handling when prop is deleted and recreated
-- Fixed Item Container roll properties
-
-## 1.5.2
-
-### Fixes
-
-- Fixed labels display
-- Fixed bug with Item container in compact mode when delete button should be shown and no additional column exists
-- Added item name to its properties
-- Fixed roll explanations for items
-
-## 1.5.1
-
-### Fixes
-
-- Fixed issue with Rich Text Area display
-
-## 1.5.0
-
-### Features
-
-- Added item support !
-  - Added equippable items which can be added to actor sheets with property modifiers
-  - Added sub templates items which can be used to define reusable template parts
-- Added item container element
-- Added option to avoid accidental row removal in dynamic tables
-- Added alternative roll option with + SHIFT Key
-- Changed custom CSS selector to be a FilePicker
-- Added full support of documents on Rich text editors
-- Reworked export popup to sort templates by folders
-
-### Fixes
-
-- Fixed missing key and additional css classes in Tabbed Panels
-- Fixed profile picture aspect ratio display
-- Fixed issue when tabbed panels contained another tabbed panel
-- Fixed issue creating ghost attribute bars in attribute bar editor
-- Fixed lost focus on field update issue
-- Fixed issue on Numeric field's minus button trigger on enter press
-- Fixed issue with inputs without labels on firefox
-- Fixed issue with Rich Text Area display on firefox
-
-## 1.4.0
-
-### Features
-
-- Select first input from start on user input on rolls
-- Reset template display size on template reloading
-- Added attribute bar edition on token
-- Added Tabbed Panel component, allowing users to create their own tabbed panels in the sheet
-  - This induced a rework of the basic sheet layout, which is now a simple Panel in which users can add a Tabbed Panel as a root element if they want a standard sheet layout.
-  - This removed the display option to display Header below the profile picture. This display can now be obtained by adding components before a Tabbed Panel in the body.
-  - Existing sheets will be automatically migrated to this new layout, creating a Tabbed Panel and copying existing tabs to the sheet.
-- Added diagonal movement configuration
-
-### Fixes
-
-- Fixed minimum Number Field size for inner display of + and - buttons
-- Fixed actor data formula computation
-- Fixed attribute bar dialog display
-- Fixed chat message formatting in case result is used as parameter in a macro
-- Fixed issue in dynamic table referencing with non ASCII characters
-- Fixed numeric field buttons to allow for multiple clicks before sheet reloading
-
-### Other
-
-- Added a sheet library to the Gitlab repository, for people to share their templates
-
-## 1.3.0
-
-### Features
-
-- Added RollTable support
-- Added foundry permission system support
-- Added button to reload all characters linked to a template
-- Added more size options for fields
-- Added + and - controls on Number Fields
-
-### Fixes
-
-- Fixed issues with template reloading
-- Fixed issues with Number Fields missing values
-- Fixed issue with Complex attributes bar deleting
-- Fixed issue with Rich Text Area display
-
-## 1.2.0
-
-### Features
-
-- Added attributes bar handling
-- Added formula handling on Number fields min & max
-
-### Fixes
-
-- Fixed display of some core components
-- Fixed issue with Table edition
-- Fixed chat commands dependency lib version
-
-## 1.1.2
-
-### Fixes
-
-- Fixed component creation in tables
-
-## 1.1.1
-
-### Fixes
-
-- Fixed roll icon display
-- Fixed dialog minimization / maximization issue
-- Fixed bug in rolls when no token is on the scene
-- Fixed bug in header components edition
-- Fixed character creation error
-- Removed 0.0.9 Breaking change warning
-
-## 1.1.0
-
-### Features
-
-- Added roll from macro & chat message
-- Added property referencing from chat message
-- Added default value handling in user inputs
-- Added sheet display settings on templates
-- Added number fields
-
-### Technical
-
-- Added component extension capabilities
-- Refactored component rendering to ES6 classes
-- Migrated number-formatted text fields to Number fields
-
-## 1.0.1
-
-- Fixed table alignment display
-- Fixed roll icons display
-- Fixed component bugs by enforcing use of keys on data-saving components
-- Fixed component editor field display bugs
-- Fixed component editor bugs by disallowing multiple component editor windows to be openeded
-
-## 1.0.0
-
-- Changed system name to Custom System Builder !
-
-## 0.0.9
-
-- **BREAKING** - Added ability to reference the value of a field in formula outside dynamic tables
-  - This feature changed dynamic table referencing system, it now uses a `$` instead of the `@`
-- Added more formula explanations on chat messages
-- Added context-menu action to reload sheet template
-- Disabled sheet reloading for non GM players
-- Fixed tab edition bug when tab key was an integer
-
-## 0.0.8
-
-- Fixed an issue with empty string handling in formulas
-- Fixed an issue with chat messages without rolls
-
-## 0.0.7
-
-- Added compatibility with the Dice so Nice module
-- Fixed issue with actor data calculation leading to errors in sheet display
-- Fixed issue with formula calculations and string handling in formulas
-
-## 0.0.6
-
-- Added initiative formula setting
-- Added basic text-field formats
-- Added user inputs for formulas
-- Added field sizing on sheets
-- Fixed core version compatibility
-- Fixed label HTML display
-- Fixed dynamic tables aggregation functions handling
-- Fixed minor error with math.js library
-
-## 0.0.5
-
-- Fixed bug on hidden properties calculation
-- Fixed rendering of rich text elements in chat messages
-- Added possibility to add an icon in front of labels
-- Added aggregation capabilities on dynamic table values
-
-## 0.0.4
-
-- Added hidden properties, used for intermediate calculations only
-- Added better explanation of rolls & formulas
-- Added option to display icon next to rollable labels
-- Added CSS class customization on components
-- Added edit button float on dialog editors RTF
-- Added option to set first line of array 'head'
-- Code cleanup - Separate character and \_template sheet codes
-
-## 0.0.3
-
-- Fixed naming errors
-
-## 0.0.2
-
-- Corrected typo in repo name
-- Updated README.md & TODO.md
-
-## 0.0.1
-
-- System init
+## 8.7.0
+
+### Highlights
+
+- (Ambrose, Tikael) Add Pathfinder Feybound content
+- (Rigo) Add Vaultlines content
+
+### System Improvements
+
+- (Chromatic Penguin) Keep ammunition rules off alternate weapon usages
+- (Dantar) Display confirmation dialog when clicking to remove rule elements
+- (Dantar) Inherit runes and materials from linked weapons for NPC attacks
+- (Dantar) Make Shift a default confirmation skip button
+- (In3luki) Add `defense` filter to Compendium Browser spell tab
+- (stwlam) Add support for applying elite/weak adjustments to non-persisted NPCs
+
+### Bugfixes
+
+- (Cerapter) Fix ammunition crafted with `CraftingAbility.craft()` not getting the infused trait
+- (Chromatic Penguin) Allow 8-digit organized play numbers and brush up level bump toggle styling
+- (Chromatic Penguin) Default troop movement to Stride when combat starts
+- (Chromatic Penguin) Fix hotbar macros for roll option toggles with suboptions
+- (Chromatic Penguin) Fix NPC class DC for critical specialization saves
+- (Chromatic Penguin) Fix token resize errors when no scene is viewed
+- (Chromatic Penguin) Hide parties and party members a user does not have permission to see in the directory
+- (Chromatic Penguin) Place templates exclusively on the currently viewed scene level
+- (Chromatic Penguin) Prevent V1 sheet styles from leaking into V2 sheets
+- (Chromatic Penguin) Refrain from resolving ignored RollOptions
+- (Dantar) Make lore proficiencies adjust to sheet width
+- (stwlam) Fix handling of `syncWeaponFeatures` flag when regenerating NPC attacks
+
+### Data Updates
+
+- (Ambrose) Add automation to Lethal Finisher
+- (Ambrose) Add effects to Ashes of the War God
+- (Ambrose) Add Fetters from Pathfinder NPC Core
+- (Ambrose) Add variants to Ring of Fire
+- (Ambrose) Correct automation on Silver Spear's damage against fiends
+- (Ambrose) Remove inline damage from Phantasmagoria
+- (Dantar) Automate Mark of the Torrent, Night Sky Elixir, Pit's Protection, Reckless Riding Lunge, Tenebrous Freedom, and Unholy Skill
+- (Dantar) Fix reach for some tiny monsters
+- (Dantar) Fix tactician requirement for The Bigger They Are
+- (Dantar) Remove old name of Choke-arm mutagen
+- (Dantar) Update Crown of Witchcraft's bonuses
+- (Dire Weasel) Add automation and journal link to Infernal Pactbreaker Dedication
+- (Dire Weasel) Add automation for Clinging Remnants, Sedacthy Warband's Frenzied Feast, and Virtuous Defender's Shield Ally
+- (Dire Weasel) Add counteract to Eclipse Burst
+- (Dire Weasel) Add effects for several items, spells, and abilities
+- (Dire Weasel) Add emanation to Repulsion and save to Sanctuary
+- (Dire Weasel) Add inline action to Read the Air and inline damage to Mercenary Band
+- (Dire Weasel) Avoid emitting success notes for greater runes that only mention bypassing resistances
+- (Dire Weasel) Brush up Eternal Hero, Heroic Scion Dedication, Immortal Ichor, Sublime Breath, Thresholder Disciple, Timelessness, and Venom Mage
+- (Dire Weasel) Brush up NPC rune automation and clean up NPC Strikes to handle automatic runes and materials
+- (Dire Weasel) Fix automation for Brimstone Blessing, Distortion Lens, Rude Awakening, Silverscrap Bombs, and Urdun Gravelhands' Break Bottle
+- (Dire Weasel) Fix some NPC Strike and ability links
+- (Dire Weasel) Restrict Inextinguishable Aura effect to persistent fire damage
+- (Dire Weasel) Update Rhoka Sword description to remaster
+- (kromko) Add missing compendium sources to embedded physical items
+- (kromko) Fix minor formatting issues and some inline links
+- (kromko) Update Wand of Fey Flames effect and some effects' publication
+- (nobbyfix) Brush up Thrune Contracts
+- (nobbyfix) Update publication source for Fey Magic feat
+- (rectulo) Fix precision damage in Martial Mayhem Mutagen (Major)
+- (rectulo) Fix typos, formatting, and links in several descriptions
+- (Rigo) Add spell effect for Tiny Wings
+- (SpartanCPA) Brush up Fungal Abomination
+- (TroelsL) Remove duplicate Four-Armed actions from two Shobhad NPCs
+- (YellowAfterlife) Fix Drainberry Bush's reach
+
+### Under the Hood
+
+- (Chromatic Penguin) Add AppV2 actor base sheet
+- (Dantar) Make land speed nullable
+- (stwlam) Divert system token management to upstream API
+
+## 8.6.1
+
+### Bugfixes
+
+- (Chromatic Penguin) Fix detached window handling across apps
+- (Chromatic Penguin) Fix missing spell level on spell prep links
+- (Chromatic Penguin) Fix modifier tooltip type options on Firefox and brush up value stepper
+- (Dantar) Fix familiar abilities formatting
+- (Dantar) Fix skill proficiency selector sizing on Firefox
+- (Dantar) Make Pick-a-thing's placeholder localizable
+- (Dantar) Prevent AE-likes pushing duplicate entries onto complex-object arrays
+
+### Data Updates
+
+- (adamhp) Add Kingmaker publication title to Kingmaker effects
+- (Ambrose) Add Infernal Inheritance content to Archetype journals
+- (Ambrose) Correct Silver Spear's spell details
+- (Ambrose) Remove select legacy NPC actors and redirect to their Infernal Inheritance reprints
+- (Dantar) Automate some Infernal Inheritance entries, including Hellbound Aspirant feats
+- (Dire Weasel) Add backlink to Exploding Bullet effect
+- (Dire Weasel) Add spell effects for Remake Physiology and Under Sunless Skies
+- (kromko) Add missing localizations
+- (kromko) Add missing physical items publication sources
+- (kromko) Fix formatting and capitalization in some item names, activations, and descriptions
+- (kromko) Restore column spanning of the flexible spellcaster spell table note
+- (nobbyfix) Update publication source for actions and effects from Cheliax, Infernal Inheritance
+- (rectulo) Fix typos and formatting in Cloudborne Haven, Planar Collision, and Remake Physiology descriptions
+- (Rigo) Add backgrounds from Vaultlines Player's Guide
+
+### Under the Hood
+
+- (Chromatic Penguin) Convert `AncestrySystemData` to `TypeDataModel`
+
+## 8.6.0
+
+### Highlights
+
+- (Ambrose, Mecha Maya, Rigo, Tikael) Add Cheliax, Infernal Inheritance content
+- (Ambrose) Add Dragon's Crown content
+
+### System Improvements
+
+- (Chromatic Penguin) Add `affects` option to `AdjustDegreeOfSuccess`
+- (Chromatic Penguin) Add temporary HP roll options
+- (Chromatic Penguin) Use listed damage for PC Strike REs with a fixed attack modifier
+- (Dantar) Allow Strike RE for PCs to use own or fixed attack modifier
+- (Dantar) Brush up persistent damage chat card
+- (Dantar) Show travel speed breakdown tooltip
+- (Idle) Add `preselectChoices` to auras
+- (kromko) Apply derived feat traits in compendium browser filters
+- (kromko) Improve feat embed headings and support a generic feature level label
+- (stwlam) Make RE-created lore skills non-editable from PC and NPC sheets
+- (stwlam) Prepare base data of lore skills early enough for AE-likes
+- (Supe) Close tooltip when opening scene darkness slider
+
+### Bugfixes
+
+- (Ambrose) Fix localization for World Clock settings in Scene config
+- (Chromatic Penguin) Allow null NPC skill bases and show the resolved modifier as placeholder
+- (Chromatic Penguin) Always give magazine weapons a capacity of 1
+- (Chromatic Penguin) Brush up compendium browser accessibility and theming
+- (Chromatic Penguin) Fix class features without a source ID not being granted on level up
+- (Chromatic Penguin) Fix mirrored tokens ignoring scale in chat portraits
+- (Chromatic Penguin) Keep drag data for content links in detached and AppV2 windows
+- (HeliumAnt) Fix parchment backgrounds when served under a route prefix
+- (kromko) Strip special characters and lower diacritic marks in ABC Picker search
+- (stwlam) Check that token is on viewed level in `TokenPF2e#_isVisionSource`
+- (stwlam) Handle unquantified Reach trait when determining reach of NPC attacks
+- (stwlam) Honor `Scene#environment#darknessLock` in `ScenePF2e#darknessSyncedToTime`
+
+### Data Updates
+
+- (Ambrose) Add autoscaling automation to select Lore features and feats
+- (Ambrose) Add Book of the Dead specific familiar abilities
+- (Ambrose) Add spell effect to Bony Barrage
+- (Ambrose) Correct automation for Waterweave Tripkee feat
+- (Ambrose) Correct text in Moonlight Ray
+- (Ambrose) Remove Divine Vessel and Final Form from the system
+- (Ambrose) Remove toggle from Risky Surgery
+- (Ambrose) Replace system Jaws icon with core equivalent
+- (Ambrose) Update Spirit Guide Form to no longer use BattleForm rule elements
+- (Ambrose) Use new embed options for PF2e archetype journal entries
+- (ChasarooniZ) Fix RE for Reach of the Dead
+- (Dantar) Add Archetype trait to Mighty Bulwark
+- (Dantar) Add clause about combining damage of Spellstrike
+- (Dantar) Fix BaseSpeed RE in Vessel's Form
+- (Dantar) Fix level for Energy Vulnerability (Greater)
+- (Dantar) Gate Studious Spells behind level checks
+- (Dantar) Prevent Scaly Hide from stacking with Scales of the Dragon
+- (Dantar) Update Bracers of Armor to Bands of Force
+- (Dire Weasel) Add automation to Nereid's Manifest Shawl
+- (Dire Weasel) Add corrosive and frost rune automation to NPCs
+- (Dire Weasel) Add effects for Angelic Opera Cloak, Blade Byrnie, Horn of Rust, and Mark of Fate (Asmodeus)
+- (Dire Weasel) Add heightening to Burrow Ward
+- (Dire Weasel) Add links to Treat Condition and add description alteration to Holistic Care
+- (Dire Weasel) Add spell effect for Summon Instrument
+- (Dire Weasel) Brush up Monster Core 2 clockworks and Season of Ghosts items
+- (Dire Weasel) Fix spell list for Staff of Air (Major)
+- (Dire Weasel) Move automation for Ecorche's Wear Skin to effect
+- (Dire Weasel) Refresh all copies of Faerie Dust
+- (Dire Weasel) Update Inner Radiance Torrent description to remaster
+- (jbblanchet) Fix Corpse Bloom level
+- (kromko) Clean up some equipment effects
+- (kromko) Consolidate some lores
+- (kromko) Fix a few embedded item sources
+- (kromko) Fix modifiers for graveknights' inline counteract rolls
+- (kromko) Fix some broken links
+- (kromko) Relabel some spell effects
+- (kromko) Remove disarm bonus from clockwork soldier speed
+- (kromko) Remove inline checks and links from trait descriptions
+- (kromko) Remove Under Sunless Skies' requirements
+- (kromko) Standardize apex item descriptions
+- (LeftPathLane) Fix Zakzak's spoon gun to use cutlery ammo
+- (Longstrider) Add Nightmare spell link to Desna entries
+- (nobbyfix) Add spell effect for Thrall Charge
+- (nythz) Fix Faerie Dust's area heightening
+- (Rigo) Add missing bonus to Anophilex Thorny Lash attack
+- (Rigo) Set alliance on some Bastion of Blasphemies NPCs
+- (Tikael) Brush up Dead God's Hand actors
+- (Tikael) Clean up and localize background lore skills
+
+### Under the Hood
+
+- (stwlam) Consolidate perception preparation among creature actors
+
+## 8.5.1
+
+### System Improvements
+
+- (Chromatic Penguin) Add Raise a Shield button to NPC sheet when shield is held
+- (Chromatic Penguin) Convert `SpellcastingCreateAndEditDialog` to `ApplicationV2` and Svelte
+- (Chromatic Penguin) Convert Treat Wounds and Encouraging Words to `DialogV2` and action macros
+- (Dantar) Include Ancestry trait in feat filters
+- (kromko) Add header, traits, and publication options to feat embeds
+- (stwlam) Allow `RuleElement#resolveValue` to return `null` from string inputs
+- (stwlam) Make world clock's dawn and dusk times configurable
+- (stwlam) Re-render world clock and sync darkness on all scenes upon setting change
+- (stwlam) Set initial value of world clock's time convention according to locale
+
+### Bugfixes
+
+- (Chromatic Penguin) Apply inline check roll options to defense DCs
+- (Chromatic Penguin) Fix apply-once weaknesses triggering when persistent damage is first applied
+- (Chromatic Penguin) Fix TokenImage rule overrides on world load
+- (Chromatic Penguin) Fix versatile and modular toggles on basic unarmed strike
+- (Chromatic Penguin) Fix versatile toggle on combination weapons' melee usage
+- (Chromatic Penguin) Only count tokens inside an effect area's highlighted squares
+- (Dantar) Acquire modifier adjustments for Sweep and Backswing
+- (Dantar) Add label for `force` field of BaseSpeed rule element
+- (sgennaoui) Fix flanking for tiny creatures
+
+### Data Updates
+
+- (Ambrose) Add area-damage option to Aeon Stone (Crescent)'s Moonbeam
+- (Ambrose) Add Dragonhide material to shields
+- (Ambrose) Add Rituals entry to GM screen
+- (Ambrose) Add secret text segments to Midnight Milk
+- (Ambrose) Add Standard DCs and Creature Cost tables to Rituals journal page
+- (Ambrose) Change recharge roll syntax for Eternal Eruption items to not be blind rolls
+- (Ambrose) Correct action cost of Thwart Evil and Sorshen's Devotion
+- (Ambrose) Correct miscellaneous data issues with select pregens
+- (Ambrose) Correct predicate for Five-Feather Wreath's Major Armor fall damage
+- (Ambrose) Correct select Apex items to use Remaster attribute boost in descriptions
+- (Ambrose) Correct slug of Astradaemon's Essence Drain ability
+- (Ambrose) Remove premaster traits from Shades of Blood Strigoi actors
+- (Ambrose) Update Hunter's Anthem to account for dedications
+- (Ambrose) Update inline roll for Goblin Song
+- (august-k) Fix missing action variant inlines in Distracting Performance
+- (Dantar) Add universal Ancestry trait to feats
+- (Dantar) Fix Conjurer's Countermeasure resistance
+- (Dantar) Fix Overflowing's bonus type
+- (Dantar) Make BattleForm remove unmentioned speeds (Errata)
+- (Dire Weasel) Add automation for Starshot Arrow and Carver-cutter
+- (Dire Weasel) Add damage resistance automation to Villamor Koth
+- (Dire Weasel) Add effects for several NPC abilities
+- (Dire Weasel) Add missing bleed immunity to Monster Core 2 oozes
+- (Dire Weasel) Add spell effect for Warshard Shot
+- (Dire Weasel) Brush up various NPCs
+- (Dire Weasel) Fix action icon for Grab an Edge in GM Screen
+- (Dire Weasel) Fix some inline precision damage links
+- (Dire Weasel) Remove some unneeded inline damage links from spells
+- (Dire Weasel) Unify damage for Drakauthix's Spore Tendrils
+- (Dire Weasel) Update Nindoru to remaster
+- (Dire Weasel) Use unique icon for Numbing Tonic
+- (kromko) Fix publication sources of The Dead God's Hand physical items
+- (kromko) Remove traditions for spellcasting proficiency in remastered class feature descriptions
+- (Longstrider) Add Dwarven Reinforcement effect
+- (Longstrider) Fix War Saddle item level
+
+### Under the Hood
+
+- (Chromatic Penguin) Adopt shared `TextSearch`/`SearchInput` in ABC picker, formula picker, roll inspector, and trade dialog
+
+## 8.5.0
+
+### Highlights
+
+- (Ambrose) Add The Dead God's Hand content
+
+### System Improvements
+
+- (Chromatic Penguin) Convert `CreatureConfig`, `IdentifyItemPopup`, and several inline confirmation dialogs to `ApplicationV2`
+- (Dantar) Add `force` option to the `BaseSpeed` rule element
+- (FolkvangrForgent) Fit emanations created from region tools to hovered tokens
+- (Idle) Add roll option to differentiate actual casting from send-to-chat
+- (Idle) Allow inline template distance to use `resolve`
+- (kromko) Remove empty filters and traits not associated with any items in compendium browser
+- (oWave) Make `_validateType` throw errors instead of returning them
+- (sgennaoui) Expire the Greater Cover effect from tower shields
+- (stwlam) Limit selection of "coin" category in treasure sheet to standard coin items
+- (stwlam) Pull recent core updates to token-appearance template to system copy
+- (stwlam) Refrain from showing default icons in item chat cards
+
+### Bugfixes
+
+- (Dantar) Keep selected key attribute when refreshing Class item
+- (Dantar) Prevent modifier duplication on derived speeds
+- (FolkvangrForgent) Add missing ellipse shape to footprint function
+- (Idle) Do not consume charges if a trick-magic-item check fails or is canceled
+- (Idle) Fix `TagSelectorBasic` not displaying current selections for `number` values
+- (kromko) Fix Compendium Browser sort by price
+- (kromko) Localize Compendium Browser option to sort by name
+- (Maksim) Fix Earn Income chat roll label localization
+- (neonyuzu) Cap character sheet HP input to max less unrecoverable
+- (stwlam) Revert "Always use action image for unusable actions in character sheet"
+
+### Data Updates
+
+- (Ambrose) Add effect to Hydrating Pinwheel's armor activation
+- (Ambrose) Add icons to select consumables
+- (Ambrose) Add inline checks to World Rouser archetype feats
+- (Ambrose) Add level 7 iconic pregens
+- (Ambrose) Correct Caligni Hunter's Encircling Command text
+- (Ambrose) Correct cost of Major Convincing Rune
+- (Ambrose) Correct errors with Demon Form spell effect
+- (Ambrose) Correct typos and remove damage inlines from Hydrating Pinwheel
+- (Ambrose) Remove Circlet of Allure and redirect to Remaster reprint
+- (Ambrose) Remove parenthetical from Refugee background
+- (Ambrose) Update Ash Form publication source and traits
+- (Dantar) Add duration to Ransack the Night
+- (Dantar) Add Heartless Debilitations to Double Debilitation
+- (Dantar) Add RE to Supramarine Chairs
+- (Dantar) Add REs for travel-speed bonuses
+- (Dantar) Automate Poison Drinker and Osteo Armaments
+- (Dantar) Automate Smithing Weapons, Seek the Hidden Glyphs, Rune Ward, and Fortifying Knock
+- (Dantar) Automate Tracing Trance, Song of Glorious Invocation, Rune Singer, and its follow-ups
+- (Dantar) Fix RE for Mask of Uncanny Breath
+- (Dantar) Force base speeds for Werecreature Dedication
+- (Dire Weasel) Add automation for Kappa's Head Bowl
+- (Dire Weasel) Add automation for Titan Centipede's Impaling Critical
+- (Dire Weasel) Add effects for several NPC abilities
+- (Dire Weasel) Add inline checks to Quandary
+- (Dire Weasel) Add inline roll options to Captivating Pollen and Incarnate Deific Herald
+- (Dire Weasel) Add spell effect for Consecrate Flesh and Know the Enemy
+- (Dire Weasel) Brush up Noppera-Bo and The Chewer
+- (Dire Weasel) Condense effects for Witchflame failure
+- (Dire Weasel) Fix damage for Living Thunderbolt
+- (Dire Weasel) Fix display of Sanctum Guardian's immunity to starvation and thirst
+- (Dire Weasel) Fix predicates for Overflowing Blade and several effects
+- (Dire Weasel) Fix some publication sources
+- (Dire Weasel) Fix traditions for Bone Spray
+- (Dire Weasel) Improve automation for Stick a Fork in It
+- (Dire Weasel) Unify damage for Irlgaunt's Regurgitate Gastrolith
+- (Dire Weasel) Update some NPCs to use `AdjustStrike` to add runes
+- (Dire Weasel) Update some vision to structured data
+- (kromko) Fix Aberrant Eidolon link in summoner's journal
+- (kromko) Fix formatting of spell slots table in Wizard class journal
+- (kromko) Fix inline template in Fungal Curtain
+- (kromko) Fix localization key for DoS upgrade against emotion effect
+- (kromko) Fix Medium Armor Expertise showing inventor text for every class
+- (kromko) Fix styling of some tables
+- (kromko) Remove empty prerequisites from dedications in archetype journal
+- (kromko) Remove pre-Impossible Magic summoner Ability Boosts class feature
+- (kromko) Update multiple class descriptions and journals
+- (Longstrider) Add Force Fling spell effect
+- (Longstrider) Add improvements to necromancer and runesmith archetypes
+- (Longstrider) Brush up runesmith feat descriptions
+- (Longstrider) Change Dwarf Battalion's Shields Up! from reaction to single action
+- (Longstrider) Fix minor typos in Necromancer and Runesmith class journals
+- (Rigo) Update several TokenLight rule elements to use Adaptive Attenuation
+- (SpartanCPA) Add proper shock and flaming runes to NPCs
+- (SpartanCPA) Localize increased degree of success for emotion effects
+- (Suldrun45) Fix Undead Familiar and Glyph Familiar number of abilities
+- (Tikael) Change icon for Bastion of Blasphemies background effect
+- (TroelsL) Fix Vorrea Talminari malformed JSON
+
+### Under the Hood
+
+- (Idle) Bundle all operations into a single server query in the `applyActorGroupUpdate` helper
+
+## 8.4.1
+
+### System Improvements
+
+- (Chromatic Penguin) Convert XP macro to `ApplicationV2`
+- (Dantar) Allow item alteration RE to add thrown trait
+- (stwlam) Remove system intervention in creating chat bubbles following changes in FVTT 14.366
+
+### Bugfixes
+
+- (Chromatic Penguin) Restore rules-accurate measured-template coverage
+- (Chromatic Penguin) Fix duplicate lore prevention in NPC skill editor
+- (Chromatic Penguin) Fix light mode parchment backgrounds
+- (Chromatic Penguin) Support choosing ancestry attribute boosts and flaws with multiple options
+- (Dantar) Apply materials from base damage to splash damage roll
+- (kromko) Localize takable-once option on feat details tab
+- (kromko) Prevent Actor sheet from erroring when IWR references a homebrew damage type that doesn't exist in the world
+- (stwlam) Keep finesse trait on ranged weapons generated from thrown usage variants
+
+### Data Updates
+
+- (Ambrose) Add Attack Modifier to Taunting Monk's Skull Ectoplasmic Spit
+- (Ambrose) Add Grant Items to Veil Dancer and World Rouser Dedications
+- (Ambrose) Add icon to Revealing Mist item
+- (Ambrose) Add journal link to Jotunborn ancestry
+- (Ambrose) Add Lamentation of Sinister Deals Animist apparition
+- (Ambrose) Add links to actions and journal entries to Impossible Magic archetype dedications
+- (Ambrose) Add missing "wizard-arcane-school" tag to Impossible Magic Arcane schools
+- (Ambrose) Add missing occult tradition to Feral Shades and add missing predicate to Spiritual Scar
+- (Ambrose) Add Runesmith stealth errata
+- (Ambrose) Add tags to Hell's Destiny Commander tactics
+- (Ambrose) Condense Medium Armor Expertise class feature
+- (Ambrose) Condense Potion of Stable Form Effects
+- (Ambrose) Correct action cost of Pierce the Sky
+- (Ambrose) Correct missing attribute in Runesmith Dedication class DCs
+- (Ambrose) Correct tags on Ready, Aim, Fire! and slugs on Aberrant Bloodline class features
+- (Ambrose) Correct School of Quantic Control's category
+- (Ambrose) Localize Spellshifter Spell Shift options
+- (Ambrose) Refresh select spells on Monster Core Hryngar actors
+- (Ambrose) Remove empty Grant RE and add mode to Reaper's item alteration RE
+- (Ambrose) Remove vitality immunity from Cranium Preserver
+- (Ambrose) Update Class journals and add missing content to Archetype journals
+- (bjornestol) Change Remaining Air effect to floor con modifier
+- (D4wnstar) Fix prone condition description
+- (Dantar) Implement resonance effect of Vital Amplification Aeon Stone
+- (Dire Weasel) Add automation for Amaranthine Visage, Cavnakash's Profane Gift, Warshard Wight's Drain Life, Pharyngeal Jaws, some Necromancer feats
+- (Dire Weasel) Add description alteration automation for Selective Energy
+- (Dire Weasel) Add description automation for Cleric's Void Siphon
+- (Dire Weasel) Add effects for Draconic Miasma, Lightning Catcher, Manacles, Resin Crust, Sacred Defense
+- (Dire Weasel) Merge effects for Hallucinogenic Pollen
+- (Dire Weasel) Add heightening to Mask of Terror
+- (Dire Weasel) Add skill choice automation to Captivator Dedication
+- (Dire Weasel) Add some aura effect for Bastion of Blasphemies
+- (Dire Weasel) Add some spell effects for Impossible Magic
+- (Dire Weasel) Add spell effects for Calcification, Fey Disappearance, Canticle of Everlasting Grief, Synesthesia
+- (Dire Weasel) Fix damage for Planar Collision
+- (Dire Weasel) Fix heightening area for Aberrant Whispers
+- (Dire Weasel) Fix inline damage for Incarnate Wild Rose
+- (Dire Weasel) Fix selector for Cutthroat Grapple effect
+- (Dire Weasel) Remove Note from Guillotine Golem's Decapitation
+- (Dire Weasel) Remove spurious REs from Warp Pillar's Time Shift
+- (Dire Weasel) Use inline actions on some EC NPCs
+- (DocSchlock) Large-scale brush up Extinction Curse
+- (DocSchlock) Fix Multishot Stance not applying to Triple Shot
+- (hokon3) Fix dragon eidolon not giving correct skill
+- (kromko) Add missing publication data to Impossible Magic spells and rituals
+- (kromko) Change Occult Spellcasting to Bard Spellcasting and update its description
+- (kromko) Fix Memento Mori staff spell link, Greater Retrieval Prism description and some minor formatting issues
+- (kromko) Fix some items that don't pass validation
+- (kromko) Fix Twofold Tine Gravity Well link
+- (kromko) Remove class-specific Spell Repertoires and have the base description use localized strings
+- (kromko) Update publication source for Backfire Mantle, Noxious Incense and Soothing Scents
+- (kromko) Update Staff of nature's cunning variants descriptions
+- (KStick) Set includesSelf explicitly on Thermal Nimbus aura effect
+- (Longstrider) Add Thrall trait description
+- (Longstrider) Fix Empowered Breath's doubled damage dice
+- (Longstrider) Fix Twisting Tree description
+- (neonyuzu) Correct action cost for Share Vision spell
+- (nobbyfix) Update publication source for Command a Thrall
+- (nythz) Add new Impossible Magic property runes
+- (rectulo) Add description for Bodach
+- (Reiaka) Fix captivator dedication level
+- (Rigo) Audit some Bastion of Blasphemies content and add effects for adventure-specific action
+- (Rigo) Grant trained Will save proficiency instead of expert with Necromancer
+- (sgennaoui) Add augmentation automation to IM Automaton feats (#22808)
+- (Shaunymon) Add missing traditions to Spectral Blade
+- (Shaunymon) Correct Giant Monitor Lizard AC
+- (Tikael) Add missing flourish trait to Isgeri Slayer's action
+- (Tikael) Fix number of actions for Begone spell
+
+### Miscellaneous
+
+- (stwlam) Update CONTRIBUTING.md with statements on AI (don't use it) and submitting feature PRs (talk to us first)
+
+## 8.4.0
+
+### Highlights
+
+- (Ambrose, Dantar, Dogstarb, Kromko, Mecha Maya, Rigo Tikael) Add Impossible Magic content
+- (Ambrose) Add Clockwork Mystery content
+- (Ambrose) Add Things Go to Hell content
+- (Rigo, SpartanCPA) Add Bastion of Blasphemies content
+
+### System Improvements
+
+- (Chromatic Penguin) Convert `AdjustmentDialog`, `CompendiumMigrationStatus`, `LootNPCsPopup`, `MigrationSummary`, `NPCSkillsEditor`, `SpellPreparationSheet`, and `TrickMagicItemPopup` to `ApplicationV2`
+- (Supe) Always use action image for unusable actions in character sheet
+
+### Bugfixes
+
+- (Chromatic Penguin) Fix shield block button not untoggling after applying damage
+- (Chromatic Penguin) Fix double applied penalties when battle form statistics are compared with actor's own
+- (Chromatic Penguin) Fix PF2e style table borders in `ApplicationV2`
+- (Chromatic Penguin) Fix trait and grip toggles on battle form strikes
+- (Chromatic Penguin) Fix weapon trait toggles on attached weapons
+- (Dantar) Update handling of Two-Hand trait when when's damage die is upgraded to be in line with errata
+- (stwlam) Prevent `onDeleteActions` being dropped from Choice Set rule elements
+- (Supe) Fix ammo quantity input when there is more than one type
+
+### Data Updates
+
+- (Ambrose) Add effect to Overstuff focus spell
+- (Ambrose) Add inline rolls to Frighten Undead
+- (Ambrose) Add missing persistent damage from Iris of the Sky
+- (Ambrose) Add missing traits to Runic Warmaw
+- (Ambrose) Add slugs to Cognitive Mutagen's Flat Modifiers RE
+- (Ambrose) Add some localization updates for Impossible Magic options
+- (Ambrose) Add traits from Impossible Magic and Absalom Station, apply them to select items
+- (Ambrose) Correct action cost of Sabotage
+- (Ambrose) Correct Condition Grant RE for Overstuff spell effect
+- (Ambrose) Correct definitions on Iruxi Spirt Strike
+- (Ambrose) Correct Spectral Dagger Damage Die
+- (Ambrose) Remove Levaloch's spirit immunity
+- (Ambrose) Remove Rune of Sin and Staff-Storing Shield variants
+- (Ambrose) Update Munsahir Trooper's reaction to Reactive Strike per the publication
+- (Dantar) Add rule for Guerrilla Weaponry weapon die override
+- (Dantar) Add Treasure Vault relics
+- (Dantar) Update Devise a Stratagem according to errata
+- (Dire Weasel) Add automation for Battle Scars
+- (Dire Weasel) Add effects for Anchoring Air, Balisse Feather, Bloody Hands' Battle Reek, Fishing Spot, Sanctum Guardian's Pallid Curse Stoneriver's Measure Soul, Savor the Sting, Xotanispawn's Heat Surge, Undertow, and Unimpeded Stride
+- (Dire Weasel) Delete pre-remaster Hive Mother, Rhu-Chalik, and Twigjack
+- (Dire Weasel) Fix range for Razorbones' Hurled Bone
+- (Dire Weasel) Fix slugs for Tangle Vine and Void Warp in Arcane Tattoos
+- (Dire Weasel) Make Bully the Departed and Consume Sacrifice self effects
+- (Dire Weasel) Mark some Rejuvenation NPC abilities as deathNote
+- (Dire Weasel) Remove extraneous attack from Vault-Drowned Souls
+- (DocSchlock) Perform large audit and cleanup of Age of Ashes content
+- (hollyvalenta) Update traditions for Undertow spell
+- (Kromko) Fix Unbreakable Expertise embed in Guardian class journal
+- (Kromko) Make Catfolk Dance effect apply off-guard on a critical success
+- (Longstrider) Fix Draddeth's Edge potency bonus
+- (Longstrider) Implement and improve Plant Form effects
+- (rectulo) Fix cost and duration for Connective Current
+- (Rigo) Predicate Hunter's Aim cover reduction on target being Hunted Prey
+- (sgennaoui) Update Extending Rune level to 9
+- (Tikael) Fix Leap the Falls repeating its grants
+
+## 8.3.0
+
+## Bugfixes
+
+- (Chromatic Penguin) Accept a leading "+" in modifier dialog inputs on Firefox
+- (Chromatic Penguin) Apply roll options to inline damage rolled from effect tooltips
+- (Chromatic Penguin) Fix attribute builder breaking after opening it for a second character
+- (Chromatic Penguin) Fix background color on dragged equipment
+- (Chromatic Penguin) Fix runes added to handwraps via item alterations not applying to unarmed strikes
+- (Chromatic Penguin) Fix senses granted via Details not upgrading
+- (Chromatic Penguin) Fix stale and clobbered state in Svelte applications
+- (Chromatic Penguin) Fix total price not updating on item transfer dialogs
+- (Chromatic Penguin) Fix two-handed grip toggle on Strike rule elements
+- (Chromatic Penguin) Improve trade initiation: party-sheet member drops, request expiry with alerts on both sides, prevent sending to familiars
+- (Chromatic Penguin) Improve visual accessibility of spell slot number input
+- (Chromatic Penguin) Include origin item roll options in effects dragged from a sheet
+- (Chromatic Penguin) Match self-applied effect card body to the standard action card
+- (Chromatic Penguin) Recalculate encounter threat/XP when a combatant's level or alliance changes
+- (Chromatic Penguin) Remove manipulate trait from alchemical bomb strikes
+- (Chromatic Penguin) Truncate long names, fix broken search icon in Trade Dialog
+- (Chromatic Penguin) Snapshot area fire save DC in chat message context
+- (Dantar) Add back TakesNoDamage text on applyDamage card
+- (Dantar) Apply each persistent damage from dragged formula
+- (Dantar) Make clown car respect elevation and levels
+- (Dantar) Prevent chat bubbles if message isn't in the in-character style
+- (Kromko) Fix not being able to remove spells from deities
+- (Noisyink) Use check icon for trade accept button in unaccepted state
+- (stwlam) Prevent some some fields in the Aura RE form from resetting their values
+
+### Data Updates
+
+- (Ambrose, Kromko) Add content from Lost Omens High Seas
+- (Ambrose) Add Animate Nightmare actor variants
+- (Ambrose) Add automation to Vrolikai's Focused Flames ability
+- (Ambrose) Add Chelaxian Scion Archetype feats and actions
+- (Ambrose) Add Chelaxian Scion dedication to Archetypes journals
+- (Ambrose) Add effect for Ten Day's Breath
+- (Ambrose) Add effect to Sanguine Evasion and restore missing folders
+- (Ambrose) Add Marine Marauder to Archetype Journals
+- (Ambrose) Add Spell Effect: Fly to Urveth
+- (Ambrose) Add toggle to Scamp's Fast Healing
+- (Ambrose) Add variants for Create a Diversion to Deceptive Tactics
+- (Ambrose) Correct Aqueous Dragonblood RE FlatModifier selector
+- (Ambrose) Correct Malfunctioning Perfumery's Crushing Notes DC value
+- (Ambrose) Expand GM Screen Research journal entry
+- (Ambrose) Fix Blood Painter spellcasting stats
+- (Ambrose) Remove and redirect reprinted Lost Omens High Seas actors
+- (Ambrose) Remove Cyclonic Cannon equipment item
+- (Ambrose) Remove redundant sleep immunity from Lythazossa
+- (Ambrose) Remove Wyrm on the Wing tattoos
+- (Ambrose) Update Know-It-All to account for Archetypes
+- (Dantar) Add master spellcasting into the Master Eldritch Archer Spellcasting
+- (Dantar) Add rules for verdant- and pristine- weapon feats
+- (Dantar) Exclude self from fire and metal aura junction effects
+- (Dantar) Implement One-Inch Punch for Monastic Archer Stance
+- (Dantar) Implement rule for effortless reach
+- (Dantar) Localize family ability glossary
+- (Dantar) Update description of boulder seed bombs, add critSuccess note
+- (Dire Weasel) Add automation for Ioton's Leech Thought
+- (Dire Weasel) Add automation for Ogre Hurler's Toss Kobold
+- (Dire Weasel) Add effect for Golden Wings
+- (Dire Weasel) Add inflicts roll option to Greater Constrict
+- (Dire Weasel) Add inline roll options to Engulf
+- (Dire Weasel) Add link to effect for NPC ability Pinpoint Poisoner
+- (Dire Weasel) Add SpecialStatistic automation to Efficient Capture, Envelop, Hurl Net, Shackle, Swift Capture
+- (Dire Weasel) Add spell effect for Scholarly Recollection
+- (Dire Weasel) Add Strike automation for Xulgath Gutrager's Corrosive Kiss
+- (Dire Weasel) Fix compendiumSource for Romi Bracken's copy of Blood-Drinker Blade
+- (Dire Weasel) Fix order of Ochiastis's Quill damage partials
+- (Dire Weasel) Fix spelling of rank in all copies of Spell Repertoire
+- (Dire Weasel) Remove spell name override from Pickled Demon Tongue (Major) description
+- (Dire Weasel) Tidy description for Redemption
+- (Dire Weasel) Unify damage for Nethershade
+- (Dire Weasel) Unify damage for Warcat of Rull's Piercing Fangs
+- (Dire Weasel) Unify Ravener's Void Breath damage
+- (Dire Weasel) Update Azlanti Elemental Nexus's Elemental Wave to use selectable damage
+- (Dire Weasel) Update Sliding Statue's Slide to use `@Damage`
+- (hollyvalenta) Correct Arcana modifier for Dust Bunny Swarm
+- (hollyvalenta) Update Hellknight-Errant to not increase Hellknight feat count by 5
+- (Kromko) Move Lead the Way to Knight Vigilant archetype
+- (Longstrider) Fix ruffian Combat Grab requirement
+- (rectulo) Change Attack of Opportunity to Reactive Strike in Baomal
+- (rectulo) Correct spelling of "Talmandor" in For Talmandor! For…
+- (rectulo) Fix spelling of "effect" in zhuraita
+- (Rigo) Implement Bodyguard's increased Taunt penalty using Ephemeral Effect
+- (Rigo) Replace core inline roll with Shove inline action in Bands of Force
+- (Rigo) Update critical specialization predicate in Weapon implement's initiate benefit
+- (SpartanCPA) Add Hell's Destiny Player's Guide Backgrounds
+- (SpartanCPA) Combine Klacktel Inline Damage
+- (Tikael) Add missing Skirmish trait and skirmish actions
+
+## 8.2.0
+
+### System Improvements
+
+- (Dire Weasel) Add support for ring templates
+- (Geliogabalus) Add weapon boost automation
+- (JiDW) Improve Dice So Nice integration with Damage Type
+- (stwlam) Set cone angle to 90 when created from scene controls
+
+### Bugfixes
+
+- (Chromatic Penguin) Fix hiding roll opposer names
+- (Dantar) Add {item|id}-{meleeOrRanged}-damage domain to attacks, to enable ammunition rules
+- (Dantar) Hide ActorsDeadAtZero setting from players
+- (In3luki) Restore missing radio buttons in shield block dialog
+- (In3luki) Restore missing reroll icons in chat context menu
+- (Noisyink) Fix DOM helpers returning null cross-window in PopOut!
+- (Noisyink) Preserve token mirror state when applying TokenImage scale override
+- (stwlam) Allow "base" actor and item subtypes to construct
+- (stwlam) Set `ignored` if predicate fails in `StrikeRuleElement#beforePrepareData`
+- (Supe) Fix icon of add/remove currency dialog
+- (Supe) Fix tags in dark mode formula picker
+
+### Data Updates
+
+- (Ambrose) Add action macros to Deceptive Tactics
+- (Ambrose) Add area-damage options to Rainbow Fumarole's inline damage
+- (Ambrose) Add effect for Belt of Long Life
+- (Ambrose) Add Initiative note to the Hellbreaker Dedication
+- (Ambrose) Add link to confused status to Shoggoth's Maddening Cacophany and remove DC explanation note on Constrict
+- (Ambrose) Add note RE to Fracture Timeline
+- (Ambrose) Condense spell effects for several battleforms
+- (Ambrose) Correct action cost of Rally Point
+- (Ambrose) Correct Asp of Grief data entry errors
+- (Ambrose) Correct inline check for Lassoing Lash
+- (Ambrose) Correct Nosferatu Malefactor's fang damage type
+- (Ambrose) Correct rollOptions for Invoke Rune's Pride effect
+- (Ambrose) Correct typo in Explosive Arrival flags
+- (Ambrose) Remove Detect Alignment cantrip and update Strigoi creature abilities to match Remaster update
+- (Ambrose) Update action cost of Mask of Mercy per Treasure Vault Remaster update
+- (Ambrose) Update Invoke Rune effect to match Monster Core update
+- (Ambrose) Update localization for Aerial Form to match existing localizations
+- (Ambrose) Update Propulsive Leap's damage syntax
+- (Ambrose) Update Wyrm on The Wing tattoo to match Remaster updates
+- (Dire Weasel) Add automation to Crystal Healing
+- (Dire Weasel) Add effect for Feast on Fear, Gentle Breeze, and Shark Tooth Charm
+- (Dire Weasel) Add increased damage automation to Telekinetic Swarm Trap
+- (Dire Weasel) Add some links to Soulsight
+- (Dire Weasel) Fix bonus type for Vengeful Wrath
+- (Dire Weasel) Fix save for Eclipse Burst
+- (Dire Weasel) Standardize inline action for Embrace
+- (Dire Weasel) Tidy description of Malefic Mirror and some inline actions
+- (Dire Weasel) Update some equipment to grant conditions
+- (Dantar) Add a separate effect for redcap brigade
+- (Dantar) Add Arcane tradition to Retrocognition and its references
+- (Dantar) Add missing `replaceAll: true` for Talon and Claw stance effects
+- (Dantar) Allow didactic strike to affect attack spell damage
+- (Dantar) Fix greater Endless Quiver material choices
+- (Dantar) Implement rules for Hellknight Mobility feat
+- (Dantar) Update dawnsilver-tree and shield-pistol rounds
+- (Kromko) Add some missing compendium sources for physical items
+- (Kromko) Clean up whitespace around inline buttons; Fix Spellsap Grenades data
+- (Kromko) Fix Fire and Water Wisps' Resonance description
+- (Kromko) Fix formatting of Flawless Celestial Shawl and Smoking Sword
+- (Kromko) Fix invalid language keys
+- (Kromko) Fix Skill Mastery overwriting all feat descriptions
+- (Kromko) Remove duplicate dedication from Provocator Archetype journal page
+- (Kromko) Remove remnants of pre-remaster activation from Greater Screech Shooter
+- (rectulo) Add description text for Grandmaster NPC
+- (rectulo) Add forgotten text in Black Belt NPC
+- (rectulo) Add missing text in Cultist description
+- (rectulo) Add teleportation trait to Retrieval Prism
+- (rectulo) Change damage type from bludgeoning to slashing in Storm Hag's Cutting Gale
+- (rectulo) Fix a typo in a Dwarf Battalion ability
+- (rectulo) Fix a typo in Spell Repertoire feature
+- (rectulo) Fix description in Gathered Lore and Precise Discipline features
+- (rectulo) Fix Fiend Caller description
+- (rectulo) Fix typo in spell name for Tumbleweed Leshy Courier
+- (rectulo) Revise description for Retrieval Prism (Greater)
+- (Rigo) Make Crossbow Crack Shot's bonus damage and backstabber upgrade mutually exclusive
+- (SpartanCPA) Add RuleElement for Seugathi Guard's Magic Item Mastery feature
+- (stwlam) Update icon for Elixir of Gender Transformation
+- (Tikael) Add missing localization for Commander Fortitude Expertise
+- (Tikael) Fix action cost of Start the Festival
+- (TroelsL) Fix 2 NPCs in Outlaws with malformed resources JSON
+- (YellowAfterlife) Fix Spirit Thresher's damage type
+
+### Under the Hood
+
+- (Kromko) Remove Catfolk feat Expanded Luck and redirect it to Lucky Break
+- (Noisyink) Avoid duplicate feat group slots in custom campaigns slots
+- (stwlam) Remove migrations for foundry versions up to and including 10
+- (stwlam) Support retrieval of highest and lowest save from creatures
+
+## 8.1.2
+
+### System Improvements
+
+- (stwlam) Add "robot" trait to creature identification
+
+### Bugfixes
+
+- (Chromatic Penguin) Refresh token bars on Temp HP updates.
+- (Kromko) Fix item transfer message localization
+- (steve148) Update changelog link in foundry to the new one
+- (stwlam) Fix aura rule forms not updating includeSelf
+- (stwlam) Fix tokens being visible when partially clipping through a wall
+- (Supe) Fix errors migrating certain old effects with invalid badge min/max fields
+- (Supe) Fix issues attack rolls using item spellcasting features such as kinetic activation
+- (Supe) Remove invalid expend and unprepare buttons from flexible spellcasting
+
+## Data Updates
+
+- (Ambrose) Add effect to Moon Hag's Ride the Moonbeams ability
+- (Ambrose) Correct Essence Overflow's damage formula
+- (Ambrose) Localize Overhand Smash Notes text for Volodmyra
+- (Ambrose) Update Ardent Armirger text and prerequisites to match Hellfire dispatches
+- (Dire Weasel) Add automation to Spirit of Vigil
+- (Dire Weasel) Brush up automation for No Stranger to Death
+- (Kromko) Fix Opportune Trickster's description formatting
+- (Kromko) Remove Ghoul Fever and Paralysis from Skaveling
+- (rectulo) Fix description for Devastation Cavalry Brigade
+- (rectulo) Fix formatting in Ort Mob description
+- (rectulo) Revise Starstone Aspirant archetype details in journals
+
+## 8.1.1
+
+### Bugfixes
+
+- (stwlam) Restore close button to attack popout
+- (Supe) Fix migration failure on certain embedded spells in scrolls and wands
+
+### Data Updates
+
+- (Ambrose) Extract Noise from Rollable Tables and Deity Boons and Curses
+- (SpartanCPA) Correct Attack Bonus for Young Wish Dragon
+- (SpartanCPA) Cleanup and Reorganize labels involved in ChangeShape REs
+
+## 8.1.0
+
+### System Improvements
+
+- (stwlam) Have darkness lights work like darkness regions when controlling a token with darkvision
+- (Supe) Add strike buttons to chat log upon creating Quick Alchemy bombs
+
+### Bugfixes
+
+- (Chromatic Penguin) Fix updating scene darkness via darkness adjuster tool
+- (Dantar) Fix precision immunity crit damage miscalculation
+- (Dantar) Apply holy/unholy to sanctified NPC attacks
+- (oWave) Fix feat delete on ABCSheet silently failing
+- (Rigo) Use modifier type to find proficiency modifier in mythic rerolls
+- (stwlam) Add system roll-link listeners to detached windows
+- (stwlam) Fix setting message mode for slash command damage rolls, checks with the "secret" trait
+- (stwlam) Fix issue causing feats and class features with no-longer-valid traits to throw errors
+- (Supe) Fix tag strikethrough when rerolling untrained improvisation using mythic proficiency
+- (Supe) Fix troop creation in unviewed scenes
+- (Supe) Propagate elite/weak updates to all troop siblings
+- (Supe) Prevent troop token flags from being saved to prototype tokens
+
+### Data Updates
+
+- (Ambrose) Add missing Attribute Boost to the Beginner Box Merisiel
+- (Ambrose) Add missing grant for Additional Lore to Halfling Lore feat
+- (Ambrose) Condense Adapt Self Spell Effects
+- (Ambrose) Remove action cost from Improvised Pummel
+- (Ambrose) Remove malformed skill entry from Bikkhasura
+- (Ambrose) Update Dwarven Gods deity stat block descriptions to use published sources instead of the Pathfinder Wiki
+- (Ambrose) Update Sea Dragon's Liquify Resistance automation to match Draconic Codex update
+- (Dantar) Add draconic benefactors from draconic codex to dragon disciple choices
+- (Dantar) Add GM notes for Hellbreakers relics
+- (Dantar) Make Ageless Patience always apply on nat 1
+- (Dantar) Make Alternate Amps replace base ones for Silent Whisper and Parallel Breakthrough
+- (Dantar) Make Reinforced Chassis use medium armor proficiency
+- (Dantar) Make Taunt affect class DC
+- (Dantar) Migrate Kholo/Tripkee traits and related strings
+- (digitalshadowhawk) Automate Battle Lute item bonus to performance checks
+- (Dire Weasel) Add automation for Heir of the Saoc
+- (Dire Weasel) Add automation for Urnak Lostwind's Brutally Disarm
+- (Dire Weasel) Add inline typed damage rolls to Volatile Reagents
+- (Dire Weasel) Add missing frequences to Feed on Fear
+- (Dire Weasel) Add roll options to inline saving throw for Paralysis NPC ability
+- (Dire Weasel) Fix range of Wild Winds stance's Wind Crash Strike
+- (Dire Weasel) Fix water trait predicate for Elemental Assault effect
+- (Dire Weasel) Unify damage for Kithangian's Rasping Tongues
+- (Kromko) Add slugs to Living Weapons's Strikes
+- (Longstrider) Fix multiclass dedications proficiencies
+- (Longstrider) Lightly brush up Swashbuckler
+- (Razytos) Remove malformed skill entry from Garadasura
+- (Rigo) Add effect for Ferrous Butterfly's A Thousand Cuts slashing weakness
+- (Rigo) Support inline damage from Notes with Energized Spark
+- (TroelsL) Fix malformed skills in Sovereign Dragons
+- (TroelsL) Remove badly formatted Spear Frog skills
+- (TroelsL) Remove malformed skill from Risen Runelord Envy
+- (TroelsL) Update Divine Living Rune initiative statistic
+
+## 8.0.3
+
+### Bugfixes
+
+- (stwlam) Fix field name in appearance tab of `TokenConfig`
+- (stwlam) Fix show damage dialog toggle
+- (stwlam) Restore overlay icon on tokens of dead actors
+- (stwlam) Restore status effects title bar
+- (Supe) Fix colors of whisper and blind inline rolls in dark mode
+- (Supe) Fix empty tooltips flashing when hovering over the effect panel
+- (Supe) Fix items and actions sent by players defaulting to blind
+- (Supe) Fix styling of character language tags
+
+### Data Updates
+
+- (Ambrose) Add an index to the Ancestry Journals and link to GM and Player screens
+- (Ambrose) Add inline rolls to Eagle Knight dedication
+- (Ambrose) Remove Prepared Spellcasting entry for Adult Requiem Dragon (non-spellcasting variant)
+- (Dire Weasel) Add supplemental area information to Frigid Flurry description
+
+## 8.0.2
+
+### System Improvements
+
+- (7H3LaughingMan) Allow modification of roll-twice behavior in damage-roll hooks
+- (stwlam) Convert Check Prompt Generator to `ApplicationV2`, add raw output preview
+- (Supe) Convert Attack Proficiencies dialog to `DialogV2`
+
+### Bugfixes
+
+- (In3luki) Fix Compendium Browser header controls
+- (In3luki) Fix updating physical-item prices
+- (In3luki) Fix `TextEditorPF2e#_createInlineRoll` failing to return pre-rolled inline rolls
+- (stwlam) Fix double-barrel icon on PC sheet
+- (stwlam) Fix handling of damage changes in NPC Attack sheet
+- (stwlam) Fix localization of damage-application chat message
+- (stwlam) Have hearing detection test against region surfaces
+- (stwlam) Restore token effect icons
+
+### Data Updates
+
+- (Ambrose) Add automation to Commitment to Protection feat
+- (Ambrose) Add missing defenses to The Bloodstorm actor
+- (Ambrose) Add notes to Evangelize feat
+- (Ambrose) Consolidate Evasiveness Archetype feat
+- (Ambrose) Consolidate Skill Mastery archetype feats
+- (Dantar) Automate Sanguine Tenacity's Drained mechanics
+- (Dantar) Make Arghun unique
+- (Kromko) Add missing Hellfire Dispatches localization strings
+
+## 8.0.1
+
+### Bugfixes
+
+- (In3luki) Fix detection of inline damage rolls
+- (In3luki) Fix Region shape resetting after release of shape control handles
+- (In3luki) Fix localization of check-roll message flavor with static DCs
+- (stwlam) Fix style incapability with V14 code-mirror elements in Note Rule Element form
+- (stwlam) Fix issue preventing changing viewed scene
+- (stwlam) Restore styling of inline roll links according to roll (now message) mode
+
+### Data Updates
+
+- (Ambrose) Correct Shadow Maze's Disorient action type to reaction
+- (Dantar) Align the implementation of Bless spell effect with Benediction
+
+## 8.0.0
+
+### Bugfixes
+
+- (stwlam, Supe, In3luki) Update to support V14
+
+### Data Updates
+
+- (Ambrose) Add notes RE to Disturbing Knowledge feat
+- (Dantar) Fix Ammunition RE applying to Combination Weapons
+- (Tikael) Remove trailing semicolon from ritual costs

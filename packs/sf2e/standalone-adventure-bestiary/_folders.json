@@ -1,0 +1,35 @@
+[
+    {
+        "_id": "byOVUGuasFKcmNuI",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": null,
+        "name": "Rescue on Raxil",
+        "sort": 0,
+        "sorting": "a",
+        "type": "Actor"
+    },
+    {
+        "_id": "oR8sKPLKRm404ky2",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": null,
+        "name": "Murder in Metal City",
+        "sort": 100000,
+        "sorting": "a",
+        "type": "Actor"
+    },
+    {
+        "_id": "EVPPkDCXu8rx7tKt",
+        "color": null,
+        "description": "",
+        "flags": {},
+        "folder": null,
+        "name": "Battle for Nova Rush",
+        "sort": 200000,
+        "sorting": "a",
+        "type": "Actor"
+    }
+]

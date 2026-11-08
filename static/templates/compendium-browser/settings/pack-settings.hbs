@@ -1,0 +1,20 @@
+<h2>{{localize "PF2E.SETTINGS.CompendiumBrowserPacks.Name"}}</h2>
+{{#each tabSettings as |setting key|}}
+    {{#unless setting.hidden}}
+        <div class="setting-section">
+            <fieldset>
+                <legend>{{localize setting.label}}</legend>
+                {{#each setting.settings as |conf pack|}}
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="{{key}}-{{pack}}"
+                            {{checked conf.load}}
+                        >
+                        {{conf.name}} ({{#if conf.showFullId}}{{pack}}{{else}}{{conf.package}}{{/if}})
+                    </label>
+                {{/each}}
+            </fieldset>
+        </div>
+    {{/unless}}
+{{/each}}

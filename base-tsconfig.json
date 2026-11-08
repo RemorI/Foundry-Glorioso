@@ -1,0 +1,60 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "lib": [
+            "DOM",
+            "ES6",
+            "ES2021",
+            "DOM.Iterable"
+        ],
+        "module": "ESNext" ,
+        "rootDir": "./src",
+        "moduleResolution": "bundler",
+        "types": [
+            "fvtt-types"
+        ],
+        "resolveJsonModule": true,
+       
+        "allowJs": true,
+        
+        "sourceMap": true,
+        
+        "outDir": "./dist",
+        "allowImportingTsExtensions": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+
+       
+        "strict": true ,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        
+        "noImplicitThis": true,
+        "skipLibCheck": true,
+        "paths": {
+            "@actor": ["./src/module/actor/index.ts"],
+            "@actor/*": ["./src/module/actor/*"],
+            "@item": ["./src/module/item/index.ts"],
+            "@item/*": ["./src/module/item/*"],
+            "@scene": ["./src/module/scene/index.ts"],
+            "@scene/*": ["./src/module/scene/*"],
+            "@system/*": ["./src/module/system/*"],
+            "@module/*": ["./src/module/*"],
+            "@scripts/*": ["./src/scripts/*"],
+            "@common/*": ["./types/foundry/common/*"],
+            "@client/*": ["./types/foundry/client/*"],
+            "@util": ["./src/util/index.ts"],
+            "@util/*": ["./src/util/*"]
+        }
+    },
+    "include": [
+        "./build/**/*",
+        "./src/**/*",
+        "./src/**/*.svelte",
+        "./tests/**/*.ts",
+        "./types/foundry/global-external.d.mts",
+        "./vite.config.ts",
+        "./vitest.config.ts"
+    ]
+}

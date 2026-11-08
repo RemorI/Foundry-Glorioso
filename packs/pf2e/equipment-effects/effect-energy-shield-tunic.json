@@ -1,0 +1,115 @@
+{
+    "_id": "7NImqTYZ5Yg9gkM3",
+    "img": "icons/equipment/chest/robe-collared-blue.webp",
+    "name": "Effect: Energy Shield Tunic",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.equipment-srd.Item.Energy Shield Tunic], or @UUID[Compendium.pf2e.equipment-srd.Item.Energy Shield Tunic (Greater)]</p>\n<p>You gain resistance to the chosen energy type.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "days",
+            "value": 1
+        },
+        "fromSpell": false,
+        "level": {
+            "value": 15
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Impossible Magic"
+        },
+        "rules": [
+            {
+                "adjustName": false,
+                "choices": [
+                    {
+                        "predicate": [
+                            {
+                                "or": [
+                                    "parent:origin:item:slug:energy-shield-tunic",
+                                    {
+                                        "not": "parent:origin:item"
+                                    }
+                                ]
+                            }
+                        ],
+                        "value": "Compendium.pf2e.equipment-srd.Item.Energy Shield Tunic"
+                    },
+                    {
+                        "predicate": [
+                            {
+                                "or": [
+                                    "parent:origin:item:slug:energy-shield-tunic-greater",
+                                    {
+                                        "not": "parent:origin:item"
+                                    }
+                                ]
+                            }
+                        ],
+                        "value": "Compendium.pf2e.equipment-srd.Item.Energy Shield Tunic (Greater)"
+                    }
+                ],
+                "key": "ChoiceSet",
+                "prompt": "PF2E.SpecificRule.Prompt.EquipmentVariety",
+                "rollOption": "energy-shield-tunic"
+            },
+            {
+                "choices": [
+                    {
+                        "label": "PF2E.TraitAcid",
+                        "value": "acid"
+                    },
+                    {
+                        "label": "PF2E.TraitCold",
+                        "value": "cold"
+                    },
+                    {
+                        "label": "PF2E.TraitElectricity",
+                        "value": "electricity"
+                    },
+                    {
+                        "label": "PF2E.TraitFire",
+                        "value": "fire"
+                    },
+                    {
+                        "label": "PF2E.TraitSonic",
+                        "value": "sonic"
+                    }
+                ],
+                "flag": "resistance",
+                "key": "ChoiceSet",
+                "prompt": "PF2E.SpecificRule.Prompt.Resistance"
+            },
+            {
+                "key": "Resistance",
+                "predicate": [
+                    "energy-shield-tunic:energy-shield-tunic"
+                ],
+                "type": "{item|flags.system.rulesSelections.resistance}",
+                "value": 10
+            },
+            {
+                "key": "Resistance",
+                "predicate": [
+                    "energy-shield-tunic:energy-shield-tunic-greater"
+                ],
+                "type": "{item|flags.system.rulesSelections.resistance}",
+                "value": 15
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "value": []
+        }
+    },
+    "type": "effect"
+}

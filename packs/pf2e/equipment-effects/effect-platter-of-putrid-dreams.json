@@ -1,0 +1,49 @@
+{
+    "_id": "5yP9Y2iSOmy4hsrW",
+    "img": "icons/commodities/materials/bowl-liquid-white.webp",
+    "name": "Effect: Platter of Putrid Dreams",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.equipment-srd.Item.Platter of Putrid Dreams]</p>\n<p>You gain a +2 status bonus to saving throws against being sickened.</p>"
+        },
+        "duration": {
+            "expiry": null,
+            "sustained": false,
+            "unit": "unlimited",
+            "value": -1
+        },
+        "fromSpell": false,
+        "level": {
+            "value": 1
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Adventure Path: Hellbreakers"
+        },
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "inflicts:sickened"
+                ],
+                "selector": [
+                    "saving-throw"
+                ],
+                "type": "status",
+                "value": 2
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "value": []
+        }
+    },
+    "type": "effect"
+}

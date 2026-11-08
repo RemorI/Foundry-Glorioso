@@ -1,0 +1,44 @@
+{
+    "_id": "bXoGskH0SYfdcEtJ",
+    "folder": "A3ptJbuJdNEEDvAy",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Garden Path",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "class",
+        "description": {
+            "value": "<p>You can guide your crop to move unnoticed through dangerous situations. When you and any of your crop are @UUID[Compendium.pf2e.actionspf2e.Item.Avoid Notice]{Avoiding Notice}, you can choose yourself or one member of your crop to temporarily gain the benefits of the @UUID[Compendium.pf2e.feats-srd.Item.Quiet Allies] skill feat until the group is no longer Avoiding Notice. The group rolls two checks instead of one, using the higher die roll.</p>"
+        },
+        "level": {
+            "value": 8
+        },
+        "prerequisites": {
+            "value": [
+                {
+                    "value": "Bellflower Tiller Dedication"
+                },
+                {
+                    "value": "expert in Stealth or Survival"
+                }
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Lost Omens Cheliax, Infernal Inheritance"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "archetype"
+            ]
+        }
+    },
+    "type": "feat"
+}

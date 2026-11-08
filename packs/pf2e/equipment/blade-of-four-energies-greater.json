@@ -1,0 +1,96 @@
+{
+    "_id": "AWUzApS5PPwt3TCI",
+    "img": "systems/pf2e/icons/equipment/weapons/specific-magic-weapons/blade-of-four-energies.webp",
+    "name": "Blade of Four Energies (Greater)",
+    "system": {
+        "ammo": null,
+        "baseItem": "shortsword",
+        "bonus": {
+            "value": 0
+        },
+        "bonusDamage": {
+            "value": 0
+        },
+        "bulk": {
+            "value": 0.1
+        },
+        "category": "martial",
+        "containerId": null,
+        "damage": {
+            "damageType": "piercing",
+            "dice": 1,
+            "die": "d6"
+        },
+        "description": {
+            "value": "<p>This <em>+3 greater striking shifting shortsword</em> is formed of rapidly vibrating air and magical energy, though it uses the same statistics as iron. The wooden hilt is adorned with four gems, representing the energies of acid, cold, fire, and electricity, that sparkle in sequence at random intervals.</p><hr /><p><strong>Activate—Cycle Energy</strong> <span class=\"action-glyph\">f</span> (manipulate)</p>\n<p><strong>Frequency</strong> once per round</p><hr /><p><strong>Effect</strong> You draw magical energy from one of the gems. Roll 1d4. Until the start of your next turn, the weapon gains the effects of the corresponding property rune:</p><ol><li><p><em>@UUID[Compendium.pf2e.equipment-srd.Item.Corrosive (Greater)]{Greater Corrosive}</em>,</p></li><li><p><em>@UUID[Compendium.pf2e.equipment-srd.Item.Flaming (Greater)]{Greater Flaming}</em>,</p></li><li><p><em>@UUID[Compendium.pf2e.equipment-srd.Item.Frost (Greater)]{Greater Frost}</em>, or</p></li><li><p><em>@UUID[Compendium.pf2e.equipment-srd.Item.Shock (Greater)]{Greater Shock}</em>.</p></li></ol><p>@UUID[Compendium.pf2e.equipment-effects.Item.Effect: Blade of Four Energies]</p><hr /><p><strong>Activate—Release Energy</strong> <span class=\"action-glyph\">2</span> (concentrate, manipulate)</p>\n<p><strong>Frequency</strong> once per day</p>\n<p><strong>Requirements</strong> The blade has an energy rune from Cycle Energy</p><hr /><p><strong>Effect</strong> You call upon the energy stored in the blade to explode outward. You cast a 7th-rank spell that depends on the active rune:</p><ol><li><p>@UUID[Compendium.pf2e.spells-srd.Item.Acid Grip] for <em>corrosive</em></p></li><li><p>@UUID[Compendium.pf2e.spells-srd.Item.Fireball] for <em>flaming</em>,</p></li><li><p>2-action @UUID[Compendium.pf2e.spells-srd.Item.Howling Blizzard] for <em>frost</em>, or</p></li><li><p>@UUID[Compendium.pf2e.spells-srd.Item.Lightning Bolt] for <em>shock</em>.</p></li></ol><p>The DC for these spells is 38.</p>"
+        },
+        "expend": null,
+        "grade": null,
+        "group": "sword",
+        "hardness": 0,
+        "hp": {
+            "max": 0,
+            "value": 0
+        },
+        "level": {
+            "value": 18
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 20000
+            }
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Impossible Magic"
+        },
+        "quantity": 1,
+        "range": null,
+        "reload": {
+            "value": null
+        },
+        "rules": [],
+        "runes": {
+            "potency": 3,
+            "property": [
+                "shifting"
+            ],
+            "striking": 2
+        },
+        "size": "med",
+        "specific": {
+            "material": {
+                "grade": null,
+                "type": null
+            },
+            "runes": {
+                "potency": 3,
+                "property": [
+                    "shifting"
+                ],
+                "striking": 2
+            }
+        },
+        "splashDamage": {
+            "value": 0
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "agile",
+                "finesse",
+                "magical",
+                "versatile-s"
+            ]
+        },
+        "usage": {
+            "value": "held-in-one-hand"
+        }
+    },
+    "type": "weapon"
+}
