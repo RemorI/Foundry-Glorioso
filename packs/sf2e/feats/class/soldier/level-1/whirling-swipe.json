@@ -1,0 +1,97 @@
+{
+    "_id": "xND8wnEdnGSq84kn",
+    "folder": "81KtKO71Z3ZZ01KH",
+    "img": "systems/sf2e/icons/default-icons/feats-sf2e.webp",
+    "name": "Whirling Swipe",
+    "system": {
+        "actionType": {
+            "value": "action"
+        },
+        "actions": {
+            "value": 2
+        },
+        "category": "class",
+        "description": {
+            "value": "<p><strong>Requirements</strong> You're wielding a two-handed melee weapon.</p><hr /><p>You swipe your weapon in a wide swing to create a deadly arc. Your weapon gains the area (burst 5 feet) and unwieldy traits until the end of the turn. If your weapon has reach, the burst radius becomes the reach of your weapon. @UUID[Compendium.sf2e.actions.Item.Area Fire] with the required weapon, centering the burst on a corner of a square you occupy. You're excluded from the burst. If you're using a weapon with the backswing or sweep trait, you gain a +1 circumstance bonus to the save DC of the attack. If you have the primary target class feature, the primary target Strike you make is a melee Strike, rather than a ranged Strike.</p>"
+        },
+        "level": {
+            "value": 1
+        },
+        "prerequisites": {
+            "value": []
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Player Core"
+        },
+        "rules": [
+            {
+                "key": "RollOption",
+                "option": "whirling-swipe",
+                "toggleable": true
+            },
+            {
+                "key": "RollOption",
+                "label": "SF2E.SpecificRule.Soldier.WhirlingSwipe.DCUpgradeLabel",
+                "option": "whirling-swipe-dc-upgrade",
+                "predicate": [
+                    "whirling-swipe"
+                ],
+                "toggleable": true
+            },
+            {
+                "itemType": "weapon",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    "whirling-swipe",
+                    "item:usage:hands:2",
+                    "item:melee",
+                    "item:equipped",
+                    "item:trait:reach"
+                ],
+                "property": "traits",
+                "value": "area-burst-10"
+            },
+            {
+                "itemType": "weapon",
+                "key": "ItemAlteration",
+                "mode": "add",
+                "predicate": [
+                    "whirling-swipe",
+                    "item:usage:hands:2",
+                    "item:melee",
+                    "item:equipped",
+                    {
+                        "not": "item:trait:reach"
+                    }
+                ],
+                "property": "traits",
+                "value": "area-burst-5"
+            },
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "whirling-swipe-dc-upgrade"
+                ],
+                "selector": [
+                    "area-fire-dc"
+                ],
+                "value": 1
+            }
+        ],
+        "subfeatures": {
+            "proficiencies": {},
+            "senses": {},
+            "suppressedFeatures": []
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "soldier"
+            ]
+        }
+    },
+    "type": "feat"
+}

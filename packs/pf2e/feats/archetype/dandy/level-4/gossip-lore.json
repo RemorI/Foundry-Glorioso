@@ -1,0 +1,67 @@
+{
+    "_id": "7jqBwXq9jVsghCva",
+    "folder": "MyG6Mg5pwihDfpy2",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Gossip Lore",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "class",
+        "description": {
+            "value": "<p>Your time gossiping in fashionable salons keeps you informed on every topic.</p>\n<p>You are trained in Gossip Lore, a special Lore skill that can be used only to [[/act recall-knowledge skill=gossip-lore]], but on any topic. If you fail a check to Recall Knowledge with Gossip Lore, you get the effects of the @UUID[Compendium.pf2e.feats-srd.Item.Dubious Knowledge] skill feat.</p>\n<p>If you have legendary proficiency in Society, you gain expert proficiency in Gossip Lore, but you can't increase your proficiency rank in Gossip Lore by any other means.</p>"
+        },
+        "level": {
+            "value": 4
+        },
+        "prerequisites": {
+            "value": [
+                {
+                    "value": "Dandy Dedication"
+                }
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Player Core 2"
+        },
+        "rules": [
+            {
+                "key": "ActiveEffectLike",
+                "mode": "override",
+                "path": "system.skills.gossip-lore",
+                "value": {
+                    "attribute": "int",
+                    "label": "{item|name}",
+                    "rank": "match(when(gte(@actor.system.skills.society.rank, 4), 2),1)"
+                }
+            },
+            {
+                "key": "Note",
+                "outcome": [
+                    "failure"
+                ],
+                "predicate": [
+                    "action:recall-knowledge"
+                ],
+                "selector": [
+                    "gossip-lore",
+                    "gossip-lore-check"
+                ],
+                "text": "PF2E.SpecificRule.DubiousKnowledge.Note",
+                "title": "{item|name}"
+            }
+        ],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "archetype"
+            ]
+        }
+    },
+    "type": "feat"
+}

@@ -1,0 +1,32 @@
+{
+    "_id": "kbUymGTjbesOKsV6",
+    "folder": "LkjMKhSIthBOzEc0",
+    "img": "systems/pf2e/icons/actions/TwoActions.webp",
+    "name": "Primal Roar",
+    "system": {
+        "actionType": {
+            "value": "action"
+        },
+        "actions": {
+            "value": 2
+        },
+        "category": "offensive",
+        "description": {
+            "value": "<p>Your eidolon unleashes a primal roar or other terrifying noise that fits your eidolon's form. Your eidolon attempts to [[/act demoralize]] each enemy that can hear the roar, comparing the result of a single Intimidation check to the Will DC of each target; this check doesn't take any penalty for not sharing a language.</p>"
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Impossible Magic"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "auditory",
+                "eidolon"
+            ]
+        }
+    },
+    "type": "action"
+}

@@ -1,0 +1,50 @@
+{
+    "_id": "4xeFMXOsfrNZ3Ijv",
+    "img": "icons/commodities/treasure/token-gold-gem-purple.webp",
+    "name": "Effect: Impelling Symbol",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.equipment-srd.Item.Impelling Symbol]</p>\n<p>You gain a number of temporary Hit Points equal to your level plus the rank of the spell you cast.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "minutes",
+            "value": 1
+        },
+        "fromSpell": false,
+        "level": {
+            "value": 1
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Adventure Path: Hellbreakers"
+        },
+        "rules": [
+            {
+                "choices": {
+                    "config": "ranks"
+                },
+                "flag": "rank",
+                "key": "ChoiceSet",
+                "prompt": "PF2E.SpecificRule.Prompt.Rank"
+            },
+            {
+                "key": "TempHP",
+                "value": "@actor.level+@item.flags.pf2e.rulesSelections.rank"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "value": []
+        }
+    },
+    "type": "effect"
+}

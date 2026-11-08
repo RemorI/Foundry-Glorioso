@@ -1,0 +1,41 @@
+{
+    "_id": "YTHsakqXumdMU0dn",
+    "folder": "e7cY9fjWonaLBwOb",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Conflux Focus",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "class",
+        "description": {
+            "value": "<p>You imagine how you'll weave magic and combat into future battles, improving your focus. Whenever you @UUID[Compendium.pf2e.actionspf2e.Item.Refocus], you completely refill your focus pool.</p>"
+        },
+        "level": {
+            "value": 12
+        },
+        "prerequisites": {
+            "value": [
+                {
+                    "value": "conflux spells"
+                }
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Impossible Magic"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "magus"
+            ]
+        }
+    },
+    "type": "feat"
+}

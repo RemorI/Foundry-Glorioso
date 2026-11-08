@@ -1,0 +1,13 @@
+<div class="form-group">
+    <label for="{{rootId}}-lootable">{{localize "PF2E.Actor.NPC.Configure.Lootable.Label"}}</label>
+    <select
+        id="{{rootId}}-lootable"
+        name="{{concat "flags." systemId ".lootable"}}"
+        aria-describedby="{{rootId}}-lootable-hint"
+    >
+        {{#each lootable as |option|}}
+            <option value="{{option.value}}"{{#if option.selected}} selected="selected"{{/if}}>{{localize option.label}}</option>
+        {{/each}}
+    </select>
+    <p id="{{rootId}}-lootable-hint" class="hint">{{{lootableHint}}}</p>
+</div>

@@ -1,0 +1,9 @@
+<fieldset>
+    <legend>{{localize "PF2E.loot.LootNPCsPopupHeader"}}</legend>
+    {{#each tokenInfo as |info|}}
+        <label>
+            <input type="checkbox" name="{{info.id}}" {{checked info.checked}} />
+            <span>{{info.name}}</span>
+        </label>
+    {{/each}}
+</fieldset>

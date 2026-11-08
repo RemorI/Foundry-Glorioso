@@ -1,0 +1,224 @@
+import type { ActorPF2e } from "@actor";
+import { FormulaPicker } from "@actor/character/apps/formula-picker/app.ts";
+import type { ChatMessageMode } from "@client/config.d.mts";
+import type { AbilityItemPF2e, FeatPF2e, ItemPF2e } from "@item";
+import { extractEphemeralEffects } from "@module/rules/helpers.ts";
+import { DamageRoll } from "@system/damage/roll.ts";
+import { ErrorPF2e, getActionGlyph, htmlQuery, tupleHasValue } from "@util";
+import { traitSlugToObject } from "@util/tags.ts";
+import * as R from "remeda";
+import { ChatContextFlag, ChatMessageFlagsPF2e, CheckContextChatFlag } from "./data.ts";
+import { ChatMessagePF2e } from "./document.ts";
+
+function isCheckContextFlag(flag?: ChatContextFlag): flag is CheckContextChatFlag {
+    return !!flag && !tupleHasValue(["damage-roll", "spell-cast"], flag.type);
+}
+
+/** Create a message with collapsed action description and button to apply an effect */
+async function createUseActionMessage(
+    item: AbilityItemPF2e<ActorPF2e> | FeatPF2e<ActorPF2e>,
+    messageMode?: ChatMessageMode,
+): Promise<ChatMessagePF2e | null> {
+    const { actor, actionCost } = item;
+    const token = actor.getActiveTokens(true, true).shift() ?? null;
+
+    // Reduce remaining uses in frequency
+    if (item.system.frequency && item.system.frequency.value > 0) {
+        const newValue = item.system.frequency.value - 1;
+        await item.update({ "system.frequency.value": newValue });
+    }
+
+    // If this is a crafting action, prompt for the item we want to craft and then craft it
+    const craftingAbility = item.crafting;
+    const resource = craftingAbility?.resource ? actor.getResource(craftingAbility.resource) : null;
+    const isCraftingAction = !!craftingAbility && !!resource && actor.isOfType("character");
+    const consumeResources = !!resource?.value;
+    const craftedItem = await (async () => {
+        if (!isCraftingAction) return null;
+        const picker = new FormulaPicker({ actor, item, ability: craftingAbility, mode: "craft" });
+        const selection = await picker.resolveSelection();
+        return selection ? craftingAbility.craft(selection, { consume: consumeResources, destination: "hand" }) : null;
+    })();
+    if (!craftedItem && isCraftingAction) return null;
+
+    // If there is no self effect nor crafted item, show a regular message
+    if (!item.system.selfEffect && !craftedItem) {
+        return (await item.toMessage(null, { mode: messageMode })) ?? null;
+    }
+
+    const speaker = ChatMessagePF2e.getSpeaker({ actor, token });
+    const flavor = await fa.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/chat/action/flavor.hbs`, {
+        action: { title: item.name, glyph: getActionGlyph(actionCost) },
+        item,
+        traits: item.system.traits.value.map((t) => traitSlugToObject(t, CONFIG.PF2E.actionTraits)),
+    });
+
+    // The `getChatData` overrides can't be called on a union, so call it through the base type.
+    const baseItem: ItemPF2e<ActorPF2e> = item;
+    const data = await baseItem.getChatData();
+    const content = await fa.handlebars.renderTemplate(`systems/${SYSTEM_ID}/templates/chat/action/collapsed.hbs`, {
+        actor: item.actor,
+        data,
+        selfEffect: !!item.system.selfEffect,
+        craftedItem: craftedItem?.toAnchor({ attrs: { draggable: "true" } }).outerHTML,
+        withoutResources: craftedItem && !consumeResources,
+        activate: craftedItem?.type === "consumable" && craftedItem.system.usage.type === "held" ? craftedItem : null,
+        strike: craftedItem?.isOfType("weapon") ? actor.system.actions?.find((a) => a.item === craftedItem) : null,
+    });
+    const flags: { [SYSTEM_ID]: ChatMessageFlagsPF2e[SystemId] } = { [SYSTEM_ID]: {} };
+    if (item.system.selfEffect) {
+        flags[SYSTEM_ID].context = { type: "self-effect", item: item.id };
+    } else {
+        flags[SYSTEM_ID].origin = item.getOriginData();
+    }
+
+    // Create the message
+    const messageData = ChatMessagePF2e.applyMode({ speaker, flavor, content, flags }, messageMode);
+    return (await ChatMessagePF2e.create(messageData)) ?? null;
+}
+
+async function applyDamageFromMessage({
+    message,
+    multiplier = 1,
+    addend = 0,
+    promptModifier = false,
+    rollIndex = 0,
+}: ApplyDamageFromMessageParams): Promise<void> {
+    if (promptModifier) return shiftAdjustDamage(message, multiplier, rollIndex);
+
+    const html = htmlQuery(ui.chat.element, `li.chat-message[data-message-id="${message.id}"]`);
+    const tokens = html?.dataset.actorIsTarget && message.token ? [message.token] : game.user.getActiveTokens();
+    if (tokens.length === 0) {
+        ui.notifications.error("PF2E.ErrorMessage.NoTokenSelected", { localize: true });
+        return;
+    }
+
+    const shieldBlockRequest = CONFIG.PF2E.chatDamageButtonShieldToggle;
+    const roll = message.rolls.at(rollIndex);
+    if (!(roll instanceof DamageRoll)) throw ErrorPF2e("Unexpected error retrieving damage roll");
+
+    const damage = multiplier < 0 ? multiplier * roll.total + addend : roll.alter(multiplier, addend);
+
+    // Get origin roll options and apply damage to a contextual clone: this may influence condition IWR, for example
+    const messageRollOptions = [...(message.flags[SYSTEM_ID].context?.options ?? [])];
+    const originRollOptions = messageRollOptions
+        .filter((o) => o.startsWith("self:"))
+        .map((o) => o.replace(/^self\b/, "origin"));
+    const messageItem = message.item;
+    const effectRollOptions = messageItem?.isOfType("affliction", "condition", "effect")
+        ? messageItem.getRollOptions("item")
+        : [];
+
+    for (const token of R.uniqueBy(tokens, (t) => t.flags[SYSTEM_ID].troop?.id ?? t)) {
+        if (!token.actor) continue;
+        // Add roll option for ally/enemy status
+        if (token.actor.alliance && message.actor) {
+            const allyOrEnemy = token.actor.alliance === message.actor.alliance ? "ally" : "enemy";
+            messageRollOptions.push(`origin:${allyOrEnemy}`);
+        }
+
+        // If no target was acquired during a roll, set roll options for it during damage application
+        if (!messageRollOptions.some((o) => o.startsWith("target"))) {
+            messageRollOptions.push(...token.actor.getSelfRollOptions("target"));
+        }
+        const domain = multiplier > 0 ? "damage-received" : "healing-received";
+        const ephemeralEffects =
+            multiplier > 0
+                ? await extractEphemeralEffects({
+                      affects: "target",
+                      origin: message.actor,
+                      target: token.actor,
+                      item: messageItem,
+                      domains: [domain],
+                      options: messageRollOptions,
+                  })
+                : [];
+        const contextClone = token.actor.getContextualClone(originRollOptions, ephemeralEffects);
+        const rollOptions = new Set([
+            ...messageRollOptions.filter((o) => !/^(?:self|target)(?::|$)/.test(o)),
+            ...effectRollOptions,
+            ...originRollOptions,
+            ...contextClone.getSelfRollOptions(),
+        ]);
+
+        await contextClone.applyDamage({
+            damage,
+            token,
+            item: messageItem,
+            skipIWR: multiplier <= 0,
+            rollOptions,
+            shieldBlockRequest,
+            outcome: message.flags[SYSTEM_ID].context?.outcome,
+        });
+    }
+    toggleOffShieldBlock(message.id);
+}
+
+interface ApplyDamageFromMessageParams {
+    message: ChatMessagePF2e;
+    multiplier?: number;
+    addend?: number;
+    promptModifier?: boolean;
+    rollIndex?: number;
+}
+
+async function shiftAdjustDamage(message: ChatMessagePF2e, multiplier: number, rollIndex: number): Promise<void> {
+    const content = await fa.handlebars.renderTemplate(
+        `systems/${SYSTEM_ID}/templates/chat/damage/adjustment-dialog.hbs`,
+        { uid: fu.randomID() },
+    );
+    const isHealing = multiplier < 0;
+    const adjustment = await foundry.applications.api.DialogV2.input<number>({
+        id: "shift-adjust-damage-{id}",
+        window: { title: _loc(isHealing ? "PF2E.UI.shiftModifyHealingTitle" : "PF2E.UI.shiftModifyDamageTitle") },
+        content,
+        ok: {
+            callback: (_event, button) => {
+                const input = button.form?.elements.namedItem("adjustment");
+                const value = input && fu.isElementInstanceOf(input, HTMLInputElement) ? Number(input.value) || 0 : 0;
+                // In case of healing, multiplier will have negative sign. The user will expect that positive
+                // modifier would increase healing value, while negative would decrease.
+                return value * Math.sign(multiplier);
+            },
+        },
+    });
+    if (typeof adjustment === "number") {
+        applyDamageFromMessage({ message, multiplier, addend: adjustment, promptModifier: false, rollIndex });
+    } else {
+        toggleOffShieldBlock(message.id);
+    }
+}
+
+/** The rendered chat log and its popout, which may be in a detached window */
+function getChatLogElements(): HTMLElement[] {
+    return [ui.chat.element, ui.chat.popout?.element].filter(R.isTruthy);
+}
+
+/** Toggle off the Shield Block button on a damage chat message */
+function toggleOffShieldBlock(messageId: string): void {
+    const selector = `li.chat-message[data-message-id="${messageId}"] button[data-action=shieldBlock]`;
+    for (const chatLogDOM of getChatLogElements()) {
+        htmlQuery(chatLogDOM, selector)?.classList.remove("shield-activated");
+    }
+    CONFIG.PF2E.chatDamageButtonShieldToggle = false;
+}
+
+/**
+ * Show or hide a clear-measured-template button on a message (applicable to spell cards with template-placed buttons).
+ * The button will be shown if templates are placed and the user has ownership; otherwise it will be hidden.
+ */
+function toggleClearEffectAreaButton(message: ChatMessagePF2e | null): void {
+    if (!message || !canvas.ready) return;
+
+    const selector = `li[data-message-id="${message.id}"] button[data-action=spell-template-clear]`;
+    for (const chatLogDOM of getChatLogElements()) {
+        const clearTemplatesButton = htmlQuery(chatLogDOM, selector);
+        if (!clearTemplatesButton) continue;
+        const hasEffectAreas = !!canvas.scene?.regions.some(
+            (t) => t.isOwner && t.isEffectArea && t.message === message,
+        );
+        clearTemplatesButton.classList.toggle("hidden", !hasEffectAreas);
+    }
+}
+
+export { applyDamageFromMessage, createUseActionMessage, isCheckContextFlag, toggleClearEffectAreaButton };

@@ -1,0 +1,65 @@
+{
+    "_id": "bJ3fdg24lf6bWF8k",
+    "folder": "2N8o7toO9rSZAsNY",
+    "img": "systems/sf2e/icons/default-icons/feats-sf2e.webp",
+    "name": "Grabbing Pincer",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "ancestry",
+        "description": {
+            "value": "<p>Your massive pincer can crush your foes and never let go. Your pincer unarmed attack deals 1d8 damage instead of 1d6 and gains the versatile S trait.</p>"
+        },
+        "level": {
+            "value": 5
+        },
+        "prerequisites": {
+            "value": [
+                {
+                    "value": "Ancestral Unarmed Attack (pincer)"
+                }
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Starfinder Galactic Ancestries"
+        },
+        "rules": [
+            {
+                "definition": [
+                    "item:slug:pincer"
+                ],
+                "key": "AdjustStrike",
+                "mode": "add",
+                "property": "weapon-traits",
+                "value": "versatile-s"
+            },
+            {
+                "key": "DamageAlteration",
+                "mode": "upgrade",
+                "property": "dice-faces",
+                "selectors": [
+                    "pincer-damage"
+                ],
+                "value": 8
+            }
+        ],
+        "subfeatures": {
+            "proficiencies": {},
+            "senses": {},
+            "suppressedFeatures": []
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "gfolian"
+            ]
+        }
+    },
+    "type": "feat"
+}

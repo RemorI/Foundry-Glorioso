@@ -1,0 +1,80 @@
+{
+    "_id": "GXcC6oVa5quzgNHD",
+    "img": "systems/pf2e/icons/ancestries/strix.webp",
+    "name": "Strix",
+    "system": {
+        "additionalLanguages": {
+            "count": 0,
+            "custom": "",
+            "value": [
+                "diabolic",
+                "draconic",
+                "gnomish",
+                "jotun"
+            ]
+        },
+        "boosts": {
+            "0": {
+                "value": [
+                    "dex"
+                ]
+            },
+            "1": {
+                "value": []
+            },
+            "2": {
+                "value": [
+                    "str",
+                    "dex",
+                    "con",
+                    "int",
+                    "wis",
+                    "cha"
+                ]
+            }
+        },
+        "description": {
+            "value": "<p><em>Known as itarii in their own language, strix are avian humanoids capable of flight. They enthusiastically take to the skies, a place where few other ancestries can follow. The dangers that live among the skies and treetops are particularly fearsome, leading strix to develop defensive sensibilities. They defend their communities with broad wingspans and razor talons. Strix value ferocity, vengeance, and devotion above all else. This ferocity sometimes causes other ancestries to incorrectly interpret strix to be a wholly dangerous or wicked people. In contradiction to their misunderstood nature, strix boast a spiritual, artistic, and compassionate culture that is rarely seen outside of their roosts.</em></p>\n<p><em>@UUID[Compendium.pf2e.journals.JournalEntry.45SK8rdbbxvEHfMn.JournalEntryPage.N8aShsDuf3ur0vZ2]{Strix}</em></p>"
+        },
+        "flaws": {
+            "0": {
+                "value": []
+            }
+        },
+        "hands": 2,
+        "hp": 8,
+        "items": {
+            "uECVZ": {
+                "img": "systems/pf2e/icons/spells/unfettered-pack.webp",
+                "level": 1,
+                "name": "Wings",
+                "uuid": "Compendium.pf2e.ancestryfeatures.Item.Wings"
+            }
+        },
+        "languages": {
+            "custom": "",
+            "value": [
+                "common",
+                "strix"
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Lost Omens Cheliax, Infernal Inheritance"
+        },
+        "reach": 5,
+        "rules": [],
+        "size": "med",
+        "speed": 25,
+        "traits": {
+            "rarity": "rare",
+            "value": [
+                "humanoid",
+                "strix"
+            ]
+        },
+        "vision": "low-light-vision"
+    },
+    "type": "ancestry"
+}

@@ -1,0 +1,65 @@
+{
+    "_id": "EBcZ7ftWs8lVW7Fj",
+    "img": "systems/pf2e/icons/equipment/shields/specific-shields/staff-storing-shield.webp",
+    "name": "Staff-Storing Shield",
+    "system": {
+        "acBonus": 2,
+        "baseItem": "wooden-shield",
+        "bulk": {
+            "value": 0
+        },
+        "containerId": null,
+        "description": {
+            "value": "<p>This magically reinforced wooden shield (Hardness 6, HP 36, BT 18) normally has a blank face. It can absorb a staff and transform between a shield and staff. When you prepare a staff, you can hold it up to the shield, at which point the items merge until your next daily preparations, and the shield's face becomes an image corresponding to the type of magic, such as a skull for a <em>staff of the dead</em>.</p><hr /><p><strong>Activate—Astonishing Transfiguration</strong> <span class=\"action-glyph\">1</span> (manipulate)</p>\n<p><strong>Effect</strong> You change the staff-storing shield from its shield form into the stored staff, which has an image of the shield on it, or change it from the stored staff back into a shield. Reinforcing runes etched on the shield have no effect in the staff form, and fundamental weapon runes etched on the stored staff have no effect in the shield form.</p>"
+        },
+        "grade": null,
+        "hardness": 6,
+        "hp": {
+            "max": 36,
+            "value": 36
+        },
+        "level": {
+            "value": 7
+        },
+        "material": {
+            "grade": null,
+            "type": null
+        },
+        "price": {
+            "value": {
+                "gp": 350
+            }
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Impossible Magic"
+        },
+        "quantity": 1,
+        "rules": [],
+        "runes": {
+            "reinforcing": 0
+        },
+        "size": "med",
+        "specific": {
+            "integrated": null,
+            "material": {
+                "grade": null,
+                "type": null
+            },
+            "runes": {
+                "reinforcing": 0
+            }
+        },
+        "speedPenalty": 0,
+        "traits": {
+            "integrated": null,
+            "rarity": "common",
+            "value": [
+                "extradimensional",
+                "magical"
+            ]
+        }
+    },
+    "type": "shield"
+}

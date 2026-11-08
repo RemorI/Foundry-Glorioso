@@ -1,0 +1,51 @@
+{
+    "_id": "SwzPqEsLzZpNufvm",
+    "folder": "NKOtFcFCixMHYckp",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Summoner Dedication",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "class",
+        "description": {
+            "value": "<p>You've formed a bond with an eidolon, an entity that manifests in a physical body only through their link to your life force. You gain an eidolon as well as the @UUID[Compendium.pf2e.actionspf2e.Item.Manifest Eidolon] activity. Due to your tenuous link, you can't gain or use tandem actions. Because you don't have @UUID[Compendium.pf2e.actionspf2e.Item.Act Together], only you or your eidolon can perform an exploration activity at one time.</p>\n<p>Your eidolon is trained in unarmed attacks and unarmored defense, and shares your proficiency rank for Perception, saving throws, and skill checks. Choose an eidolon type. You become trained in your eidolon's listed skills. For each of those skills that you're already trained in, you become trained in a different skill of your choice. Your eidolon's initial attributes are reduced. Instead of starting with a +4 attribute modifier in Strength or Dexterity and +2 in the other, your eidolon starts with a +3 in Strength or Dexterity and +2 in the other attribute. They otherwise gain the statistics listed for an eidolon of that type.</p>\n<p>At 5th level, the eidolon's attribute modifier that was reduced to +3 increases to +4, before applying attribute boosts. At levels 5, 10, 15, and 20, your eidolon also gets four attribute boosts, which follow the same rules as yours.</p>\n<p>@UUID[Compendium.pf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.b5VoSJNzoNuqbtvD]{Summoner}</p>"
+        },
+        "level": {
+            "value": 2
+        },
+        "prerequisites": {
+            "value": [
+                {
+                    "value": "Charisma +2"
+                }
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Impossible Magic"
+        },
+        "rules": [
+            {
+                "key": "GrantItem",
+                "uuid": "Compendium.pf2e.classfeatures.Item.Eidolon"
+            }
+        ],
+        "traits": {
+            "otherTags": [
+                "spellcasting-multiclass-archetype"
+            ],
+            "rarity": "common",
+            "value": [
+                "archetype",
+                "dedication",
+                "multiclass"
+            ]
+        }
+    },
+    "type": "feat"
+}

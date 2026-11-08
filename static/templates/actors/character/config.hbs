@@ -1,0 +1,15 @@
+<div class="form-group">
+    <label for="{{rootId}}-show-basic-unarmed">
+        {{localize "PF2E.Actor.Character.Configure.ShowBasicUnarmed.Label"}}
+    </label>
+    <input
+        id="{{rootId}}-show-basic-unarmed"
+        type="checkbox"
+        name="{{concat "flags." systemId ".showBasicUnarmed"}}"
+        aria-describedby="{{rootId}}-show-basic-unarmed-hint"
+        {{checked showBasicUnarmed}}
+    />
+    <p id="{{rootId}}-show-basic-unarmed-hint" class="hint">
+        {{localize "PF2E.Actor.Character.Configure.ShowBasicUnarmed.Hint"}}
+    </p>
+</div>

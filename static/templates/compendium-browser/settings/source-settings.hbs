@@ -1,0 +1,53 @@
+<div class="setting-section single-column">
+    <h2>{{localize "PF2E.SETTINGS.CompendiumBrowserSources.Name"}}</h2>
+    <p>{{localize "PF2E.SETTINGS.CompendiumBrowserSources.Hint"}}</p>
+</div>
+
+<div class="setting-section single-column">
+    <fieldset>
+        <legend>{{localize "PF2E.SETTINGS.Settings"}}</legend>
+
+        <label>
+            <input type="checkbox" name="show-empty-sources" {{checked sources.showEmptySources}}>
+            {{localize "PF2E.SETTINGS.CompendiumBrowserSources.ShowEmptySources"}}
+        </label>
+
+        <label>
+            <input type="checkbox" name="show-unknown-sources" {{checked sources.showUnknownSources}}>
+           {{localize "PF2E.SETTINGS.CompendiumBrowserSources.ShowUnknownSources"}}
+        </label>
+
+        <label>
+            <input type="checkbox" name="ignore-as-gm" {{checked sources.ignoreAsGM}}>
+            {{localize "PF2E.SETTINGS.CompendiumBrowserSources.IgnoreAsGM"}}
+        </label>
+    </fieldset>
+
+    <button type="button" data-action="settings-sources-delete">{{localize "PF2E.SETTINGS.CompendiumBrowserSources.DeleteAllTitle"}}</button>
+</div>
+
+<div class="setting-section single-column fixed-height">
+    <fieldset>
+        <legend>{{localize "PF2E.SETTINGS.CompendiumBrowserSources.SourcesListHeader"}}</legend>
+        <div class="sources-header">
+            <input
+                type="checkbox"
+                data-action="setting-sources-toggle-visible"
+                aria-label="{{localize "PF2E.CompendiumBrowser.Settings.ToggleVisibleSources"}}"
+                data-tooltip="PF2E.CompendiumBrowser.Settings.ToggleVisibleSources"
+            />
+            <input
+                type="text"
+                data-element="setting-sources-search"
+                placeholder="{{localize "PF2E.CompendiumBrowser.Filter.FilterSources"}}"
+                aria-label="{{localize "PF2E.CompendiumBrowser.Filter.FilterSources"}}"
+            />
+        </div>
+        {{#each sources.sources}}
+            <label data-element="setting-source" data-name="{{this.name}}">
+                <input type="checkbox" name="source-{{@key}}" {{checked this.load}}>
+                {{this.name}}
+            </label>
+        {{/each}}
+    </fieldset>
+</div>

@@ -1,0 +1,47 @@
+{
+    "_id": "K0gyvvX0S2FdJZ5T",
+    "folder": "f76Fsc5KTVZFEjKt",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Weighty Impact",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "class",
+        "description": {
+            "value": "<p>Your eidolon hurls enemies to the ground or across the battlefield. Choose one of the eidolon's unarmed attacks that has the shove or trip trait. The attack gains the other trait as well, and your eidolon gains the @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.Knockdown] and @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.Push] actions for that attack.</p>"
+        },
+        "level": {
+            "value": 10
+        },
+        "prerequisites": {
+            "value": [
+                {
+                    "value": "Your eidolon has an unarmed attack with the shove or trip trait"
+                }
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Impossible Magic"
+        },
+        "rules": [],
+        "subfeatures": {
+            "proficiencies": {},
+            "senses": {},
+            "suppressedFeatures": []
+        },
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "evolution",
+                "summoner"
+            ]
+        }
+    },
+    "type": "feat"
+}

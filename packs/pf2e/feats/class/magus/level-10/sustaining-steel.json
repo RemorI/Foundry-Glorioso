@@ -1,0 +1,44 @@
+{
+    "_id": "lTwi4lyVk1UXomhK",
+    "folder": "UlSUY2shgoFl9Ni2",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Sustaining Steel",
+    "system": {
+        "actionType": {
+            "value": "free"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "class",
+        "description": {
+            "value": "<p><strong>Trigger</strong> You Cast a Spell using a spell slot.</p><hr /><p>You pull magic from the surrounding area into your weapon, using its substance to transform the magic into restorative energy. You regain Hit Points equal to the triggering spell's rank and roll to end any persistent void damage you have. If you're in the Arcane Cascade stance, the healing is equal to double the spell's rank.</p>\n<p>If the spell had the vitality or void trait, any persistent vitality or void damage you have ends automatically, and you can change the damage type from Arcane Cascade to vitality or void if you wish. (Vitality damage typically damages only undead or other creatures with void healing.)</p>"
+        },
+        "level": {
+            "value": 10
+        },
+        "prerequisites": {
+            "value": [
+                {
+                    "value": "inexorable iron hybrid study"
+                }
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Impossible Magic"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "arcane",
+                "healing",
+                "magus",
+                "vitality"
+            ]
+        }
+    },
+    "type": "feat"
+}

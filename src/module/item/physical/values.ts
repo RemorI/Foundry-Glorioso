@@ -1,0 +1,100 @@
+import * as R from "remeda";
+
+const PHYSICAL_ITEM_TYPES = new Set([
+    "ammo",
+    "armor",
+    "backpack",
+    "book",
+    "consumable",
+    "equipment",
+    "shield",
+    "treasure",
+    "weapon",
+] as const);
+
+const PRECIOUS_MATERIAL_TYPES = new Set([
+    "abysium",
+    "adamantine",
+    "cold-iron",
+    "duskwood",
+    "djezet",
+    "dragonhide",
+    "dreamweb",
+    "grisantian-pelt",
+    "inubrix",
+    "keep-stone",
+    "dawnsilver",
+    "noqual",
+    "orichalcum",
+    "peachwood",
+    "siccatite",
+    "silver",
+    "sisterstone",
+    "sisterstone-dusk",
+    "sisterstone-scarlet",
+    "sloughstone",
+    "sovereign-steel",
+    "throneglass",
+    "warpglass",
+] as const);
+
+const PRECIOUS_MATERIAL_GRADES = new Set(["low", "standard", "high"] as const);
+
+const COIN_DENOMINATIONS = ["pp", "gp", "sp", "cp"] as const;
+const CURRENCY_DENOMINATIONS = [...COIN_DENOMINATIONS, "credits", "upb"] as const;
+
+const DENOMINATION_RATES = {
+    cp: 1,
+    sp: 10,
+    gp: 100,
+    pp: 1000,
+    credits: 10,
+    upb: 10,
+};
+
+const COIN_DENOMINATION_BY_VALUE = R.invert(R.pick(DENOMINATION_RATES, ["cp", "sp", "gp", "pp"]));
+
+/** Slots a worn item can occupy, each labeled by `PF2E.Item.Physical.Usage.WornSlot.<slot>` */
+const WORN_SLOTS = new Set([
+    "amulet",
+    "anklets",
+    "armbands",
+    "armor",
+    "backpack",
+    "barding",
+    "belt",
+    "beltpouch",
+    "bracelet",
+    "bracers",
+    "circlet",
+    "cloak",
+    "clothing",
+    "collar",
+    "crown",
+    "epaulet",
+    "eyeglasses",
+    "eyepiece",
+    "footwear",
+    "garment",
+    "gloves",
+    "headwear",
+    "horseshoes",
+    "mask",
+    "necklace",
+    "onbelt",
+    "ring",
+    "saddle",
+    "shoes",
+    "wrist",
+] as const);
+
+export {
+    COIN_DENOMINATION_BY_VALUE,
+    COIN_DENOMINATIONS,
+    CURRENCY_DENOMINATIONS,
+    DENOMINATION_RATES,
+    PHYSICAL_ITEM_TYPES,
+    PRECIOUS_MATERIAL_GRADES,
+    PRECIOUS_MATERIAL_TYPES,
+    WORN_SLOTS,
+};

@@ -1,0 +1,79 @@
+{
+    "_id": "3Qej6bMkgJ5ntllg",
+    "img": "systems/pf2e/icons/default-icons/effect.svg",
+    "name": "Effect: Devil You Know",
+    "system": {
+        "description": {
+            "value": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.Devil You Know]</p>\n<p>You gain a +1 circumstance bonus to your next skill check against the marked creature. If you're a master in Devil Lore or Hellknight Lore, the bonus increases to +2.</p>"
+        },
+        "duration": {
+            "expiry": "turn-end",
+            "sustained": false,
+            "unit": "rounds",
+            "value": 1
+        },
+        "fromSpell": false,
+        "level": {
+            "value": 4
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Adventure Path: Hellbreakers"
+        },
+        "rules": [
+            {
+                "key": "TokenMark",
+                "slug": "devil-you-know"
+            },
+            {
+                "key": "FlatModifier",
+                "predicate": [
+                    "target:mark:devil-you-know"
+                ],
+                "removeAfterRoll": "if-enabled",
+                "selector": [
+                    "skill-check"
+                ],
+                "slug": "devil-you-know",
+                "type": "circumstance",
+                "value": 1
+            },
+            {
+                "key": "AdjustModifier",
+                "mode": "upgrade",
+                "predicate": [
+                    {
+                        "or": [
+                            {
+                                "gte": [
+                                    "skill:devil-lore:rank",
+                                    3
+                                ]
+                            },
+                            {
+                                "gte": [
+                                    "skill:hellknight-lore:rank",
+                                    3
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "slug": "devil-you-know",
+                "value": 2
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "value": []
+        }
+    },
+    "type": "effect"
+}

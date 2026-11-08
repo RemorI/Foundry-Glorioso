@@ -1,0 +1,44 @@
+{
+    "_id": "amPQHO9O86G6AC4P",
+    "folder": "jrz6uG0OCHxnCOPo",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Devastating Spellstrike",
+    "system": {
+        "actionType": {
+            "value": "action"
+        },
+        "actions": {
+            "value": 2
+        },
+        "category": "class",
+        "description": {
+            "value": "<p><strong>Requirements</strong> Your Spellstrike is charged.</p><hr /><p>Your Spellstrike sweeps are so wide and devastating, they smash into nearby foes. Make a Spellstrike with a spell that can deal damage. Enemies in a @Template[type:emanation|distance:5] around the target (not including the target) take 2 damage of the same damage type your spell could deal. This damage increases to 3 at 9th level, 4 at 14th level, and 5 at 19th level.</p>\n<p>If you're in the Arcane Cascade stance, the emanation's damage gains a status bonus to damage equal to the extra damage from your Arcane Cascade.</p>"
+        },
+        "level": {
+            "value": 4
+        },
+        "prerequisites": {
+            "value": [
+                {
+                    "value": "inexorable iron hybrid study"
+                },
+                {
+                    "value": "Spellstrike"
+                }
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Impossible Magic"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "magus"
+            ]
+        }
+    },
+    "type": "feat"
+}

@@ -1,0 +1,94 @@
+<script lang="ts">
+    import { ItemPF2e, type PhysicalItemPF2e } from "@item";
+    import { dropTarget, type DropData } from "@module/sheet/drop-target.ts";
+    import type { SvelteAppProps } from "@module/sheet/mixin.svelte.ts";
+    import type { SelectItemRenderContext } from "./select-item.ts";
+    import { sluggify } from "@util";
+
+    const { resolve, getState }: SelectItemRenderContext & SvelteAppProps<SelectItemRenderContext> = $props();
+    const data = $derived(getState());
+
+    let selection: PhysicalItemPF2e | null = $state(null);
+
+    const actionKey = $derived(sluggify(data.action, { camel: "bactrian" }));
+
+    const placeholderIcon = $derived(
+        data.action === "craft"
+            ? "systems/pf2e/icons/actions/craft/unknown-item.webp"
+            : "systems/pf2e/icons/actions/repair/unknown-item.webp",
+    );
+
+    async function handleDrop(dropped: DropData) {
+        const droppedItem = dropped.type === "Item" ? await ItemPF2e.fromDropData(dropped) : null;
+
+        if (!(droppedItem instanceof ItemPF2e)) {
+            ui.notifications.error(_loc(`PF2E.Actions.${actionKey}.Error.ItemReferenceMismatch`));
+            return;
+        }
+
+        if (!droppedItem.isOfType("physical")) {
+            const itemName = droppedItem.name ?? "";
+            ui.notifications.warn(_loc(`PF2E.Actions.${actionKey}.Warning.NotPhysicalItem`, { item: itemName }));
+            return;
+        }
+
+        if (data.action === "repair" && !(droppedItem.isEmbedded && droppedItem.isOwner)) {
+            ui.notifications.error(_loc("DOCUMENT.UsePermissionWarn"));
+            return;
+        }
+
+        selection = droppedItem;
+    }
+</script>
+
+<article {@attach dropTarget({ onDrop: handleDrop })}>
+    <section class="drop-item-zone">
+        {#if selection}
+            <img src={selection.img} class="item-icon" alt={selection.name} />
+            <span>{selection.name}</span>
+        {:else}
+            <img src={placeholderIcon} class="item-icon" alt="" />
+            <span>{_loc(`PF2E.Actions.${actionKey}.SelectItemDialog.DropItemZoneLabel`)}</span>
+        {/if}
+    </section>
+    <section class="button-panel">
+        <button type="button" onclick={() => resolve(selection)} disabled={!selection}>
+            <i class="fa-solid fa-fw fa-hammer"></i>
+            {_loc(`PF2E.Actions.${actionKey}.SelectItemDialog.${actionKey}ButtonLabel`)}
+        </button>
+        <button type="button" onclick={() => resolve(null)}>
+            <i class="fa-solid fa-fw fa-times"></i>
+            {_loc(`PF2E.Actions.${actionKey}.SelectItemDialog.CancelButtonLabel`)}
+        </button>
+    </section>
+</article>
+
+<style lang="scss">
+    article {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-8);
+    }
+
+    .drop-item-zone {
+        display: flex;
+        align-items: center;
+        gap: var(--space-8);
+        margin: 0 2px 5px;
+        min-height: 32px;
+    }
+
+    .item-icon {
+        height: 32px;
+        width: 32px;
+    }
+
+    .button-panel {
+        display: flex;
+        gap: var(--space-4);
+
+        button {
+            flex: 1;
+        }
+    }
+</style>

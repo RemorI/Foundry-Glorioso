@@ -1,11 +1,26 @@
-.idea
-node_modules
-*.env
+# IDE
+.idea/
+.vs/
 .vscode
-tests/output
-tests/expected_data/screenshots/diff
-tests/mochaReport
-output/
-public/
+icons/\!dox/
+
+coverage
+build/logs
+.eslintcache
 dist/
-wikiOutput/
+docs/
+foundryconfig.json
+node_modules/
+package/
+packs-temp/
+json-assets/
+types/foundry/node_modules/
+types/foundry/package-lock.json
+vite.config.ts.*
+
+# Dummy files for vite dev server
+/index.html
+/styles/
+/pf2e.mjs
+/sf2e.mjs
+/vendor.mjs

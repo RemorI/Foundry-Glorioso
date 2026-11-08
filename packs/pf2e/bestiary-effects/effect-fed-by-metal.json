@@ -1,0 +1,44 @@
+{
+    "_id": "OMJnZspk5YHai8yn",
+    "img": "icons/commodities/leather/scales-white.webp",
+    "name": "Effect: Fed by Metal",
+    "system": {
+        "description": {
+            "value": "<p>You gain an item bonus to AC.</p>"
+        },
+        "duration": {
+            "expiry": "turn-start",
+            "sustained": false,
+            "unit": "rounds",
+            "value": 1
+        },
+        "level": {
+            "value": 1
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Lost Omens Draconic Codex"
+        },
+        "rules": [
+            {
+                "key": "FlatModifier",
+                "selector": "ac",
+                "type": "item",
+                "value": "@item.origin.flags.system.fedByMetalAC"
+            }
+        ],
+        "start": {
+            "initiative": null,
+            "value": 0
+        },
+        "tokenIcon": {
+            "show": true
+        },
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "effect"
+}

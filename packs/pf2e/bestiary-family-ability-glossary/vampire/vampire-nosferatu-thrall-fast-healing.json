@@ -1,0 +1,37 @@
+{
+    "_id": "2BjqIO36k0Y6tgZf",
+    "folder": "Pycs65tqRMBiiARd",
+    "img": "systems/pf2e/icons/actions/Passive.webp",
+    "name": "(Vampire, Nosferatu Thrall) Fast Healing",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "offensive",
+        "description": {
+            "value": "<p>A nosferatu thrall gains @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.Fast Healing]{Fast Healing 5} from being sustained by their master's blood.</p>"
+        },
+        "publication": {
+            "license": "OGL",
+            "remaster": false,
+            "title": "Pathfinder Bestiary 3"
+        },
+        "rules": [
+            {
+                "itemId": "{item|id}",
+                "key": "ItemAlteration",
+                "mode": "override",
+                "property": "name",
+                "value": "PF2E.NPCAbility.Vampire.FastHealing.Name"
+            }
+        ],
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "action"
+}

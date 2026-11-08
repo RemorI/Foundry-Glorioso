@@ -1,68 +1,51 @@
-# Welcome to Custom System Builder contributing guide
+# Contributing
 
-Thank you for investing your time in contributing to our project!
+## Welcome All
 
-In this guide you will get an overview of the contribution workflow from opening an issue, creating an MR, reviewing,
-and merging the MR.
+If you would like to contribute to the project then I welcome all support. If you are (or would like to be) a developer, then hit us up on Discord (https://discord.gg/pf2e) and we can help get you up and running. Pull requests are welcome, and there are plenty of issues logged if you want to sink your teeth into something.
 
-Please keep in mind that I am a human being working alone on the system, so be polite and be patient !
+## Development
 
-## Getting started
+### Prerequisites
 
-There are many ways in which you can contribute to the system !
+- pnpm. Install using the instructions for your operating system on https://pnpm.io/installation.
 
-You can report bugs, suggest new features or even tackle bugs and features all on your own ! I'll review each suggestion
-and integrate them in the project or tell you why I won't !
+### Building
 
-Please keep in mind this system is meant to be game-agnostic, any request targeting a game too specifically and/or not
-applicable to other games will likely be rejected.
+The project uses vite to bundle the ES module and compile the SASS files needed for a build and can create a local distribution for your own Foundry server. If you want to give it a go yourself follow these steps:
 
-### Issues
+- Clone the repo into a local folder in your dev environment `git clone https://github.com/foundryvtt/pf2e.git`
 
-#### Create a new issue
+- From within the clone's folder, install dependencies with `pnpm install`. After that, pnpm installs dependency changes automatically whenever you run one of the scripts below, so you only need to do this once.
 
-If you spot a problem or something missing from the system, [search if an issue already exists](https://gitlab.com/linkedfluuuush/custom-system-builder/-/issues). If a
-related issue doesn't exist, you can open a new issue using the [issue form](https://gitlab.com/linkedfluuuush/custom-system-builder/-/issues/new).
+- You'll now need to create a symbolic link between the build folder ("dist") and your Foundry data folder. This can be done manually or by running `pnpm run link` and following the instructions (`pnpm link` without `run` is a built-in pnpm command).
 
-#### Comment on an issue
+- Run `pnpm build --system=pf2e` to perform a one-off build.
 
-If you find an issue that interests you, you are free to comment on it to give your point of view / give more details,
-or even suggest a solution ! I'll be happy to see people help each other with the system !
+- Run `pnpm hot` while Foundry is running to start a development server, then open http://localhost:30001 instead of Foundry's usual address.
 
-### Make Changes
+- To update compendium datafiles, run `pnpm extractPacks ${compendium db filename} --system=pf2e` after editing the item directly in the built world's compendium, rather than editing the json files directly.
 
-#### Make changes locally
+## How to Help
 
-1. [Install Git](https://git-scm.com/downloads)
+As a project, we are using a modified gitlab flow, with a development branch (`master`) for development and a release branch (`release`) that mirrors the development branch at a certain point in its revision history. If you want to make improvements to the project, you can ask to be added to the project or make a fork of the project in GitHub. Then push your branch to GitHub and open a pull request for your branch to our development branch. After being reviewed it can be pulled into the project by one of the project maintainers.
 
-2. Fork the repository.
+### Compendium Content
 
-   Fork the repository locally using the fork button on the top right of the Gitlab Page. This will allow you to edit
-   the files locally without messing with the main code.
+As new OGL and/or ORC content is released by Paizo, we would like to incorporate it as soon as we are permitted (usually on a street release date). If you would like to contribute such content, please keep in mind the following guidelines:
 
-3. Create a working branch and start with your changes!
+- Name the entities (be they physical items, abilities, or other discrete game features) exactly as they are in the source material, with one exception: square brackets (`[` and `]`) should replaced with another set of characters, like parentheses, or simply omitted.
+- Any embedded links to other entities should be of the form `@Compendium[pf2e.pack-name.Entity Name]`. For ease of maintenance, the linked entities should be referenced by _name_ rather than by ID.
+- Do not submit new graphics (especially copyrighted graphics) without first receiving clearance from the copyright holders, if applicable, as well as this repository's maintainers.
 
-### Commit your update
+### Pull Requests
 
-Commit and push the changes once you are happy with them.
+Pull requests ("PRs") can be made by anyone. PRs titles should be in imperative mood and state clearly and concisely what is being changed. A description is often needed to expand on any details. For new contributors, CI actions must be manually triggered by the system maintainers. It will automatically trigger for subsequent pull requests after a first one is merged into `master`.
 
-### Merge Request
+Unsolicited new features are generally not accepted. If you'd like to contribute one, first find or open an issue detailing the feature gap. From there, we can discuss solutions you have in mind and--if we prefer to go a different direction--possibly save you some headache and wasted effort.
 
-When you're finished with the changes, create a merge request, also known as an MR.
+A pull request may not contain any AI-written changes. PRs noticed as having any AI-written changes will be summarily closed without merging.
 
-- Create the merge request
-  using [Gitlab UI](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html#when-you-work-in-a-fork)
-  .
-- Don't forget
-  to [link the MR to the issue](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-  if you are solving one.
-- I may ask for changes to be made before a PR can be merged, either using suggested changes or pull request comments.
-  You can apply suggested changes directly through the UI. You can make any other changes in your fork, then commit them
-  to your branch.
-- As you update your PR and apply changes, mark each conversation as resolved.
+#### Style
 
-### Your PR is merged!
-
-Congratulations ! And thank you very much for your help, it is greatly appreciated.
-
-Once your PR is merged, your contributions will be shipped with the next release of the system.
+We have integrated [Prettier](https://prettier.io/) into this project to enforce a consistent coding—even if it's not one everybody likes. Github CI will block merges of any PR that fails the test suite, which includes style linting, or the type check. To check locally, run `pnpm lint` and `pnpm check`. To manually fix style issues, you can call `pnpm lint:fix` from the project environment.

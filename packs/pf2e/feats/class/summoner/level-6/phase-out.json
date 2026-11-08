@@ -1,0 +1,43 @@
+{
+    "_id": "axGS5bBJ9vl5AePc",
+    "folder": "YM8bZCKVGHokQXCG",
+    "img": "icons/sundries/books/book-red-exclamation.webp",
+    "name": "Phase Out",
+    "system": {
+        "actionType": {
+            "value": "action"
+        },
+        "actions": {
+            "value": 3
+        },
+        "category": "class",
+        "description": {
+            "value": "<p>Your eidolon phases out of reality slightly, gaining resistance to all damage (except force, spirit, and vitality) equal to half your level. They're not incorporeal, but can't use Strikes or actions that require a fully physical form, such as [[/act grapple]], [[/act reposition]], [[/act shove]], or [[/act trip]].</p>\n<p>Your eidolon can Dismiss this effect to return to their normal form.</p>"
+        },
+        "level": {
+            "value": 6
+        },
+        "prerequisites": {
+            "value": [
+                {
+                    "value": "your eidolon is a phantom"
+                }
+            ]
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Impossible Magic"
+        },
+        "rules": [],
+        "traits": {
+            "rarity": "common",
+            "value": [
+                "concentrate",
+                "evolution",
+                "summoner"
+            ]
+        }
+    },
+    "type": "feat"
+}

@@ -1,0 +1,40 @@
+{
+    "_id": "6isn9nqnvfRrC1wW",
+    "folder": "VDsm6Sn88FQRnVG2",
+    "img": "systems/pf2e/icons/actions/Passive.webp",
+    "name": "(Graveknight) Weapon Master",
+    "system": {
+        "actionType": {
+            "value": "passive"
+        },
+        "actions": {
+            "value": null
+        },
+        "category": "offensive",
+        "description": {
+            "value": "<p>The graveknight has access to the critical specialization effects of any weapons it wields.</p>"
+        },
+        "publication": {
+            "license": "ORC",
+            "remaster": true,
+            "title": "Pathfinder Monster Core"
+        },
+        "rules": [
+            {
+                "itemId": "{item|id}",
+                "key": "ItemAlteration",
+                "mode": "override",
+                "property": "name",
+                "value": "PF2E.NPCAbility.Graveknight.WeaponMaster.Name"
+            },
+            {
+                "key": "CriticalSpecialization"
+            }
+        ],
+        "traits": {
+            "rarity": "common",
+            "value": []
+        }
+    },
+    "type": "action"
+}
